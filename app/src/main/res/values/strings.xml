@@ -7,4 +7,9 @@
     <string name="close">Close</string>
     <string name="start_scanner">START</string>
     <string name="stop_scanner">STOP</string>
+    <string name="torch_off">Torch Off</string>
+    <string name="torch_on">Torch On</string>
+    <string name="zoom_1x">Zoom 1x</string>
+    <string name="zoom_2x">Zoom 2x</string>
+    <string name="zoom_3x">Zoom 3x</string>
 </resources>

@@ -120,23 +120,32 @@ Le stub MSI recevra déjà la signature complète (FrameNV21 + rotationDeg) pour
 
 ## 📋 Progression Phase 0
 
-### Mini-lots Terminés (3/7)
+### Mini-lots Terminés (4/7)
 - **T-001** ✅ : Infrastructure de base Android + CameraX Preview
 - **T-002** ✅ : Pipeline analyse YUV + métriques temps réel  
 - **T-003** ✅ : Contrôle START/STOP + gestion d'état
+- **T-004** ✅ : **Boutons Torch/Zoom + Persistance États (APPROVED)**
+
+### T-004 : Contrôles Caméra Complets
+- ✅ **UI** : Boutons torch/zoom 56x56dp avec texte visible ("T", "1"/"2"/"3")  
+- ✅ **Torch** : Toggle ON/OFF + inversion couleurs + auto-OFF au STOP scanner
+- ✅ **Zoom** : Cyclique 1×→2×→3× respectant maxZoom caméra
+- ✅ **Persistance** : SharedPreferences + restauration parfaite (même pause/resume)
+- ✅ **Fix Critique** : MaterialButton insets supprimés pour affichage texte
+- ✅ **Architecture** : CameraControlsManager + PreferencesRepository extensible
 
 ### Prochains Mini-lots
-- **T-004** : Boutons Torch + Zoom cyclique (1×→2×→3×)
 - **T-005** : ML Kit whitelist + arbitre MSI stub
-- **T-006** : Persistance SharedPreferences + restauration état
+- **T-006** : ~~Persistance SharedPreferences~~ → Extension persistance + config avancée
 - **T-007** : Overlay snapshot JSON debug + lifecycle complet
 
-### Architecture Solide Établie
+### Architecture Solide Renforcée
 - **Dynamic binding** CameraX Preview + ImageAnalysis
-- **State management** extensible pour contrôles futures  
-- **Performance** validée (FPS: 23, Proc: 2.8ms)
-- **UX** fluide avec feedback temps réel
+- **State management** complet : Scanner + Camera + Persistance
+- **Performance** validée (FPS: 23, Proc: 2.8ms) 
+- **UX** complète avec tous contrôles intuitifs
+- **Infrastructure** prête pour ML Kit et MSI integration
 
 ---
 *Document vivant mis à jour à chaque phase*
-*Dernière révision: Phase 0 - T-003 Completed*
+*Dernière révision: Phase 0 - T-004 APPROVED (2025-08-15)*

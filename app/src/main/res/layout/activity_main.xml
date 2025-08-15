@@ -29,21 +29,69 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Start/Stop Scanner Button -->
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/fabStartStop"
-        android:layout_width="120dp"
-        android:layout_height="48dp"
+    <!-- Control buttons container -->
+    <LinearLayout
+        android:id="@+id/controlsContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
-        android:text="@string/start_scanner"
-        android:textColor="@android:color/white"
-        android:backgroundTint="@color/teal_700"
-        app:icon="@drawable/ic_play"
-        app:iconTint="@android:color/white"
-        app:iconGravity="textStart"
+        android:orientation="horizontal"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        style="@style/Widget.Material3.Button" />
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Torch Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/fabTorch"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginEnd="16dp"
+            android:text="T"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            android:contentDescription="@string/torch_off"
+            style="@style/Widget.Material3.Button" />
+
+        <!-- Start/Stop Scanner Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/fabStartStop"
+            android:layout_width="120dp"
+            android:layout_height="48dp"
+            android:text="@string/start_scanner"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@color/teal_700"
+            app:icon="@drawable/ic_play"
+            app:iconTint="@android:color/white"
+            app:iconGravity="textStart"
+            style="@style/Widget.Material3.Button" />
+
+        <!-- Zoom Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/fabZoom"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="16dp"
+            android:text="1"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            android:contentDescription="@string/zoom_1x"
+            style="@style/Widget.Material3.Button" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
