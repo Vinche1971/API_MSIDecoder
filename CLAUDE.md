@@ -29,7 +29,8 @@
 
 ### Structure Phases Validée
 - **Phase 0** (Infrastructure) : 7 mini-lots T-001 à T-007
-  - ✅ **T-001 COMPLETED** : Portrait-only + CameraX Preview + permissions (AGP 8.12.0)
+  - ✅ **T-001 COMPLETED** : Portrait-only + CameraX Preview + permissions (AGP 8.12.0)  
+  - ✅ **T-002 COMPLETED** : ImageAnalysis + YUV→NV21 + overlay métriques (FPS: 23, Proc: 2.8ms)
 - **Phase 1-8** : Progression MSI détection → décodage → packaging AAR
 
 ## 🔧 Recommandations d'Implémentation
