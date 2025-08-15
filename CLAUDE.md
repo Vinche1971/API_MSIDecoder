@@ -16,9 +16,11 @@
 - **SharedPreferences** : Persistance d'état
 
 ### Environnement de Développement
+- **OS** : WSL Ubuntu (Windows Subsystem for Linux)
 - **IDE** : Android Studio (Windows)
-- **Build** : Gradle via Android Studio uniquement (pas de build CLI en WSL)
+- **Build** : Gradle via Android Studio uniquement (pas de build CLI possible en WSL)
 - **Test** : Device Android via Android Studio
+- **Limitation Critique** : Aucun build Gradle possible depuis WSL - obligatoire d'utiliser Android Studio
 
 ### Points Techniques Critiques
 1. **Conversion YUV→NV21** : Une seule conversion par frame, fermeture immédiate ImageProxy
@@ -42,28 +44,73 @@
 3. **T-003** : Lifecycle bulletproof (pause/resume/multitask)
 4. **T-005** : Gestion téléobjectif vs zoom numérique intelligente
 
-### Architecture Code Suggérée
+## 📁 Architecture Projet & Organisation
+
+### Structure Arborescence Réelle
 ```
-app/
-├── camera/
-│   ├── CameraController.kt
-│   ├── ImageAnalyzer.kt
-│   └── FrameConverter.kt
-├── scanner/
-│   ├── MLKitScanner.kt
-│   ├── MSIScanner.kt (stub → complet)
-│   └── ScannerArbitrator.kt
-├── ui/
-│   ├── MainActivity.kt
-│   ├── OverlayManager.kt
-│   └── ControlsManager.kt
-├── state/
-│   ├── AppStateManager.kt
-│   └── PreferencesRepository.kt
-└── utils/
-    ├── PermissionHandler.kt
-    └── MetricsCollector.kt
+/mnt/c/DEV/WORK/API_MSIDecoder/
+├── CLAUDE.md                        # Documentation technique vivante
+├── README.md                        # Documentation projet
+├── build.gradle                     # Configuration racine Gradle
+├── settings.gradle                  # Modules Gradle
+│
+├── Docs/                           # TOUTE la documentation
+│   └── Phase 0/                    # Fiches techniques par phase
+│       ├── Phase 0.MD              # Vision générale Phase 0
+│       ├── T-001 - Mode Portrait Only + Preview CameraX.md
+│       ├── T-001_Approved.md       # Validation T-001
+│       ├── T-002 - ImageAnalysis + Overlay métriques.md
+│       ├── T-002_Approved.md       # Validation T-002
+│       ├── T-003 - Bouton Start Stop Scanner.md
+│       ├── T-003_Approved.md       # Validation T-003
+│       ├── T-004 - Boutons Torch et Zoom cyclique.md
+│       ├── T-004_Approved.md       # Validation T-004 ✅
+│       ├── T-005 - ML Kit Whitelist + Arbitre de résultats.md
+│       ├── T-006 - Persistance & Restauration d'état.md
+│       └── T-007 - Overlay Snapshot JSON (debug ponctuel).md
+│
+├── Log/                            # Logs de debug
+│   └── Log.txt                     # Fichier de logs courant
+│
+└── app/                            # Module Android principal
+    ├── build.gradle                # Config module app
+    ├── src/main/
+    │   ├── AndroidManifest.xml     # Permissions, orientation
+    │   ├── kotlin/com/msidecoder/scanner/
+    │   │   ├── MainActivity.kt     # Activity principale
+    │   │   ├── camera/
+    │   │   │   └── YuvToNv21Converter.kt
+    │   │   ├── state/              # State Management
+    │   │   │   ├── CameraControlsState.kt
+    │   │   │   ├── PreferencesRepository.kt
+    │   │   │   └── ScannerState.kt
+    │   │   ├── ui/
+    │   │   │   └── MetricsOverlayView.kt
+    │   │   └── utils/
+    │   │       └── MetricsCollector.kt
+    │   └── res/
+    │       ├── layout/
+    │       │   └── activity_main.xml    # UI Layout principal
+    │       ├── values/
+    │       │   ├── colors.xml          # Couleurs (blue_tender)
+    │       │   ├── strings.xml         # Textes i18n
+    │       │   └── themes.xml          # Thème Material3
+    │       └── drawable/               # Icônes vectorielles
+    └── proguard-rules.pro
 ```
+
+### Convention Documentation
+- **Docs/Phase X/** : Fiches techniques `.md` + validations `_Approved.md`
+- **Log/** : Fichiers de logs pour debugging sessions
+- **CLAUDE.md** : Documentation technique centrale (ce fichier)
+- **Approved.md** : Validation formelle des mini-lots terminés
+
+### Contraintes Environnement WSL
+- **Pas de build CLI** : `./gradlew build` impossible depuis WSL Ubuntu
+- **Android Studio requis** : Seule méthode pour build/test/deploy
+- **Partage fichiers** : `/mnt/c/` accès aux fichiers Windows
+- **Logs externes** : Copie manuelle des logs Android Studio → `Log/Log.txt`
+- **Git fonctionnel** : Commits/push possibles depuis WSL
 
 ### Patterns Recommandés
 - **StateFlow/LiveData** pour états réactifs
