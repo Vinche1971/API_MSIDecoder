@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MSI Scanner</string>
+    <string name="camera_permission_required">Camera permission is required to scan barcodes</string>
+    <string name="camera_permission_denied_message">Camera access is required for barcode scanning. Please grant camera permission and restart the app.</string>
+    <string name="ok">OK</string>
+    <string name="close">Close</string>
+</resources>

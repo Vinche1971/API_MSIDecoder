@@ -15,6 +15,11 @@
 - **AndroidX** : UI et lifecycle management
 - **SharedPreferences** : Persistance d'état
 
+### Environnement de Développement
+- **IDE** : Android Studio (Windows)
+- **Build** : Gradle via Android Studio uniquement (pas de build CLI en WSL)
+- **Test** : Device Android via Android Studio
+
 ### Points Techniques Critiques
 1. **Conversion YUV→NV21** : Une seule conversion par frame, fermeture immédiate ImageProxy
 2. **Pipeline Dual** : Arbitre ML Kit prioritaire → MSI en fallback
@@ -24,6 +29,7 @@
 
 ### Structure Phases Validée
 - **Phase 0** (Infrastructure) : 7 mini-lots T-001 à T-007
+  - ✅ **T-001 COMPLETED** : Portrait-only + CameraX Preview + permissions (AGP 8.12.0)
 - **Phase 1-8** : Progression MSI détection → décodage → packaging AAR
 
 ## 🔧 Recommandations d'Implémentation
