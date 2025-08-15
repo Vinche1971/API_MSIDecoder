@@ -21,6 +21,10 @@ import androidx.camera.view.PreviewView
 import androidx.core.content.ContextCompat
 import com.msidecoder.scanner.camera.YuvToNv21Converter
 import com.msidecoder.scanner.databinding.ActivityMainBinding
+import com.msidecoder.scanner.scanner.MLKitScanner
+import com.msidecoder.scanner.scanner.MSIScanner
+import com.msidecoder.scanner.scanner.ScannerArbitrator
+import com.msidecoder.scanner.scanner.ScanResult
 import com.msidecoder.scanner.state.CameraControlsManager
 import com.msidecoder.scanner.state.PreferencesRepository
 import com.msidecoder.scanner.state.ScannerState
@@ -42,10 +46,32 @@ class MainActivity : AppCompatActivity() {
     private val scannerStateManager = ScannerStateManager()
     private val cameraControlsManager = CameraControlsManager()
     private lateinit var preferencesRepository: PreferencesRepository
+    
+    // Scanner components
+    private lateinit var scannerArbitrator: ScannerArbitrator
+    private var lastScanTime = 0L
+    private val debounceIntervalMs = 750L // 750ms debounce for scan results
     private val overlayHandler = Handler(Looper.getMainLooper())
     private val overlayUpdateRunnable = object : Runnable {
         override fun run() {
-            binding.metricsOverlay.updateMetrics(metricsCollector.getSnapshot())
+            // Clear old scan source (1 second timeout)
+            metricsCollector.clearScanSourceIfOld(1000L)
+            
+            // Get scanner metrics
+            val scannerMetrics = if (::scannerArbitrator.isInitialized) {
+                scannerArbitrator.getMetrics()
+            } else {
+                ScannerArbitrator.ScanMetrics(0, 0, 0, 0)
+            }
+            
+            // Update overlay with combined metrics
+            val snapshot = metricsCollector.getSnapshot(
+                mlkitTimeMs = scannerMetrics.mlkitTimeMs,
+                msiTimeMs = scannerMetrics.msiTimeMs,
+                mlkitHits = scannerMetrics.mlkitHits,
+                msiHits = scannerMetrics.msiHits
+            )
+            binding.metricsOverlay.updateMetrics(snapshot)
             overlayHandler.postDelayed(this, 100) // 10Hz refresh
         }
     }
@@ -72,6 +98,9 @@ class MainActivity : AppCompatActivity() {
         
         cameraExecutor = Executors.newSingleThreadExecutor()
         preferencesRepository = PreferencesRepository(this)
+        
+        // Initialize scanner components
+        initializeScanners()
         
         // Restore saved states
         restoreStates()
@@ -170,7 +199,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun processFrame(imageProxy: ImageProxy) {
-        Log.d(TAG, "processFrame called")
         metricsCollector.onFrameStart()
         val startTime = System.currentTimeMillis()
         
@@ -179,16 +207,47 @@ class MainActivity : AppCompatActivity() {
             val height = imageProxy.height
             val rotationDegrees = imageProxy.imageInfo.rotationDegrees
             
-            // Convert YUV to NV21 (use simple version to avoid crash)
+            // Convert YUV to NV21 
             val nv21Data = YuvToNv21Converter.convert(imageProxy)
             
-            // TODO: Pass nv21Data to ML Kit and MSI pipeline
+            // Process frame through scanner arbitrator
+            scannerArbitrator.scanFrame(nv21Data, width, height, rotationDegrees) { result ->
+                handleScanResult(result)
+            }
             
             val processingTime = System.currentTimeMillis() - startTime
             metricsCollector.onFrameProcessed(processingTime, width, height, rotationDegrees)
             
         } finally {
             imageProxy.close()
+        }
+    }
+    
+    private fun handleScanResult(result: ScanResult) {
+        when (result) {
+            is ScanResult.Success -> {
+                // Debounce to prevent multiple detections
+                val currentTime = System.currentTimeMillis()
+                if (currentTime - lastScanTime < debounceIntervalMs) {
+                    return
+                }
+                lastScanTime = currentTime
+                
+                Log.d(TAG, "SCAN SUCCESS: ${result.format} = '${result.data}' (${result.source}, ${result.processingTimeMs}ms)")
+                
+                // Update metrics with scan source
+                metricsCollector.updateScanSource(result.source.name)
+                
+                // TODO: Add beep + haptic feedback
+            }
+            
+            is ScanResult.Error -> {
+                Log.w(TAG, "Scan error from ${result.source}", result.exception)
+            }
+            
+            is ScanResult.NoResult -> {
+                // Normal case - no barcode detected
+            }
         }
     }
 
@@ -431,9 +490,27 @@ class MainActivity : AppCompatActivity() {
         Log.d(TAG, "=== ON RESUME COMPLETE ===")
     }
 
+    private fun initializeScanners() {
+        Log.d(TAG, "Initializing scanner components")
+        
+        val mlkitScanner = MLKitScanner()
+        val msiScanner = MSIScanner() 
+        
+        scannerArbitrator = ScannerArbitrator(
+            mlkitScanner = mlkitScanner,
+            msiScanner = msiScanner,
+            executor = cameraExecutor
+        )
+        
+        Log.d(TAG, "Scanner components initialized")
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         overlayHandler.removeCallbacks(overlayUpdateRunnable)
+        if (::scannerArbitrator.isInitialized) {
+            scannerArbitrator.close()
+        }
         cameraExecutor.shutdown()
     }
 

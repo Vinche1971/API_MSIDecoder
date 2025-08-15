@@ -48,16 +48,18 @@ class MetricsOverlayView @JvmOverloads constructor(
         
         val snapshot = metricsSnapshot ?: return
         
-        val metrics = listOf(
-            "MSI Scanner Metrics",
-            "",
-            "FPS: ${String.format("%.1f", snapshot.fps)}",
-            "Proc: ${String.format("%.1f", snapshot.avgProcessingTimeMs)} ms", 
-            "Res: ${snapshot.resolution}",
-            "Queue: ${snapshot.queueSize}",
-            "Frames: ${snapshot.frameCount}",
-            "Rot: ${snapshot.rotation}°"
-        )
+        val metrics = mutableListOf<String>().apply {
+            add("MSI Scanner Metrics")
+            add("")
+            add("FPS: ${String.format("%.1f", snapshot.fps)}")
+            add("Proc: ${String.format("%.1f", snapshot.avgProcessingTimeMs)} ms")
+            add("Queue: ${snapshot.queueSize}")
+            add("Res: ${snapshot.resolution}")
+            add("")
+            add("ML: ${snapshot.mlkitTimeMs} ms, hits: ${snapshot.mlkitHits}")
+            add("MSI: ${if (snapshot.msiTimeMs > 0) "${snapshot.msiTimeMs} ms" else "—"}")
+            add("SRC: ${snapshot.lastScanSource}")
+        }
 
         // Calculate background size
         val maxTextWidth = metrics.maxOfOrNull { 

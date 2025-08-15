@@ -167,11 +167,12 @@ Le stub MSI recevra déjà la signature complète (FrameNV21 + rotationDeg) pour
 
 ## 📋 Progression Phase 0
 
-### Mini-lots Terminés (4/7)
+### Mini-lots Terminés (5/7)
 - **T-001** ✅ : Infrastructure de base Android + CameraX Preview
 - **T-002** ✅ : Pipeline analyse YUV + métriques temps réel  
 - **T-003** ✅ : Contrôle START/STOP + gestion d'état
 - **T-004** ✅ : **Boutons Torch/Zoom + Persistance États (APPROVED)**
+- **T-005** ✅ : **ML Kit Whitelist + Arbitre Scanners (APPROVED)**
 
 ### T-004 : Contrôles Caméra Complets
 - ✅ **UI** : Boutons torch/zoom 56x56dp avec texte visible ("T", "1"/"2"/"3")  
@@ -181,18 +182,26 @@ Le stub MSI recevra déjà la signature complète (FrameNV21 + rotationDeg) pour
 - ✅ **Fix Critique** : MaterialButton insets supprimés pour affichage texte
 - ✅ **Architecture** : CameraControlsManager + PreferencesRepository extensible
 
+### T-005 : Scanner ML Kit + Arbitre MSI 
+- ✅ **ML Kit Integration** : Whitelist DataMatrix, EAN-13/8, Code-128, QR
+- ✅ **MSI Scanner Stub** : Interface complète prête Phase 1+
+- ✅ **Arbitrateur** : ML Kit prioritaire → MSI fallback + métriques temps réel
+- ✅ **Pipeline complet** : ImageAnalysis → Arbitre → Callback + debounce 750ms
+- ✅ **Overlay pro** : `ML: 15ms, hits: 3` + `SRC: none/ML_KIT` (timeout 1s)
+- ✅ **Performance** : FPS stable 23+, async processing, cleanup lifecycle
+
 ### Prochains Mini-lots
-- **T-005** : ML Kit whitelist + arbitre MSI stub
 - **T-006** : ~~Persistance SharedPreferences~~ → Extension persistance + config avancée
 - **T-007** : Overlay snapshot JSON debug + lifecycle complet
 
 ### Architecture Solide Renforcée
 - **Dynamic binding** CameraX Preview + ImageAnalysis
 - **State management** complet : Scanner + Camera + Persistance
-- **Performance** validée (FPS: 23, Proc: 2.8ms) 
-- **UX** complète avec tous contrôles intuitifs
-- **Infrastructure** prête pour ML Kit et MSI integration
+- **Scanner Pipeline** : ML Kit + MSI Arbitrator avec priorité et métriques
+- **Performance** validée (FPS: 23, ML Kit: 15ms, debounce: 750ms)
+- **UX** complète avec contrôles intuitifs + overlay professionnel temps réel
+- **Infrastructure** prête pour MSI détection réelle Phase 1+
 
 ---
 *Document vivant mis à jour à chaque phase*
-*Dernière révision: Phase 0 - T-004 APPROVED (2025-08-15)*
+*Dernière révision: Phase 0 - T-005 APPROVED (2025-08-15)*

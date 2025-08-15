@@ -92,8 +92,31 @@ class MetricsCollector {
         val resolution: String,
         val frameCount: Int,
         val rotation: Int,
+        // Scanner metrics
+        val mlkitTimeMs: Long = 0,
+        val msiTimeMs: Long = 0,
+        val mlkitHits: Int = 0,
+        val msiHits: Int = 0,
+        val lastScanSource: String = "",
         val timestamp: Long = System.currentTimeMillis()
     )
+    
+    // Scanner metrics - will be updated from MainActivity
+    @Volatile var lastScanSource = "none"
+        private set
+    @Volatile var lastScanTime = 0L
+        private set
+    
+    fun updateScanSource(source: String) {
+        lastScanSource = source
+        lastScanTime = System.currentTimeMillis()
+    }
+    
+    fun clearScanSourceIfOld(timeoutMs: Long = 1000L) {
+        if (System.currentTimeMillis() - lastScanTime > timeoutMs) {
+            lastScanSource = "none"
+        }
+    }
     
     fun getSnapshot(): Snapshot {
         return Snapshot(
@@ -102,7 +125,30 @@ class MetricsCollector {
             queueSize = getQueueSize(),
             resolution = getResolution(),
             frameCount = getFrameCount(),
-            rotation = currentRotation
+            rotation = currentRotation,
+            lastScanSource = lastScanSource
+        )
+    }
+    
+    // Overloaded version with scanner metrics
+    fun getSnapshot(
+        mlkitTimeMs: Long,
+        msiTimeMs: Long, 
+        mlkitHits: Int,
+        msiHits: Int
+    ): Snapshot {
+        return Snapshot(
+            fps = getFps(),
+            avgProcessingTimeMs = getAverageProcessingTime(),
+            queueSize = getQueueSize(),
+            resolution = getResolution(),
+            frameCount = getFrameCount(),
+            rotation = currentRotation,
+            mlkitTimeMs = mlkitTimeMs,
+            msiTimeMs = msiTimeMs,
+            mlkitHits = mlkitHits,
+            msiHits = msiHits,
+            lastScanSource = lastScanSource
         )
     }
 }
