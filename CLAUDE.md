@@ -31,6 +31,7 @@
 - **Phase 0** (Infrastructure) : 7 mini-lots T-001 à T-007
   - ✅ **T-001 COMPLETED** : Portrait-only + CameraX Preview + permissions (AGP 8.12.0)  
   - ✅ **T-002 COMPLETED** : ImageAnalysis + YUV→NV21 + overlay métriques (FPS: 23, Proc: 2.8ms)
+  - ✅ **T-003 COMPLETED** : Boutons START/STOP + bind/unbind dynamique + state management
 - **Phase 1-8** : Progression MSI détection → décodage → packaging AAR
 
 ## 🔧 Recommandations d'Implémentation
@@ -117,6 +118,25 @@ Le stub MSI recevra déjà la signature complète (FrameNV21 + rotationDeg) pour
 - WebView bridge pour terminal Pharmony
 - Logs structurés pour debugging terrain
 
+## 📋 Progression Phase 0
+
+### Mini-lots Terminés (3/7)
+- **T-001** ✅ : Infrastructure de base Android + CameraX Preview
+- **T-002** ✅ : Pipeline analyse YUV + métriques temps réel  
+- **T-003** ✅ : Contrôle START/STOP + gestion d'état
+
+### Prochains Mini-lots
+- **T-004** : Boutons Torch + Zoom cyclique (1×→2×→3×)
+- **T-005** : ML Kit whitelist + arbitre MSI stub
+- **T-006** : Persistance SharedPreferences + restauration état
+- **T-007** : Overlay snapshot JSON debug + lifecycle complet
+
+### Architecture Solide Établie
+- **Dynamic binding** CameraX Preview + ImageAnalysis
+- **State management** extensible pour contrôles futures  
+- **Performance** validée (FPS: 23, Proc: 2.8ms)
+- **UX** fluide avec feedback temps réel
+
 ---
 *Document vivant mis à jour à chaque phase*
-*Dernière révision: Phase 0 - Infrastructure*
+*Dernière révision: Phase 0 - T-003 Completed*

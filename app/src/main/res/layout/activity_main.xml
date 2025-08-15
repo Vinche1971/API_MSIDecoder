@@ -29,4 +29,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Start/Stop Scanner Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/fabStartStop"
+        android:layout_width="120dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="24dp"
+        android:text="@string/start_scanner"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@color/teal_700"
+        app:icon="@drawable/ic_play"
+        app:iconTint="@android:color/white"
+        app:iconGravity="textStart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/Widget.Material3.Button" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
