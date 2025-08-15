@@ -21,6 +21,7 @@ import androidx.camera.view.PreviewView
 import androidx.core.content.ContextCompat
 import com.msidecoder.scanner.camera.YuvToNv21Converter
 import com.msidecoder.scanner.databinding.ActivityMainBinding
+import com.msidecoder.scanner.debug.SnapshotManager
 import com.msidecoder.scanner.scanner.MLKitScanner
 import com.msidecoder.scanner.scanner.MSIScanner
 import com.msidecoder.scanner.scanner.ScannerArbitrator
@@ -46,6 +47,7 @@ class MainActivity : AppCompatActivity() {
     private val scannerStateManager = ScannerStateManager()
     private val cameraControlsManager = CameraControlsManager()
     private lateinit var preferencesRepository: PreferencesRepository
+    private lateinit var snapshotManager: SnapshotManager
     
     // Scanner components
     private lateinit var scannerArbitrator: ScannerArbitrator
@@ -99,6 +101,14 @@ class MainActivity : AppCompatActivity() {
         cameraExecutor = Executors.newSingleThreadExecutor()
         preferencesRepository = PreferencesRepository(this)
         
+        // T-007: Initialize snapshot manager
+        snapshotManager = SnapshotManager(
+            context = this,
+            metricsCollector = metricsCollector,
+            cameraControlsManager = cameraControlsManager,
+            preferencesRepository = preferencesRepository
+        )
+        
         // Initialize scanner components
         initializeScanners()
         
@@ -122,6 +132,9 @@ class MainActivity : AppCompatActivity() {
         
         // Setup persistence listeners
         setupPersistenceListeners()
+        
+        // T-007: Setup snapshot capture on overlay long-press
+        setupOverlaySnapshotCapture()
         
         // Start overlay updates
         overlayHandler.post(overlayUpdateRunnable)
@@ -226,7 +239,14 @@ class MainActivity : AppCompatActivity() {
     private fun handleScanResult(result: ScanResult) {
         when (result) {
             is ScanResult.Success -> {
-                // Debounce to prevent multiple detections
+                // T-006: Check anti-republication before debounce
+                val lastResult = preferencesRepository.getLastScanResult()
+                if (lastResult != null && lastResult.matches(result.data) && lastResult.isRecent(800L)) {
+                    Log.d(TAG, "SCAN IGNORED: Same result '${result.data}' within 800ms (anti-republication)")
+                    return
+                }
+                
+                // Standard debounce to prevent multiple detections
                 val currentTime = System.currentTimeMillis()
                 if (currentTime - lastScanTime < debounceIntervalMs) {
                     return
@@ -234,6 +254,10 @@ class MainActivity : AppCompatActivity() {
                 lastScanTime = currentTime
                 
                 Log.d(TAG, "SCAN SUCCESS: ${result.format} = '${result.data}' (${result.source}, ${result.processingTimeMs}ms)")
+                
+                // T-006: Save scan result immediately for anti-republication
+                preferencesRepository.setLastScanResult(result.data, currentTime)
+                Log.d(TAG, "Last scan result saved: '${result.data}' at $currentTime")
                 
                 // Update metrics with scan source
                 metricsCollector.updateScanSource(result.source.name)
@@ -294,6 +318,9 @@ class MainActivity : AppCompatActivity() {
                     // Auto-disable torch when stopping scanner
                     if (cameraControlsManager.getCurrentState().torchEnabled) {
                         cameraControlsManager.setTorch(false)
+                        // Reset user intended state when scanner stops (intentional)
+                        preferencesRepository.setUserIntendedTorchState(false)
+                        Log.d(TAG, "Reset user intended torch state: OFF (scanner stopped)")
                     }
                 }
                 ScannerState.ACTIVE -> {
@@ -356,6 +383,11 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
             lastClickTime = currentTime
+            
+            // Save user intended torch state before toggling
+            val newTorchState = !cameraControlsManager.getCurrentState().torchEnabled
+            preferencesRepository.setUserIntendedTorchState(newTorchState)
+            Log.d(TAG, "User intended torch state saved: $newTorchState")
             
             cameraControlsManager.toggleTorch()
         }
@@ -437,18 +469,65 @@ class MainActivity : AppCompatActivity() {
         if (savedControlsState.zoomLevel != com.msidecoder.scanner.state.ZoomLevel.ZOOM_1X) {
             Log.d(TAG, "Need to restore zoom from ZOOM_1X to ${savedControlsState.zoomLevel} (${savedControlsState.zoomLevel.ordinal} cycles)")
             // Manually cycle to the saved zoom level
-            repeat(savedControlsState.zoomLevel.ordinal) {
-                val maxZoom = 3.0f // Use default until camera is ready
-                Log.d(TAG, "Cycling zoom: step ${it + 1}/${savedControlsState.zoomLevel.ordinal}")
-                cameraControlsManager.cycleZoom(maxZoom)
-                Log.d(TAG, "After cycle step ${it + 1}: ${cameraControlsManager.getCurrentState().zoomLevel}")
+            try {
+                repeat(savedControlsState.zoomLevel.ordinal) {
+                    val maxZoom = 3.0f // Use default until camera is ready
+                    Log.d(TAG, "Cycling zoom: step ${it + 1}/${savedControlsState.zoomLevel.ordinal}")
+                    cameraControlsManager.cycleZoom(maxZoom)
+                    Log.d(TAG, "After cycle step ${it + 1}: ${cameraControlsManager.getCurrentState().zoomLevel}")
+                }
+            } catch (exception: Exception) {
+                Log.w(TAG, "Failed to restore zoom state - falling back to 1X", exception)
+                // Fallback: don't change zoom state if restoration fails
+                // The controls will stay at default 1X which is safe
             }
         } else {
             Log.d(TAG, "Zoom already at ZOOM_1X, no cycling needed")
         }
         
         Log.d(TAG, "Final CameraControlsManager state after restore: ${cameraControlsManager.getCurrentState()}")
+        
+        // T-006: Restore user intended torch state
+        val userIntendedTorch = preferencesRepository.getUserIntendedTorchState()
+        if (userIntendedTorch && !cameraControlsManager.getCurrentState().torchEnabled) {
+            Log.d(TAG, "Restoring user intended torch state: ON")
+            cameraControlsManager.setTorch(true)
+        }
+        
+        // T-006: Force UI update after restore
+        val finalState = cameraControlsManager.getCurrentState()
+        updateTorchButton(finalState.torchEnabled)
+        updateZoomButton(finalState.zoomLevel)
+        
+        // T-006: Restore scanner state
+        restoreScannerState()
+        
         Log.d(TAG, "=== RESTORE COMPLETE ===")
+    }
+    
+    private fun restoreScannerState() {
+        val savedScannerState = preferencesRepository.getScannerState()
+        val alwaysStartStopped = preferencesRepository.getAlwaysStartStopped()
+        
+        Log.d(TAG, "Scanner state from prefs: $savedScannerState, alwaysStartStopped: $alwaysStartStopped")
+        
+        if (alwaysStartStopped) {
+            Log.d(TAG, "Always start stopped enabled - forcing IDLE state")
+            scannerStateManager.setState(ScannerState.IDLE)
+            return
+        }
+        
+        when (savedScannerState) {
+            ScannerState.ACTIVE -> {
+                Log.d(TAG, "Scanner was ACTIVE - will auto-start after camera ready")
+                // Don't start immediately - wait for camera to be ready
+                // Will be handled in applySavedZoomAfterCameraReady()
+            }
+            ScannerState.IDLE -> {
+                Log.d(TAG, "Scanner was IDLE - keeping stopped")
+                scannerStateManager.setState(ScannerState.IDLE)
+            }
+        }
     }
     
     private fun setupPersistenceListeners() {
@@ -474,20 +553,117 @@ class MainActivity : AppCompatActivity() {
         // Always apply the current zoom state to camera (even if it's 1.0f, to be sure)
         cameraControl?.setZoomRatio(currentState.zoomLevel.ratio)
         Log.d(TAG, "Camera setZoomRatio called with: ${currentState.zoomLevel.ratio}")
-        Log.d(TAG, "=== ZOOM APPLY COMPLETE ===")
+        
+        // T-006: Apply torch state to camera (after camera is ready)
+        Log.d(TAG, "Applying torch state to camera: ${currentState.torchEnabled}")
+        cameraControl?.enableTorch(currentState.torchEnabled)
+        
+        // T-006: Auto-start scanner if it was previously ACTIVE
+        autoStartScannerIfNeeded()
+        
+        Log.d(TAG, "=== ZOOM & TORCH APPLY COMPLETE ===")
+    }
+    
+    private fun autoStartScannerIfNeeded() {
+        val savedScannerState = preferencesRepository.getScannerState()
+        val alwaysStartStopped = preferencesRepository.getAlwaysStartStopped()
+        
+        Log.d(TAG, "=== AUTO-START CHECK ===")
+        Log.d(TAG, "Saved scanner state: $savedScannerState")
+        Log.d(TAG, "Always start stopped: $alwaysStartStopped")
+        Log.d(TAG, "Current scanner state: ${scannerStateManager.getCurrentState()}")
+        
+        if (alwaysStartStopped) {
+            Log.d(TAG, "Always start stopped enabled - no auto-start")
+            return
+        }
+        
+        // T-006: Check prerequisites before auto-starting
+        if (!canAutoStartScanner()) {
+            Log.w(TAG, "Cannot auto-start scanner - prerequisites not met")
+            // Force IDLE state and save it
+            scannerStateManager.setState(ScannerState.IDLE)
+            return
+        }
+        
+        if (savedScannerState == ScannerState.ACTIVE && scannerStateManager.getCurrentState() == ScannerState.IDLE) {
+            Log.d(TAG, "Auto-starting scanner (was previously ACTIVE)")
+            try {
+                scannerStateManager.setState(ScannerState.ACTIVE)
+                Log.d(TAG, "Scanner auto-started successfully")
+            } catch (exception: Exception) {
+                Log.e(TAG, "Failed to auto-start scanner", exception)
+                // Fallback to IDLE on any error
+                scannerStateManager.setState(ScannerState.IDLE)
+            }
+        } else {
+            Log.d(TAG, "No auto-start needed")
+        }
+        Log.d(TAG, "=== AUTO-START CHECK COMPLETE ===")
+    }
+    
+    private fun canAutoStartScanner(): Boolean {
+        // Check camera permissions
+        if (!allPermissionsGranted()) {
+            Log.w(TAG, "Camera permission not granted")
+            return false
+        }
+        
+        // Check camera availability
+        if (cameraProvider == null) {
+            Log.w(TAG, "Camera provider not available")
+            return false
+        }
+        
+        if (cameraControl == null) {
+            Log.w(TAG, "Camera control not available")
+            return false
+        }
+        
+        // Check scanner arbitrator
+        if (!::scannerArbitrator.isInitialized) {
+            Log.w(TAG, "Scanner arbitrator not initialized")
+            return false
+        }
+        
+        Log.d(TAG, "All prerequisites met for auto-start")
+        return true
     }
 
     override fun onResume() {
         super.onResume()
         Log.d(TAG, "=== ON RESUME ===")
         Log.d(TAG, "CameraControlsManager state on resume: ${cameraControlsManager.getCurrentState()}")
-        // Force apply current zoom state when resuming 
+        
+        // Force apply current states when resuming 
         if (cameraControl != null) {
-            val currentZoom = cameraControlsManager.getCurrentState().zoomLevel.ratio
-            Log.d(TAG, "Applying zoom on resume: $currentZoom")
-            cameraControl?.setZoomRatio(currentZoom)
+            val currentState = cameraControlsManager.getCurrentState()
+            
+            // Restore zoom
+            Log.d(TAG, "Applying zoom on resume: ${currentState.zoomLevel.ratio}")
+            cameraControl?.setZoomRatio(currentState.zoomLevel.ratio)
+            
+            // T-006: Restore torch state (may have been turned off in onPause)
+            Log.d(TAG, "Applying torch on resume: ${currentState.torchEnabled}")
+            cameraControl?.enableTorch(currentState.torchEnabled)
         }
         Log.d(TAG, "=== ON RESUME COMPLETE ===")
+    }
+    
+    override fun onPause() {
+        super.onPause()
+        Log.d(TAG, "=== ON PAUSE ===")
+        
+        // T-006: Auto-OFF torch when going to background (system only)
+        val currentTorchState = cameraControlsManager.getCurrentState().torchEnabled
+        if (currentTorchState) {
+            Log.d(TAG, "Auto-OFF torch due to onPause() - keeping user intention")
+            // Turn off torch directly on camera without updating CameraControlsManager
+            // This preserves user intended state while turning off LED
+            cameraControl?.enableTorch(false)
+        }
+        
+        Log.d(TAG, "=== ON PAUSE COMPLETE ===")
     }
 
     private fun initializeScanners() {
@@ -503,6 +679,19 @@ class MainActivity : AppCompatActivity() {
         )
         
         Log.d(TAG, "Scanner components initialized")
+    }
+    
+    private fun setupOverlaySnapshotCapture() {
+        binding.metricsOverlay.setOnLongPressListener {
+            Log.d(TAG, "=== SNAPSHOT CAPTURE TRIGGERED ===")
+            
+            // T-007: Capture snapshot on long-press with feedback
+            snapshotManager.saveSnapshotWithFeedback(
+                if (::scannerArbitrator.isInitialized) scannerArbitrator else null
+            )
+            
+            Log.d(TAG, "Total snapshots saved: ${snapshotManager.getSnapshotCount()}")
+        }
     }
 
     override fun onDestroy() {

@@ -66,8 +66,11 @@
 │       ├── T-004 - Boutons Torch et Zoom cyclique.md
 │       ├── T-004_Approved.md       # Validation T-004 ✅
 │       ├── T-005 - ML Kit Whitelist + Arbitre de résultats.md
+│       ├── T-005_Approved.md       # Validation T-005 ✅
 │       ├── T-006 - Persistance & Restauration d'état.md
-│       └── T-007 - Overlay Snapshot JSON (debug ponctuel).md
+│       ├── T-006_Approved.md       # Validation T-006 ✅
+│       ├── T-007 - Overlay Snapshot JSON (debug ponctuel).md
+│       └── T-007_Approved.md       # Validation T-007 ✅
 │
 ├── Log/                            # Logs de debug
 │   └── Log.txt                     # Fichier de logs courant
@@ -80,6 +83,14 @@
     │   │   ├── MainActivity.kt     # Activity principale
     │   │   ├── camera/
     │   │   │   └── YuvToNv21Converter.kt
+    │   │   ├── debug/              # T-007: Debug & Snapshots
+    │   │   │   ├── SnapshotData.kt
+    │   │   │   └── SnapshotManager.kt
+    │   │   ├── scanner/            # Scanner Pipeline
+    │   │   │   ├── MLKitScanner.kt
+    │   │   │   ├── MSIScanner.kt
+    │   │   │   ├── ScannerArbitrator.kt
+    │   │   │   └── ScanResult.kt
     │   │   ├── state/              # State Management
     │   │   │   ├── CameraControlsState.kt
     │   │   │   ├── PreferencesRepository.kt
@@ -167,41 +178,55 @@ Le stub MSI recevra déjà la signature complète (FrameNV21 + rotationDeg) pour
 
 ## 📋 Progression Phase 0
 
-### Mini-lots Terminés (5/7)
+### Mini-lots Terminés (7/7) ✅ **PHASE 0 COMPLÈTE**
 - **T-001** ✅ : Infrastructure de base Android + CameraX Preview
 - **T-002** ✅ : Pipeline analyse YUV + métriques temps réel  
 - **T-003** ✅ : Contrôle START/STOP + gestion d'état
-- **T-004** ✅ : **Boutons Torch/Zoom + Persistance États (APPROVED)**
-- **T-005** ✅ : **ML Kit Whitelist + Arbitre Scanners (APPROVED)**
+- **T-004** ✅ : Boutons Torch/Zoom + Persistance États
+- **T-005** ✅ : ML Kit Whitelist + Arbitre Scanners
+- **T-006** ✅ : Persistance & Restauration Complète
+- **T-007** ✅ : **Overlay Snapshot JSON Debug (APPROVED)**
 
-### T-004 : Contrôles Caméra Complets
-- ✅ **UI** : Boutons torch/zoom 56x56dp avec texte visible ("T", "1"/"2"/"3")  
-- ✅ **Torch** : Toggle ON/OFF + inversion couleurs + auto-OFF au STOP scanner
-- ✅ **Zoom** : Cyclique 1×→2×→3× respectant maxZoom caméra
-- ✅ **Persistance** : SharedPreferences + restauration parfaite (même pause/resume)
-- ✅ **Fix Critique** : MaterialButton insets supprimés pour affichage texte
-- ✅ **Architecture** : CameraControlsManager + PreferencesRepository extensible
+### T-007 : Debug Snapshot JSON Complet ⭐
+- ✅ **Long-press overlay** : Détection gestuelle 1-1.5s sur zone métriques
+- ✅ **Capture instantanée** : Snapshot JSON sans interruption scanner/caméra
+- ✅ **Structure complète** : ts, res, fps, procMs, queue, rotation, torch, zoom, ml, msi, lastPub
+- ✅ **Sauvegarde** : Fichiers `snapshots/snap_YYYYMMDD_HHMMSS.json` horodatés  
+- ✅ **Feedback UX** : Toast + vibration 100ms sur succès capture
+- ✅ **JSON formaté** : Pretty-print 2 espaces pour lisibilité debug
+- ✅ **Architecture** : SnapshotManager + MetricsOverlayView long-press + permissions
+- ✅ **Debug professionnel** : Replacement logs console par snapshots événementiels
 
-### T-005 : Scanner ML Kit + Arbitre MSI 
-- ✅ **ML Kit Integration** : Whitelist DataMatrix, EAN-13/8, Code-128, QR
-- ✅ **MSI Scanner Stub** : Interface complète prête Phase 1+
-- ✅ **Arbitrateur** : ML Kit prioritaire → MSI fallback + métriques temps réel
-- ✅ **Pipeline complet** : ImageAnalysis → Arbitre → Callback + debounce 750ms
-- ✅ **Overlay pro** : `ML: 15ms, hits: 3` + `SRC: none/ML_KIT` (timeout 1s)
-- ✅ **Performance** : FPS stable 23+, async processing, cleanup lifecycle
+## 🏆 PHASE 0 COMPLÈTE - Infrastructure MSI Decoder ✅
 
-### Prochains Mini-lots
-- **T-006** : ~~Persistance SharedPreferences~~ → Extension persistance + config avancée
-- **T-007** : Overlay snapshot JSON debug + lifecycle complet
-
-### Architecture Solide Renforcée
+### Architecture Finale Solide
 - **Dynamic binding** CameraX Preview + ImageAnalysis
-- **State management** complet : Scanner + Camera + Persistance
+- **State management** complet : Scanner + Camera + Persistance + Lifecycle
 - **Scanner Pipeline** : ML Kit + MSI Arbitrator avec priorité et métriques
-- **Performance** validée (FPS: 23, ML Kit: 15ms, debounce: 750ms)
-- **UX** complète avec contrôles intuitifs + overlay professionnel temps réel
+- **Persistance intelligente** : Auto-start + anti-republication + torch intention utilisateur
+- **Debug professionnel** : Snapshots JSON instantanés sur demande (long-press)
+- **Performance** validée (FPS: 23, ML Kit: 15ms, debounce: 750ms, restore: <200ms)
+- **UX** expérience continue : Kill/reboot/background transparent pour utilisateur
 - **Infrastructure** prête pour MSI détection réelle Phase 1+
+
+### Livrables Phase 0 Terminés
+1. **Application Android fonctionnelle** avec scanning ML Kit opérationnel
+2. **Architecture extensible** pour intégration MSI detector (stub → implémentation)
+3. **Interface utilisateur complète** (controls + métriques + debug)
+4. **Persistance bulletproof** (states + lifecycle + anti-republication)
+5. **Documentation technique** complète (spécifications + validations)
+6. **Debug tooling** professionnel (JSON snapshots)
+
+### Transition vers Phase 1
+L'infrastructure Phase 0 fournit :
+- **Pipeline dual** prêt (ML Kit ✅ + MSI interface ✅)
+- **Data structures** complètes (FrameNV21, rotationDeg, callbacks)
+- **Performance baseline** établie (FPS, latency, queue metrics)
+- **User experience** raffinée (controls, feedback, persistance)
+- **Debug capabilities** (snapshot JSON avec tous états système)
+
+**→ Phase 1 peut maintenant implémenter le détecteur MSI réel**
 
 ---
 *Document vivant mis à jour à chaque phase*
-*Dernière révision: Phase 0 - T-005 APPROVED (2025-08-15)*
+*Dernière révision: **PHASE 0 TERMINÉE** - T-007 APPROVED (2025-08-15)*

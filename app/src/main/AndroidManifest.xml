@@ -5,6 +5,9 @@
     <!-- Camera permission -->
     <uses-permission android:name="android.permission.CAMERA" />
     
+    <!-- T-007: Vibration permission for snapshot feedback -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    
     <!-- Camera features -->
     <uses-feature
         android:name="android.hardware.camera"
