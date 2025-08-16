@@ -75,8 +75,9 @@ class MainActivity : AppCompatActivity() {
             )
             binding.metricsOverlay.updateMetrics(snapshot)
             
-            // T-100: Update MSI debug status in overlay
-            binding.metricsOverlay.updateMsiDebugStatus(snapshotManager.getMsiDebugStatus())
+            // T-101: Update MSI snapshot in overlay for detailed ROI display
+            val msiSnapshot = snapshotManager.getMsiDebugManager().getCurrentSnapshot()
+            binding.metricsOverlay.updateMsiSnapshot(msiSnapshot)
             
             overlayHandler.postDelayed(this, 100) // 10Hz refresh
         }
@@ -695,7 +696,10 @@ class MainActivity : AppCompatActivity() {
         Log.d(TAG, "Initializing scanner components")
         
         val mlkitScanner = MLKitScanner()
-        val msiScanner = MSIScanner() 
+        val msiScanner = MSIScanner()
+        
+        // T-101: Connect MSI scanner to debug manager
+        msiScanner.setDebugManager(snapshotManager.getMsiDebugManager())
         
         scannerArbitrator = ScannerArbitrator(
             mlkitScanner = mlkitScanner,

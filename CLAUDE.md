@@ -229,8 +229,9 @@ L'infrastructure Phase 0 fournit :
 
 ## 📋 Progression Phase 1
 
-### Mini-lots Phase 1 (1/8) ✅ 
+### Mini-lots Phase 1 (2/8) ✅ 
 - **T-100** ✅ : **Diagnostic & Debug Snapshot (APPROVED)**
+- **T-101** ✅ : **ROI Detection Anisotrope + Overlay Unifié (APPROVED)**
 
 ### T-100 : Monitoring System MSI ⭐
 - ✅ **MsiDebugSnapshot** : Data classes pipeline stages + metrics complètes
@@ -241,15 +242,24 @@ L'infrastructure Phase 0 fournit :
 - ✅ **Architecture extensible** : Pipeline stages T-101→T-109 ready
 - ✅ **Foundation monitoring** : Debug professionnel pour Phase 1 complète
 
+### T-101 : ROI Detection Revolutionary ⭐⭐⭐
+- ✅ **Algorithme anisotrope** : Gradient énergie horizontal (Sobel X) + fermeture morphologique 1×15
+- ✅ **MsiRoiDetector complet** : Pipeline NV21 → normalisation → gradient → morpho → bounding boxes
+- ✅ **Critères MSI optimisés** : Ratio ≥3, quiet zones, seuil gradient 0.3, détection 150-250ms
+- ✅ **Performance validée** : 0-9 candidats/frame, scores 0.32-1.18, timeout 250ms respecté
+- ✅ **Debug integration** : RoiStats complètes dans JSON snapshots avec persistance 2.5s
+- ✅ **Overlay MSI unifié RÉVOLUTIONNAIRE** : 80% largeur centré, section MSI orange/jaune dédiée
+- ✅ **ROI persistance** : Détections visibles 2.5s (fini le flash invisible)
+- ✅ **Interface temps réel** : Candidats, scores, coordonnées, temps affichés en continu
+
 ### Prochains Mini-lots Phase 1
-- **T-101** : ROI Extraction (ligne médiane basique)
-- **T-102** : Normalisation & Filtrage signal 1D
-- **T-103** : Binarisation adaptative
+- **T-102** : Normalisation & Filtrage signal 1D (ROI → signal extraction)
+- **T-103** : Binarisation adaptative  
 - **T-104** : Extraction runs consécutifs
 - **T-105** : Normalisation runs (base module)
 - **T-106** : Intégration overlay & snapshot
-- **T-109** : Overlay visuel ROI (cadres orange/vert)
+- **T-109** : Overlay visuel ROI (cadres orange/vert sur preview)
 
 ---
 *Document vivant mis à jour à chaque phase*
-*Dernière révision: **PHASE 1 DÉMARRÉE** - T-100 APPROVED (2025-08-16)*
+*Dernière révision: **T-101 ROI DETECTION APPROVED** - Overlay MSI Unifié Revolutionary (2025-08-16)*

@@ -8,6 +8,7 @@ import android.graphics.RectF
 import android.util.AttributeSet
 import android.view.View
 import com.msidecoder.scanner.utils.MetricsCollector
+import com.msidecoder.scanner.msi.MsiDebugSnapshot
 
 class MetricsOverlayView @JvmOverloads constructor(
     context: Context,
@@ -16,33 +17,54 @@ class MetricsOverlayView @JvmOverloads constructor(
 ) : View(context, attrs, defStyleAttr) {
 
     private val backgroundPaint = Paint().apply {
-        color = Color.argb(180, 0, 0, 0) // Semi-transparent black
+        color = Color.argb(190, 0, 0, 0) // Semi-transparent black (plus opaque)
         style = Paint.Style.FILL
     }
 
     private val textPaint = Paint().apply {
         color = Color.WHITE
-        textSize = 18f  // T-100: Réduit pour faire place aux métriques MSI
+        textSize = 32f  // Plus large pour overlay unifié
         isAntiAlias = true
         typeface = android.graphics.Typeface.MONOSPACE
     }
 
     private val titlePaint = Paint().apply {
         color = Color.CYAN
-        textSize = 20f  // T-100: Réduit proportionnellement
+        textSize = 36f  // Titre principal plus grand
         isAntiAlias = true
         typeface = android.graphics.Typeface.DEFAULT_BOLD
     }
+    
+    private val msiTitlePaint = Paint().apply {
+        color = Color.argb(255, 255, 165, 0) // Orange vif pour MSI
+        textSize = 34f
+        isAntiAlias = true
+        typeface = android.graphics.Typeface.DEFAULT_BOLD
+    }
+    
+    private val msiTextPaint = Paint().apply {
+        color = Color.argb(255, 255, 215, 0) // Jaune doré pour texte MSI
+        textSize = 30f
+        isAntiAlias = true
+        typeface = android.graphics.Typeface.MONOSPACE
+    }
 
     private var metricsSnapshot: MetricsCollector.Snapshot? = null
-    private val padding = 24f
-    private val lineHeight = 25f  // T-100: Réduit pour police plus petite
-    
-    // T-100: MSI debug status
-    private var msiDebugStatus: String = "MSI DEBUG: —"
+    private var msiSnapshot: MsiDebugSnapshot? = null
+    private val padding = 32f
+    private val lineHeight = 42f
+    private val sectionSpacing = 20f  // Espacement entre sections
 
     fun updateMetrics(snapshot: MetricsCollector.Snapshot) {
         metricsSnapshot = snapshot
+        invalidate()
+    }
+    
+    /**
+     * T-101: Update MSI debug snapshot for detailed ROI display
+     */
+    fun updateMsiSnapshot(snapshot: MsiDebugSnapshot?) {
+        msiSnapshot = snapshot
         invalidate()
     }
 
@@ -51,50 +73,81 @@ class MetricsOverlayView @JvmOverloads constructor(
         
         val snapshot = metricsSnapshot ?: return
         
-        val metrics = mutableListOf<String>().apply {
-            add("MSI Scanner Metrics")
-            add("")
-            add("FPS: ${String.format("%.1f", snapshot.fps)}")
-            add("Proc: ${String.format("%.1f", snapshot.avgProcessingTimeMs)} ms")
-            add("Queue: ${snapshot.queueSize}")
-            add("Res: ${snapshot.resolution}")
-            add("")
-            add("ML: ${snapshot.mlkitTimeMs} ms, hits: ${snapshot.mlkitHits}")
-            add("MSI: ${if (snapshot.msiTimeMs > 0) "${snapshot.msiTimeMs} ms" else "—"}")
-            add("SRC: ${snapshot.lastScanSource}")
-            add("")
-            // T-100: Add MSI debug status line
-            add(getMsiDebugStatus())
+        // Section 1: Métriques générales
+        val generalMetrics = mutableListOf<String>().apply {
+            add("MSI Scanner")
+            add("FPS: ${String.format("%.1f", snapshot.fps)}  Proc: ${String.format("%.1f", snapshot.avgProcessingTimeMs)}ms  Queue: ${snapshot.queueSize}")
+            add("ML: ${snapshot.mlkitTimeMs}ms hits: ${snapshot.mlkitHits}  SRC: ${snapshot.lastScanSource}")
         }
-
-        // Calculate background size
-        val maxTextWidth = metrics.maxOfOrNull { 
-            if (it.isEmpty()) 0f else {
-                val paint = if (it == metrics.first()) titlePaint else textPaint
-                paint.measureText(it)
-            }
-        } ?: 0f
         
-        val backgroundWidth = maxTextWidth + padding * 2
-        val backgroundHeight = metrics.size * lineHeight + padding * 2
+        // Section 2: MSI ROI Detection
+        val msiMetrics = buildMsiSection()
         
-        // Draw background
+        // Calculer la largeur totale (80% de l'écran)
+        val screenWidth = width.toFloat()
+        val overlayWidth = (screenWidth * 0.8f).coerceAtLeast(400f)
+        val startX = (screenWidth - overlayWidth) / 2f
+        
+        // Calculer hauteur totale
+        val generalHeight = generalMetrics.size * lineHeight
+        val msiHeight = msiMetrics.size * lineHeight
+        val totalHeight = generalHeight + sectionSpacing + msiHeight + padding * 2
+        
+        // Dessiner background unifié
         val backgroundRect = RectF(
+            startX,
             padding,
-            padding,
-            padding + backgroundWidth,
-            padding + backgroundHeight
+            startX + overlayWidth,
+            padding + totalHeight
         )
-        canvas.drawRoundRect(backgroundRect, 12f, 12f, backgroundPaint)
+        canvas.drawRoundRect(backgroundRect, 16f, 16f, backgroundPaint)
         
-        // Draw text
+        // Dessiner métriques générales
         var yPosition = padding * 2 + lineHeight
-        metrics.forEachIndexed { index, text ->
-            if (text.isNotEmpty()) {
-                val paint = if (index == 0) titlePaint else textPaint
-                canvas.drawText(text, padding * 2, yPosition, paint)
-            }
+        generalMetrics.forEachIndexed { index, text ->
+            val paint = if (index == 0) titlePaint else textPaint
+            val textX = startX + padding
+            canvas.drawText(text, textX, yPosition, paint)
             yPosition += lineHeight
+        }
+        
+        // Espacement entre sections
+        yPosition += sectionSpacing
+        
+        // Dessiner section MSI
+        msiMetrics.forEachIndexed { index, text ->
+            val paint = if (index == 0) msiTitlePaint else msiTextPaint
+            val textX = startX + padding
+            canvas.drawText(text, textX, yPosition, paint)
+            yPosition += lineHeight
+        }
+    }
+    
+    /**
+     * T-101: Construire la section MSI avec détails ROI
+     */
+    private fun buildMsiSection(): List<String> {
+        val msi = msiSnapshot
+        
+        return if (msi?.roiStats != null) {
+            val roi = msi.roiStats
+            mutableListOf<String>().apply {
+                add("🎯 MSI ROI DETECTION")
+                add("Candidats: ${roi.candidatesFound} trouvés")
+                if (roi.bestCandidate != null) {
+                    val candidate = roi.bestCandidate
+                    add("Meilleur: Score ${String.format("%.2f", roi.bestScore)} → (${candidate.x},${candidate.y}) ${candidate.width}×${candidate.height}px")
+                } else {
+                    add("Meilleur: Aucun candidat valide")
+                }
+                add("Temps: ${roi.processingTimeMs}ms  Status: ${if (roi.candidatesFound > 0) "✅ DETECTED" else "❌ NO ROI"}")
+            }
+        } else {
+            mutableListOf<String>().apply {
+                add("🎯 MSI ROI DETECTION")
+                add("Status: En attente...")
+                add("Recherche de régions d'intérêt...")
+            }
         }
     }
 
@@ -106,17 +159,10 @@ class MetricsOverlayView @JvmOverloads constructor(
     }
     
     /**
-     * T-100: Update MSI debug status
+     * T-100: Legacy method - now uses updateMsiSnapshot
      */
+    @Deprecated("Use updateMsiSnapshot instead")
     fun updateMsiDebugStatus(status: String) {
-        msiDebugStatus = status
-        invalidate()
-    }
-    
-    /**
-     * T-100: Get current MSI debug status
-     */
-    private fun getMsiDebugStatus(): String {
-        return msiDebugStatus
+        // Compatibility - ne fait plus rien, utiliser updateMsiSnapshot
     }
 }

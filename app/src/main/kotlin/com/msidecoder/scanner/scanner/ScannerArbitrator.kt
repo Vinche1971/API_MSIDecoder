@@ -17,7 +17,7 @@ class ScannerArbitrator(
     
     companion object {
         private const val TAG = "ScannerArbitrator"
-        private const val MSI_TIMEOUT_MS = 50L // Max time for MSI scan
+        private const val MSI_TIMEOUT_MS = 250L // T-101: Increased for ROI detection (was 50ms)
     }
     
     // Metrics tracking

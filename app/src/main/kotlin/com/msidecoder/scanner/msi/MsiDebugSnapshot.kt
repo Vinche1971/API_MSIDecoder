@@ -12,6 +12,7 @@ data class MsiDebugSnapshot(
     val errorMessage: String? = null,       // Error details if failed
     val parameters: MsiParameters,          // Active configuration parameters
     val signalStats: SignalStats? = null,  // Signal analysis (if applicable)
+    val roiStats: RoiStats? = null,        // T-101: ROI detection statistics
     val runs: List<Int>? = null,           // Extracted runs (if applicable)
     val moduleWidth: Double? = null        // Detected module width (if applicable)
 ) {
@@ -27,6 +28,7 @@ data class MsiDebugSnapshot(
             "error" to errorMessage,
             "params" to parameters.toMap(),
             "signal" to signalStats?.toMap(),
+            "roi" to roiStats?.toMap(),
             "runs" to runs,
             "module" to moduleWidth
         ).filterValues { it != null }
@@ -92,12 +94,44 @@ data class SignalStats(
 }
 
 /**
+ * T-101: ROI Detection statistics
+ */
+data class RoiStats(
+    val candidatesFound: Int,              // Number of ROI candidates detected
+    val bestScore: Float,                  // Score of best candidate
+    val bestCandidate: RoiCandidate?,      // Best ROI candidate details
+    val processingTimeMs: Long,            // ROI detection processing time
+    val gradientThreshold: Float,          // Gradient threshold used
+    val morphoKernelSize: Int              // Morphological kernel size
+) {
+    
+    fun toMap(): Map<String, Any> {
+        return mapOf(
+            "candidates" to candidatesFound,
+            "bestScore" to "%.2f".format(bestScore),
+            "bestROI" to (bestCandidate?.let { 
+                "${it.x},${it.y} ${it.width}x${it.height}" 
+            } ?: "none"),
+            "procTimeMs" to processingTimeMs,
+            "gradThresh" to gradientThreshold,
+            "morphKernel" to morphoKernelSize
+        )
+    }
+}
+
+/**
  * MSI Debug Manager - collects and manages debug snapshots
  */
 class MsiDebugManager {
     
     private var currentSnapshot: MsiDebugSnapshot? = null
+    private var lastRoiSnapshot: MsiDebugSnapshot? = null  // T-101: Persist last ROI detection
+    private var lastRoiTimestamp = 0L  // T-101: Track when last ROI was detected
     private var frameCounter = 0L
+    
+    companion object {
+        private const val ROI_PERSIST_DURATION_MS = 2500L  // T-101: Keep ROI visible for 2.5s
+    }
     
     /**
      * Start new frame processing
@@ -137,6 +171,20 @@ class MsiDebugManager {
     }
     
     /**
+     * T-101: Add ROI detection statistics
+     */
+    fun addRoiStats(stats: RoiStats) {
+        currentSnapshot = currentSnapshot?.copy(roiStats = stats)
+        
+        // T-101: Si des candidats ROI sont trouvés, sauvegarder pour persistance
+        if (stats.candidatesFound > 0) {
+            lastRoiSnapshot = currentSnapshot
+            lastRoiTimestamp = System.currentTimeMillis()
+            android.util.Log.d("MsiDebugManager", "T-101: ROI détecté - sauvegarde pour persistance (${stats.candidatesFound} candidats)")
+        }
+    }
+    
+    /**
      * Add extracted runs
      */
     fun addRuns(runs: List<Int>) {
@@ -151,9 +199,24 @@ class MsiDebugManager {
     }
     
     /**
-     * Get current snapshot for export
+     * Get current snapshot for export - T-101: with ROI persistence
      */
-    fun getCurrentSnapshot(): MsiDebugSnapshot? = currentSnapshot
+    fun getCurrentSnapshot(): MsiDebugSnapshot? {
+        val current = currentSnapshot
+        val now = System.currentTimeMillis()
+        
+        // T-101: Si pas de ROI dans snapshot courant, mais on a une détection récente, l'utiliser
+        return if (current?.roiStats == null && 
+                   lastRoiSnapshot?.roiStats != null && 
+                   (now - lastRoiTimestamp) < ROI_PERSIST_DURATION_MS) {
+            
+            android.util.Log.d("MsiDebugManager", "T-101: Utilisation ROI persistante (${now - lastRoiTimestamp}ms ago)")
+            // Retourner snapshot courant avec ROI persistante
+            current?.copy(roiStats = lastRoiSnapshot?.roiStats) ?: lastRoiSnapshot
+        } else {
+            current
+        }
+    }
     
     /**
      * Get compact overlay status string
@@ -164,6 +227,10 @@ class MsiDebugManager {
         return when {
             !snapshot.success -> "MSI: ERROR"
             snapshot.pipelineStage == MsiStage.INIT -> "MSI: INIT"
+            snapshot.roiStats != null -> {
+                val roi = snapshot.roiStats
+                "MSI: ${roi.candidatesFound} ROI max=${roi.bestScore.let { "%.2f".format(it) }}"
+            }
             snapshot.signalStats != null -> {
                 val stats = snapshot.signalStats
                 "MSI: ${stats.length}px med=${stats.mean.toInt()}"

@@ -254,7 +254,10 @@ class SnapshotManager(
     /**
      * T-100: Get MSI debug manager for pipeline integration
      */
-    fun getMsiDebugManager(): MsiDebugManager = msiDebugManager
+    fun getMsiDebugManager(): MsiDebugManager {
+        android.util.Log.d("SnapshotManager", "T-101: DEBUG - Returning MsiDebugManager: $msiDebugManager")
+        return msiDebugManager
+    }
     
     /**
      * T-100: Get current MSI debug status for overlay
