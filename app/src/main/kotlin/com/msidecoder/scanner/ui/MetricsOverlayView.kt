@@ -22,21 +22,24 @@ class MetricsOverlayView @JvmOverloads constructor(
 
     private val textPaint = Paint().apply {
         color = Color.WHITE
-        textSize = 36f
+        textSize = 18f  // T-100: Réduit pour faire place aux métriques MSI
         isAntiAlias = true
         typeface = android.graphics.Typeface.MONOSPACE
     }
 
     private val titlePaint = Paint().apply {
         color = Color.CYAN
-        textSize = 40f
+        textSize = 20f  // T-100: Réduit proportionnellement
         isAntiAlias = true
         typeface = android.graphics.Typeface.DEFAULT_BOLD
     }
 
     private var metricsSnapshot: MetricsCollector.Snapshot? = null
     private val padding = 24f
-    private val lineHeight = 50f
+    private val lineHeight = 25f  // T-100: Réduit pour police plus petite
+    
+    // T-100: MSI debug status
+    private var msiDebugStatus: String = "MSI DEBUG: —"
 
     fun updateMetrics(snapshot: MetricsCollector.Snapshot) {
         metricsSnapshot = snapshot
@@ -59,6 +62,9 @@ class MetricsOverlayView @JvmOverloads constructor(
             add("ML: ${snapshot.mlkitTimeMs} ms, hits: ${snapshot.mlkitHits}")
             add("MSI: ${if (snapshot.msiTimeMs > 0) "${snapshot.msiTimeMs} ms" else "—"}")
             add("SRC: ${snapshot.lastScanSource}")
+            add("")
+            // T-100: Add MSI debug status line
+            add(getMsiDebugStatus())
         }
 
         // Calculate background size
@@ -97,5 +103,20 @@ class MetricsOverlayView @JvmOverloads constructor(
         val width = MeasureSpec.getSize(widthMeasureSpec)
         val height = MeasureSpec.getSize(heightMeasureSpec)
         setMeasuredDimension(width, height)
+    }
+    
+    /**
+     * T-100: Update MSI debug status
+     */
+    fun updateMsiDebugStatus(status: String) {
+        msiDebugStatus = status
+        invalidate()
+    }
+    
+    /**
+     * T-100: Get current MSI debug status
+     */
+    private fun getMsiDebugStatus(): String {
+        return msiDebugStatus
     }
 }

@@ -227,6 +227,29 @@ L'infrastructure Phase 0 fournit :
 
 **→ Phase 1 peut maintenant implémenter le détecteur MSI réel**
 
+## 📋 Progression Phase 1
+
+### Mini-lots Phase 1 (1/8) ✅ 
+- **T-100** ✅ : **Diagnostic & Debug Snapshot (APPROVED)**
+
+### T-100 : Monitoring System MSI ⭐
+- ✅ **MsiDebugSnapshot** : Data classes pipeline stages + metrics complètes
+- ✅ **MsiDebugManager** : Gestionnaire monitoring avec overlay status temps réel
+- ✅ **Intégration T-007** : Extension SnapshotData avec champ `msiDbg` optionnel
+- ✅ **Overlay optimisé** : Police réduite (/2) + ligne "MSI DEBUG: —"
+- ✅ **Sauvegarde Downloads** : /Download/MSISnapshots/ accessible publiquement
+- ✅ **Architecture extensible** : Pipeline stages T-101→T-109 ready
+- ✅ **Foundation monitoring** : Debug professionnel pour Phase 1 complète
+
+### Prochains Mini-lots Phase 1
+- **T-101** : ROI Extraction (ligne médiane basique)
+- **T-102** : Normalisation & Filtrage signal 1D
+- **T-103** : Binarisation adaptative
+- **T-104** : Extraction runs consécutifs
+- **T-105** : Normalisation runs (base module)
+- **T-106** : Intégration overlay & snapshot
+- **T-109** : Overlay visuel ROI (cadres orange/vert)
+
 ---
 *Document vivant mis à jour à chaque phase*
-*Dernière révision: **PHASE 0 TERMINÉE** - T-007 APPROVED (2025-08-15)*
+*Dernière révision: **PHASE 1 DÉMARRÉE** - T-100 APPROVED (2025-08-16)*

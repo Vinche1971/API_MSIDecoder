@@ -16,7 +16,8 @@ data class SnapshotData(
     val zoom: ZoomData,                              // { "ratio": float, "type": "optique|numerique" }
     val ml: MLKitData,                               // { "latMs": double|null, "hits": int }
     val msi: MSIData,                                // { "latMs": double|null, "status": "stub|ok|timeout|error" }
-    val lastPub: LastPublicationData?                // { "text": string|null, "src": "MLKit|MSI|null", "ts": long }
+    val lastPub: LastPublicationData?,               // { "text": string|null, "src": "MLKit|MSI|null", "ts": long }
+    val msiDbg: Map<String, Any?>? = null            // T-100: MSI debug monitoring data
 ) {
     
     data class ZoomData(
@@ -80,6 +81,11 @@ data class SnapshotData(
                 })
             } ?: put("lastPub", JSONObject.NULL)
             
+            // T-100: MSI debug data
+            msiDbg?.let { debugData ->
+                put("msiDbg", JSONObject(debugData))
+            }
+            
         }.toString()
     }
     
@@ -122,6 +128,11 @@ data class SnapshotData(
                     put("ts", lastPub.ts)
                 })
             } ?: put("lastPub", JSONObject.NULL)
+            
+            // T-100: MSI debug data
+            msiDbg?.let { debugData ->
+                put("msiDbg", JSONObject(debugData))
+            }
             
         }.toString(2) // Pretty print with 2 spaces indent
     }

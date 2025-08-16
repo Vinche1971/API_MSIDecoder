@@ -74,6 +74,10 @@ class MainActivity : AppCompatActivity() {
                 msiHits = scannerMetrics.msiHits
             )
             binding.metricsOverlay.updateMetrics(snapshot)
+            
+            // T-100: Update MSI debug status in overlay
+            binding.metricsOverlay.updateMsiDebugStatus(snapshotManager.getMsiDebugStatus())
+            
             overlayHandler.postDelayed(this, 100) // 10Hz refresh
         }
     }

@@ -8,6 +8,7 @@ import android.os.Vibrator
 import android.os.VibratorManager
 import android.provider.MediaStore
 import android.widget.Toast
+import com.msidecoder.scanner.msi.MsiDebugManager
 import com.msidecoder.scanner.scanner.ScannerArbitrator
 import com.msidecoder.scanner.state.CameraControlsManager
 import com.msidecoder.scanner.state.PreferencesRepository
@@ -27,6 +28,9 @@ class SnapshotManager(
     private val cameraControlsManager: CameraControlsManager,
     private val preferencesRepository: PreferencesRepository
 ) {
+    
+    // T-100: MSI debug manager integration
+    private val msiDebugManager = MsiDebugManager()
     
     private val dateFormat = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US)
     private var lastSnapshotFile: File? = null
@@ -69,7 +73,9 @@ class SnapshotManager(
                     src = metricsCollector.lastScanSource.takeIf { it != "none" } ?: "none",
                     ts = result.timestamp
                 )
-            }
+            },
+            // T-100: Add MSI debug data
+            msiDbg = msiDebugManager.getCurrentSnapshot()?.toCompactMap()
         )
     }
     
@@ -118,8 +124,11 @@ class SnapshotManager(
             val downloadsDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
             val msiSnapshotsDir = File(downloadsDir, "MSISnapshots")
             
+            android.util.Log.d("SnapshotManager", "Trying Downloads: ${downloadsDir?.absolutePath}")
+            
             if (!msiSnapshotsDir.exists()) {
-                msiSnapshotsDir.mkdirs()
+                val created = msiSnapshotsDir.mkdirs()
+                android.util.Log.d("SnapshotManager", "MSISnapshots dir created: $created")
             }
             
             val file = File(msiSnapshotsDir, filename)
@@ -127,8 +136,10 @@ class SnapshotManager(
                 writer.write(snapshotData.toPrettyJson())
             }
             
+            android.util.Log.d("SnapshotManager", "SUCCESS: Saved to ${file.absolutePath}")
             return file
         } catch (exception: Exception) {
+            android.util.Log.e("SnapshotManager", "FAILED Downloads: ${exception.message}")
             // Fallback to internal if public fails
             return saveToInternalFolder(snapshotData, filename)
         }
@@ -239,4 +250,14 @@ class SnapshotManager(
         
         return deletedCount
     }
+    
+    /**
+     * T-100: Get MSI debug manager for pipeline integration
+     */
+    fun getMsiDebugManager(): MsiDebugManager = msiDebugManager
+    
+    /**
+     * T-100: Get current MSI debug status for overlay
+     */
+    fun getMsiDebugStatus(): String = msiDebugManager.getOverlayStatus()
 }
