@@ -1,8 +1,12 @@
 package com.msidecoder.scanner.debug
 
 import android.content.Context
+import android.os.Build
+import android.os.Environment
 import android.os.VibrationEffect
 import android.os.Vibrator
+import android.os.VibratorManager
+import android.provider.MediaStore
 import android.widget.Toast
 import com.msidecoder.scanner.scanner.ScannerArbitrator
 import com.msidecoder.scanner.state.CameraControlsManager
@@ -49,7 +53,7 @@ class SnapshotManager(
             torch = if (cameraState.torchEnabled) "ON" else "OFF",
             zoom = SnapshotData.ZoomData(
                 ratio = cameraState.zoomLevel.ratio,
-                type = getZoomType(cameraState.zoomLevel)
+                type = getZoomType()
             ),
             ml = SnapshotData.MLKitData(
                 latMs = if (scannerMetrics.mlkitTimeMs > 0) scannerMetrics.mlkitTimeMs.toDouble() else null,
@@ -90,17 +94,56 @@ class SnapshotManager(
     
     /**
      * Save snapshot data to JSON file
+     * Android 10+: Public Downloads folder
+     * Android <10: Internal app folder fallback
      */
     private fun saveSnapshotToFile(snapshotData: SnapshotData): File {
+        val timestamp = dateFormat.format(Date(snapshotData.ts))
+        val filename = "snap_${timestamp}.json"
+        
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            // Android 10+ : Public Downloads (scoped storage)
+            saveToPublicDownloads(snapshotData, filename)
+        } else {
+            // Android <10 : Internal app folder fallback
+            saveToInternalFolder(snapshotData, filename)
+        }
+    }
+    
+    /**
+     * Save to public Downloads folder (Android 10+)
+     */
+    private fun saveToPublicDownloads(snapshotData: SnapshotData, filename: String): File {
+        try {
+            val downloadsDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
+            val msiSnapshotsDir = File(downloadsDir, "MSISnapshots")
+            
+            if (!msiSnapshotsDir.exists()) {
+                msiSnapshotsDir.mkdirs()
+            }
+            
+            val file = File(msiSnapshotsDir, filename)
+            FileWriter(file).use { writer ->
+                writer.write(snapshotData.toPrettyJson())
+            }
+            
+            return file
+        } catch (exception: Exception) {
+            // Fallback to internal if public fails
+            return saveToInternalFolder(snapshotData, filename)
+        }
+    }
+    
+    /**
+     * Save to internal app folder (fallback)
+     */
+    private fun saveToInternalFolder(snapshotData: SnapshotData, filename: String): File {
         val snapshotsDir = File(context.filesDir, "snapshots")
         if (!snapshotsDir.exists()) {
             snapshotsDir.mkdirs()
         }
         
-        val timestamp = dateFormat.format(Date(snapshotData.ts))
-        val filename = "snap_${timestamp}.json"
         val file = File(snapshotsDir, filename)
-        
         FileWriter(file).use { writer ->
             writer.write(snapshotData.toPrettyJson())
         }
@@ -111,7 +154,7 @@ class SnapshotManager(
     /**
      * Get zoom type string for snapshot
      */
-    private fun getZoomType(zoomLevel: ZoomLevel): String {
+    private fun getZoomType(): String {
         // For Phase 0, all zoom is digital
         return "numerique"
     }
@@ -120,8 +163,11 @@ class SnapshotManager(
      * Show success feedback toast
      */
     private fun showSuccessFeedback(file: File) {
-        val shortPath = "snapshots/${file.name}"
-        Toast.makeText(context, "Snapshot enregistré: $shortPath", Toast.LENGTH_LONG).show()
+        val shortPath = when {
+            file.path.contains("MSISnapshots") -> "Downloads/MSISnapshots/${file.name}"
+            else -> "App/snapshots/${file.name}"
+        }
+        Toast.makeText(context, "Snapshot: $shortPath", Toast.LENGTH_LONG).show()
     }
     
     /**
@@ -136,7 +182,14 @@ class SnapshotManager(
      */
     private fun vibrateIfSupported() {
         try {
-            val vibrator = context.getSystemService(Context.VIBRATOR_SERVICE) as? Vibrator
+            val vibrator = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {
+                val vibratorManager = context.getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as? VibratorManager
+                vibratorManager?.defaultVibrator
+            } else {
+                @Suppress("DEPRECATION")
+                context.getSystemService(Context.VIBRATOR_SERVICE) as? Vibrator
+            }
+            
             vibrator?.let { vib ->
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
                     val effect = VibrationEffect.createOneShot(100, VibrationEffect.DEFAULT_AMPLITUDE)

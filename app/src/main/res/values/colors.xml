@@ -6,4 +6,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="torch_on">#FFFFC107</color>
     <color name="blue_tender">#FF81C7E6</color>
+    <color name="purple_500">#FF9C27B0</color>
 </resources>

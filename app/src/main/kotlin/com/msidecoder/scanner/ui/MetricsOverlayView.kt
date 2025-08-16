@@ -6,8 +6,6 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.RectF
 import android.util.AttributeSet
-import android.view.GestureDetector
-import android.view.MotionEvent
 import android.view.View
 import com.msidecoder.scanner.utils.MetricsCollector
 
@@ -39,15 +37,6 @@ class MetricsOverlayView @JvmOverloads constructor(
     private var metricsSnapshot: MetricsCollector.Snapshot? = null
     private val padding = 24f
     private val lineHeight = 50f
-    
-    // T-007: Long-press detection for snapshot capture
-    private var onLongPressListener: (() -> Unit)? = null
-    private val gestureDetector = GestureDetector(context, object : GestureDetector.SimpleOnGestureListener() {
-        override fun onLongPress(e: MotionEvent) {
-            super.onLongPress(e)
-            onLongPressListener?.invoke()
-        }
-    })
 
     fun updateMetrics(snapshot: MetricsCollector.Snapshot) {
         metricsSnapshot = snapshot
@@ -108,18 +97,5 @@ class MetricsOverlayView @JvmOverloads constructor(
         val width = MeasureSpec.getSize(widthMeasureSpec)
         val height = MeasureSpec.getSize(heightMeasureSpec)
         setMeasuredDimension(width, height)
-    }
-    
-    // T-007: Touch handling for long-press detection
-    override fun onTouchEvent(event: MotionEvent): Boolean {
-        gestureDetector.onTouchEvent(event)
-        return true // Always consume touch events to enable long-press
-    }
-    
-    /**
-     * Set listener for long-press events (T-007: snapshot capture)
-     */
-    fun setOnLongPressListener(listener: () -> Unit) {
-        onLongPressListener = listener
     }
 }

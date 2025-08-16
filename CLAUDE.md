@@ -188,14 +188,14 @@ Le stub MSI recevra déjà la signature complète (FrameNV21 + rotationDeg) pour
 - **T-007** ✅ : **Overlay Snapshot JSON Debug (APPROVED)**
 
 ### T-007 : Debug Snapshot JSON Complet ⭐
-- ✅ **Long-press overlay** : Détection gestuelle 1-1.5s sur zone métriques
+- ✅ **Bouton "SS" explicite** : Click instantané bouton violet dédié (56x56dp)
 - ✅ **Capture instantanée** : Snapshot JSON sans interruption scanner/caméra
 - ✅ **Structure complète** : ts, res, fps, procMs, queue, rotation, torch, zoom, ml, msi, lastPub
-- ✅ **Sauvegarde** : Fichiers `snapshots/snap_YYYYMMDD_HHMMSS.json` horodatés  
+- ✅ **Stockage intelligent** : `Downloads/MSISnapshots/` (Android 10+) ou internal fallback
 - ✅ **Feedback UX** : Toast + vibration 100ms sur succès capture
 - ✅ **JSON formaté** : Pretty-print 2 espaces pour lisibilité debug
-- ✅ **Architecture** : SnapshotManager + MetricsOverlayView long-press + permissions
-- ✅ **Debug professionnel** : Replacement logs console par snapshots événementiels
+- ✅ **Architecture** : SnapshotManager + Bouton SS + permissions + stockage adaptatif
+- ✅ **Debug professionnel** : Snapshots accessibles depuis explorateur fichiers
 
 ## 🏆 PHASE 0 COMPLÈTE - Infrastructure MSI Decoder ✅
 
@@ -204,7 +204,7 @@ Le stub MSI recevra déjà la signature complète (FrameNV21 + rotationDeg) pour
 - **State management** complet : Scanner + Camera + Persistance + Lifecycle
 - **Scanner Pipeline** : ML Kit + MSI Arbitrator avec priorité et métriques
 - **Persistance intelligente** : Auto-start + anti-republication + torch intention utilisateur
-- **Debug professionnel** : Snapshots JSON instantanés sur demande (long-press)
+- **Debug professionnel** : Snapshots JSON instantanés sur demande (bouton "SS")
 - **Performance** validée (FPS: 23, ML Kit: 15ms, debounce: 750ms, restore: <200ms)
 - **UX** expérience continue : Kill/reboot/background transparent pour utilisateur
 - **Infrastructure** prête pour MSI détection réelle Phase 1+

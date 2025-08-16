@@ -125,6 +125,7 @@ class MainActivity : AppCompatActivity() {
         setupStartStopButton()
         setupTorchButton()
         setupZoomButton()
+        setupSnapshotButton()
         
         // Setup state listeners
         setupScannerStateListener()
@@ -132,9 +133,6 @@ class MainActivity : AppCompatActivity() {
         
         // Setup persistence listeners
         setupPersistenceListeners()
-        
-        // T-007: Setup snapshot capture on overlay long-press
-        setupOverlaySnapshotCapture()
         
         // Start overlay updates
         overlayHandler.post(overlayUpdateRunnable)
@@ -416,6 +414,29 @@ class MainActivity : AppCompatActivity() {
         }
     }
     
+    private fun setupSnapshotButton() {
+        // Set snapshot button color (distinct from others)
+        binding.fabSnapshot.backgroundTintList = ContextCompat.getColorStateList(this, R.color.purple_500)
+        
+        binding.fabSnapshot.setOnClickListener {
+            val currentTime = System.currentTimeMillis()
+            if (currentTime - lastClickTime < debounceInterval) {
+                return@setOnClickListener
+            }
+            lastClickTime = currentTime
+            
+            Log.d(TAG, "=== SNAPSHOT BUTTON CLICKED ===")
+            
+            // T-007: Capture snapshot instantly with feedback
+            snapshotManager.saveSnapshotWithFeedback(
+                if (::scannerArbitrator.isInitialized) scannerArbitrator else null
+            )
+            
+            Log.d(TAG, "Total snapshots saved: ${snapshotManager.getSnapshotCount()}")
+            Log.d(TAG, "=== SNAPSHOT CAPTURE COMPLETE ===")
+        }
+    }
+    
     private fun setupCameraControlsListener() {
         cameraControlsManager.addStateChangeListener { controlsState ->
             // Update torch
@@ -679,19 +700,6 @@ class MainActivity : AppCompatActivity() {
         )
         
         Log.d(TAG, "Scanner components initialized")
-    }
-    
-    private fun setupOverlaySnapshotCapture() {
-        binding.metricsOverlay.setOnLongPressListener {
-            Log.d(TAG, "=== SNAPSHOT CAPTURE TRIGGERED ===")
-            
-            // T-007: Capture snapshot on long-press with feedback
-            snapshotManager.saveSnapshotWithFeedback(
-                if (::scannerArbitrator.isInitialized) scannerArbitrator else null
-            )
-            
-            Log.d(TAG, "Total snapshots saved: ${snapshotManager.getSnapshotCount()}")
-        }
     }
 
     override fun onDestroy() {

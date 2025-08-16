@@ -6,10 +6,11 @@
 ## 🎯 Objectifs Atteints
 
 ### Capture Snapshot Instantanée
-- ✅ **Long-press overlay** : Détection gestuelle 1-1.5s sur zone métriques
+- ✅ **Bouton "SS" explicite** : Click instantané sur bouton dédié (violet, 56x56dp)
 - ✅ **Capture instantanée** : Snapshot sans interruption caméra/scanner  
 - ✅ **Structure JSON complète** : Conforme spécifications T-007
 - ✅ **Feedback utilisateur** : Toast + vibration (100ms) sur succès
+- ✅ **UX professionnelle** : Bouton visible et réactif vs gesture cachée
 
 ### Données Snapshot JSON Complètes
 - ✅ **Timestamp** : `ts` epoch ms précis
@@ -22,10 +23,11 @@
 - ✅ **Dernière publication** : `lastPub` (text, src, ts) nullable
 
 ### Sauvegarde & Organisation
-- ✅ **Fichiers snapshots/** : Organisation dossier interne app
+- ✅ **Android 10+** : `Downloads/MSISnapshots/` (accessible publiquement)
+- ✅ **Android <10** : Fallback dossier interne app
 - ✅ **Nommage horodaté** : `snap_YYYYMMDD_HHMMSS.json`
 - ✅ **JSON formaté** : Pretty-print 2 espaces pour lisibilité
-- ✅ **Gestion erreurs** : Fallbacks + toasts d'erreur
+- ✅ **Gestion intelligente** : Auto-fallback + toast informatif
 
 ## 🔧 Architecture Technique Complète
 
@@ -56,26 +58,26 @@ SnapshotManager →
 └── clearAllSnapshots() → Nettoyage dossier
 ```
 
-### Intégration UI Overlay
+### Intégration UI Bouton SS
 ```
-MetricsOverlayView →
-├── GestureDetector.onLongPress() → Détection 1-1.5s
-├── setOnLongPressListener() → Callback vers MainActivity  
-└── onTouchEvent() → Consommation événements touch
+MainActivity →
+├── setupSnapshotButton() → Configuration bouton "SS" violet
+├── fabSnapshot.setOnClickListener() → Trigger capture
+└── snapshotManager.saveSnapshotWithFeedback() → Capture + feedback
 ```
 
 ### Flow Capture Complète
 ```
-Long-press overlay →
-├── GestureDetector trigger
+Click bouton "SS" →
+├── Debounce protection (300ms)
 ├── SnapshotManager.captureSnapshot()
 │   ├── Collecte MetricsCollector.Snapshot
 │   ├── Collecte CameraControlsState  
 │   ├── Collecte ScannerArbitrator.Metrics
 │   └── Collecte PreferencesRepository.LastScanResult
 ├── JSON generation (pretty-print)
-├── File save snapshots/snap_*.json
-├── Toast "Snapshot enregistré: snapshots/file.json"
+├── Smart save (Downloads/MSISnapshots ou internal)
+├── Toast "Snapshot: Downloads/MSISnapshots/file.json"
 └── Vibration 100ms feedback
 ```
 
@@ -111,16 +113,18 @@ Long-press overlay →
 }
 ```
 
-### **Trigger Long-Press Validé**
-- **Durée** : 1-1.5s (GestureDetector standard Android)
-- **Zone sensible** : Entire overlay metrics (background semi-transparent)
+### **Trigger Bouton "SS" Validé**
+- **Réactivité** : Click instantané (pas d'attente)
+- **Visibilité** : Bouton violet 56x56dp explicite
+- **Position** : À droite des contrôles (T - START/STOP - 1 - SS)
 - **Feedback immédiat** : Toast + vibration simultanés
 - **Pas d'interruption** : Caméra + scanner continuent normalement
 
-### **Gestion Permissions**
+### **Gestion Permissions & Stockage**
 - ✅ **android.permission.VIBRATE** : Ajouté AndroidManifest.xml
-- ✅ **File storage** : Dossier interne app (pas de permissions externes)
-- ✅ **Fallbacks gracieux** : Vibration optionnelle (ignore erreurs)
+- ✅ **Android 10+** : Downloads publics (AUCUNE permission requise)
+- ✅ **Android <10** : Fallback dossier interne (pas de popup permission)
+- ✅ **Fallbacks gracieux** : Vibration + stockage optionnels
 
 ## 💡 Innovations Techniques
 
@@ -141,15 +145,16 @@ Architecture prête pour Phase 1+ :
 
 ### **Debug Professional**
 Replacement complet des logs console :
-- **Événementiel** : Seulement quand utilisateur le demande
+- **Événementiel** : Seulement quand utilisateur click "SS"
 - **Contexte complet** : Snapshot holistique vs logs fragmentés
-- **Partage facile** : Fichiers JSON human-readable
+- **Partage facile** : Fichiers JSON dans Downloads (accessibles)
+- **Multi-plateforme** : Compatible Android 6+ avec fallbacks intelligents
 
 ## 📊 Conformité Spécifications T-007
 
 | Critère | Status | Détail |
 |---------|--------|--------|
-| Long-press 1-1.5s | ✅ | GestureDetector Android standard |
+| Trigger instantané | ✅ | Bouton "SS" dédié + debounce |
 | Feedback visuel | ✅ | Toast avec chemin fichier |
 | Vibration légère | ✅ | 100ms VibrationEffect |
 | JSON complet | ✅ | Tous champs spécifiés présents |
@@ -170,10 +175,11 @@ Replacement complet des logs console :
 - **Persistance debug** : Snapshots horodatés organisés
 
 ### Expérience Utilisateur Finale
-- **Gesture intuitive** : Long-press familier mobile
+- **Bouton explicite** : Action visible et professionnelle
+- **Réactivité** : Capture instantanée sans attente
 - **Feedback immédiat** : Toast + vibration confirment action
 - **Non-intrusif** : Aucune interruption scanning/caméra
-- **Organisation claire** : Fichiers nommés timestamp humain
+- **Accessibilité** : Fichiers dans Downloads (Android 10+)
 
 ### Préparation Phase 1+
 L'infrastructure snapshot est **extensible** :

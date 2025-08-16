@@ -92,6 +92,25 @@
             android:contentDescription="@string/zoom_1x"
             style="@style/Widget.Material3.Button" />
 
+        <!-- T-007: Snapshot Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/fabSnapshot"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="16dp"
+            android:text="SS"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            android:contentDescription="Snapshot debug"
+            style="@style/Widget.Material3.Button" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
