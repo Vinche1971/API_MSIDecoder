@@ -14,11 +14,15 @@ import kotlin.math.min
  * - Horizontal gradient (Sobel X) for vertical bars detection
  * - Morphological closing 1×k to group bars
  * - Bounding box detection with MSI-specific criteria
+ * - T-103: Perspective rectification for normalized ROI
  */
 class MsiRoiDetector {
     
     // T-102: Orientation estimator for angle calculation
     private val orientationEstimator = OrientationEstimator()
+    
+    // T-103: Perspective rectifier for ROI normalization
+    private val perspectiveRectifier = PerspectiveRectifier()
     
     companion object {
         private const val TAG = "MsiRoiDetector"
@@ -83,10 +87,18 @@ class MsiRoiDetector {
                 filteredCandidates.take(MAX_ROI_CANDIDATES)
             )
             
-            val processingTime = System.currentTimeMillis() - startTime
-            Log.d(TAG, "ROI detection completed in ${processingTime}ms, found ${candidatesWithOrientation.size} candidates")
+            // Step 8: T-103: Apply perspective rectification to best candidates
+            val rectifiedCandidates = addRectificationToCandidates(
+                nv21Data,
+                width,
+                height,
+                candidatesWithOrientation.take(2) // Rectify top 2 candidates for performance
+            )
             
-            return candidatesWithOrientation
+            val processingTime = System.currentTimeMillis() - startTime
+            Log.d(TAG, "ROI detection completed in ${processingTime}ms, found ${rectifiedCandidates.size} candidates")
+            
+            return rectifiedCandidates
             
         } catch (exception: Exception) {
             val processingTime = System.currentTimeMillis() - startTime
@@ -447,6 +459,27 @@ class MsiRoiDetector {
     }
     
     /**
+     * T-103: Add perspective rectification to ROI candidates
+     */
+    private fun addRectificationToCandidates(
+        nv21Data: ByteArray,
+        frameWidth: Int,
+        frameHeight: Int,
+        candidates: List<RoiCandidate>
+    ): List<RoiCandidate> {
+        
+        return candidates.map { candidate ->
+            // Apply perspective rectification
+            val rectifiedRoi = perspectiveRectifier.rectifyRoi(
+                nv21Data, frameWidth, frameHeight, candidate
+            )
+            
+            // Create new candidate with rectification information
+            candidate.copy(rectifiedRoi = rectifiedRoi)
+        }
+    }
+    
+    /**
      * Internal data class for bounding box detection
      */
     private data class BoundingBox(
@@ -461,6 +494,7 @@ class MsiRoiDetector {
 /**
  * ROI Candidate result
  * T-102: Extended with orientation estimation
+ * T-103: Extended with perspective rectification
  */
 data class RoiCandidate(
     val x: Int,
@@ -469,5 +503,6 @@ data class RoiCandidate(
     val height: Int,
     val score: Float,
     val gradientVariance: Float,
-    val orientationDegrees: Float = 0.0f  // T-102: Estimated angle in degrees [-90, +90]
+    val orientationDegrees: Float = 0.0f,  // T-102: Estimated angle in degrees [-90, +90]
+    val rectifiedRoi: RectifiedRoi? = null // T-103: Rectified ROI data
 )

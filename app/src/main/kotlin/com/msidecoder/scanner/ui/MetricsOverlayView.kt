@@ -126,6 +126,7 @@ class MetricsOverlayView @JvmOverloads constructor(
     /**
      * T-101: Construire la section MSI avec détails ROI
      * T-102: Extended with orientation angle display
+     * T-103: Extended with rectification status display
      */
     private fun buildMsiSection(): List<String> {
         val msi = msiSnapshot
@@ -140,9 +141,13 @@ class MetricsOverlayView @JvmOverloads constructor(
                     add("Meilleur: Score ${String.format("%.2f", roi.bestScore)} → (${candidate.x},${candidate.y}) ${candidate.width}×${candidate.height}px")
                     // T-102: Display orientation angle
                     add("Orientation: ${String.format("%.1f", roi.estimatedAngle)}° (Structure Tensor)")
+                    // T-103: Display rectification status
+                    val rectifyStatus = if (roi.rectificationSuccess) "✅ ${roi.rectificationTimeMs}ms" else "❌ Failed"
+                    add("Rectification: $rectifyStatus")
                 } else {
                     add("Meilleur: Aucun candidat valide")
                     add("Orientation: N/A")
+                    add("Rectification: —")
                 }
                 add("Temps: ${roi.processingTimeMs}ms  Status: ${if (roi.candidatesFound > 0) "✅ DETECTED" else "❌ NO ROI"}")
             }
@@ -152,6 +157,7 @@ class MetricsOverlayView @JvmOverloads constructor(
                 add("Status: En attente...")
                 add("Recherche de régions d'intérêt...")
                 add("Orientation: —")
+                add("Rectification: —")
             }
         }
     }

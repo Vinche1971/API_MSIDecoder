@@ -73,7 +73,9 @@ class MSIScanner {
                     processingTimeMs = processingTime,
                     gradientThreshold = 0.3f, // From MsiRoiDetector
                     morphoKernelSize = 15,     // From MsiRoiDetector
-                    estimatedAngle = bestCandidate.orientationDegrees  // T-102: Include orientation
+                    estimatedAngle = bestCandidate.orientationDegrees,  // T-102: Include orientation
+                    rectificationTimeMs = bestCandidate.rectifiedRoi?.processingTimeMs ?: 0L, // T-103: Rectification time
+                    rectificationSuccess = bestCandidate.rectifiedRoi != null // T-103: Rectification success
                 )
                 
                 // T-101: Send ROI stats to debug manager
