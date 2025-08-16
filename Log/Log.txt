@@ -1,8 +1,8 @@
 {
-  "ts": 1755351093931,
+  "ts": 1755355662905,
   "res": "640x480",
-  "fps": 3.2441200324412005,
-  "procMs": 7.857142857142857,
+  "fps": 4.7704365726927955,
+  "procMs": 1.5922330097087378,
   "queue": 0,
   "rotationDeg": 90,
   "torch": "OFF",
@@ -11,21 +11,21 @@
     "type": "numerique"
   },
   "ml": {
-    "latMs": 39,
+    "latMs": 16,
     "hits": 0
   },
   "msi": {
-    "latMs": 205,
+    "latMs": 206,
     "status": "stub"
   },
   "lastPub": {
-    "text": "4052199551944",
+    "text": "http:\/\/www.tp-link.com\/support",
     "src": "none",
-    "ts": 1755349254535
+    "ts": 1755354091471
   },
   "msiDbg": {
-    "frameId": "msi_7",
-    "stage": "complete",
+    "frameId": "msi_308",
+    "stage": "roi_extract",
     "success": true,
     "params": {
       "roiWidth": 1280,
@@ -35,12 +35,592 @@
       "moduleMethod": "median"
     },
     "roi": {
-      "candidates": 3,
-      "bestScore": "0,72",
-      "bestROI": "15,52 95x23",
-      "procTimeMs": 205,
+      "candidates": 1,
+      "bestScore": "0,78",
+      "bestROI": "0,31 93x20",
+      "procTimeMs": 210,
       "gradThresh": 0.3,
-      "morphKernel": 15
+      "morphKernel": 15,
+      "angle": "-8,6°"
     }
   }
 }
+
+
+
+
+
+2025-08-16 16:49:21.999  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:22.014  9286-9318  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@100fc52[id=0]} Use cases [androidx.camera.core.Preview-ba5d9b40-8f43-4a90-a16f-7d932f3defe7124048814, androidx.camera.core.ImageAnalysis-43e38970-795f-47bb-a432-b37a7afd4f5a109930345] now ATTACHED
+2025-08-16 16:49:22.014  9286-9286  MSIScanner              com.msidecoder.scanner               D  === ON RESUME ===
+2025-08-16 16:49:22.014  9286-9286  MSIScanner              com.msidecoder.scanner               D  CameraControlsManager state on resume: CameraControlsState(torchEnabled=false, zoomLevel=ZOOM_2X, zoomType=DIGITAL)
+2025-08-16 16:49:22.014  9286-9286  MSIScanner              com.msidecoder.scanner               D  Applying zoom on resume: 2.0
+2025-08-16 16:49:22.015  9286-9286  MSIScanner              com.msidecoder.scanner               D  Applying torch on resume: false
+2025-08-16 16:49:22.015  9286-9286  MSIScanner              com.msidecoder.scanner               D  === ON RESUME COMPLETE ===
+2025-08-16 16:49:22.016  9286-9318  UseCaseAttachState      com.msidecoder.scanner               D  All use case: [androidx.camera.core.Preview-ba5d9b40-8f43-4a90-a16f-7d932f3defe7124048814, androidx.camera.core.ImageAnalysis-43e38970-795f-47bb-a432-b37a7afd4f5a109930345] for camera: 0
+2025-08-16 16:49:22.020  9286-9318  UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [] for camera: 0
+2025-08-16 16:49:22.021  9286-9318  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@100fc52[id=0]} Resetting Capture Session
+2025-08-16 16:49:22.021  9286-9318  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@100fc52[id=0]} Releasing session in state INITIALIZED
+2025-08-16 16:49:22.021  9286-9318  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@100fc52[id=0]} Attempting to force open the camera.
+2025-08-16 16:49:22.021  9286-9318  CameraStateRegistry     com.msidecoder.scanner               D  tryOpenCamera(Camera@100fc52[id=0]) [Available Cameras: 1, Already Open: false (Previous state: CLOSED)] --> SUCCESS
+2025-08-16 16:49:22.021  9286-9318  CameraStateRegistry     com.msidecoder.scanner               D  Recalculating open cameras:
+                                                                                                    Camera                                       State                 
+                                                                                                    -------------------------------------------------------------------
+                                                                                                    Camera@a8e8b9e[id=1]                         UNKNOWN               
+                                                                                                    Camera@100fc52[id=0]                         OPENING               
+                                                                                                    -------------------------------------------------------------------
+                                                                                                    Open count: 1 (Max allowed: 1)
+2025-08-16 16:49:22.021  9286-9318  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@100fc52[id=0]} Opening camera.
+2025-08-16 16:49:22.021  9286-9318  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@100fc52[id=0]} Transitioning camera internal state: INITIALIZED --> OPENING
+2025-08-16 16:49:22.022  9286-9318  CameraStateMachine      com.msidecoder.scanner               D  New public camera state CameraState{type=OPENING, error=null} from OPENING and null
+2025-08-16 16:49:22.022  9286-9318  CameraStateMachine      com.msidecoder.scanner               D  Publishing new public camera state CameraState{type=OPENING, error=null}
+2025-08-16 16:49:22.024  9286-9318  UseCaseAttachState      com.msidecoder.scanner               D  All use case: [androidx.camera.core.Preview-ba5d9b40-8f43-4a90-a16f-7d932f3defe7124048814, androidx.camera.core.ImageAnalysis-43e38970-795f-47bb-a432-b37a7afd4f5a109930345] for camera: 0
+2025-08-16 16:49:22.027  9286-9286  libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.display.enable_optimal_refresh_rate"
+2025-08-16 16:49:22.028  9286-9286  libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.gpp.create_frc_extension"
+2025-08-16 16:49:22.029  9286-9309  AdrenoGLES-0            com.msidecoder.scanner               I  QUALCOMM build                   : 923a446bf8, I23d7d7df15
+                                                                                                    Build Date                       : 09/05/24
+                                                                                                    OpenGL ES Shader Compiler Version: EV031.35.01.12
+                                                                                                    Local Branch                     : 
+                                                                                                    Remote Branch                    : refs/tags/AU_LINUX_ANDROID_LA.UM.9.14.11.00.00.571.148
+                                                                                                    Remote Branch                    : NONE
+                                                                                                    Reconstruct Branch               : NOTHING
+2025-08-16 16:49:22.029  9286-9309  AdrenoGLES-0            com.msidecoder.scanner               I  Build Config                     : S P 10.0.7 AArch64
+2025-08-16 16:49:22.029  9286-9309  AdrenoGLES-0            com.msidecoder.scanner               I  Driver Path                      : /vendor/lib64/egl/libGLESv2_adreno.so
+2025-08-16 16:49:22.025  9286-9286  decoder.scanner         com.msidecoder.scanner               W  type=1400 audit(0.0:3799): avc:  denied  { read } for  name="u:object_r:vendor_display_prop:s0" dev="tmpfs" ino=12525 scontext=u:r:untrusted_app:s0:c72,c256,c512,c768 tcontext=u:object_r:vendor_display_prop:s0 tclass=file permissive=0 app=com.google.android.apps.turbo
+2025-08-16 16:49:22.031  9286-9286  libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.display.enable_optimal_refresh_rate"
+2025-08-16 16:49:22.031  9286-9286  libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.gpp.create_frc_extension"
+2025-08-16 16:49:22.029  9286-9286  decoder.scanner         com.msidecoder.scanner               W  type=1400 audit(0.0:3800): avc:  denied  { read } for  name="u:object_r:vendor_display_prop:s0" dev="tmpfs" ino=12525 scontext=u:r:untrusted_app:s0:c72,c256,c512,c768 tcontext=u:object_r:vendor_display_prop:s0 tclass=file permissive=0 app=com.google.android.apps.turbo
+2025-08-16 16:49:22.031  9286-9286  SurfaceViewImpl         com.msidecoder.scanner               D  Surface changed. Size: 1600x1200
+2025-08-16 16:49:22.032  9286-9286  SurfaceView             com.msidecoder.scanner               I  surfaceview vote min fps
+2025-08-16 16:49:22.033  9286-9318  libc                    com.msidecoder.scanner               W  Access denied finding property "persist.vendor.camera.privapp.list"
+2025-08-16 16:49:22.034  1776-10553 CameraService           cameraserver                         E  CameraService::connect call (PID 9286 "com.msidecoder.scanner", camera ID 0) and Camera API version 2
+2025-08-16 16:49:22.037  9286-9309  AdrenoGLES-0            com.msidecoder.scanner               I  PFP: 0x016dc094, ME: 0x00000000
+2025-08-16 16:49:22.041  9286-9303  libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.camera.aux.packagelist"
+2025-08-16 16:49:22.044  9286-9303  CameraManagerGlobal     com.msidecoder.scanner               E  Camera 3 is not present. Ignore physical camera status change
+2025-08-16 16:49:22.045  9286-9303  libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.camera.aux.packagelist"
+2025-08-16 16:49:22.045  9286-9303  libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.camera.aux.packagelist"
+2025-08-16 16:49:22.045  9286-9303  CameraManagerGlobal     com.msidecoder.scanner               W  ignore the torch status update of camera: 2
+2025-08-16 16:49:22.045  9286-9303  libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.camera.aux.packagelist"
+2025-08-16 16:49:22.045  9286-9303  CameraManagerGlobal     com.msidecoder.scanner               W  ignore the torch status update of camera: 3
+2025-08-16 16:49:22.074  9286-9318  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@100fc52[id=0]} Use case androidx.camera.core.Preview-ba5d9b40-8f43-4a90-a16f-7d932f3defe7124048814 ACTIVE
+2025-08-16 16:49:22.075  9286-9318  UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.Preview-ba5d9b40-8f43-4a90-a16f-7d932f3defe7124048814] for camera: 0
+2025-08-16 16:49:22.077  9286-9318  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@100fc52[id=0]} Use case androidx.camera.core.ImageAnalysis-43e38970-795f-47bb-a432-b37a7afd4f5a109930345 ACTIVE
+2025-08-16 16:49:22.077  9286-9318  UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.Preview-ba5d9b40-8f43-4a90-a16f-7d932f3defe7124048814, androidx.camera.core.ImageAnalysis-43e38970-795f-47bb-a432-b37a7afd4f5a109930345] for camera: 0
+2025-08-16 16:49:22.080  9286-9318  UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.Preview-ba5d9b40-8f43-4a90-a16f-7d932f3defe7124048814, androidx.camera.core.ImageAnalysis-43e38970-795f-47bb-a432-b37a7afd4f5a109930345] for camera: 0
+2025-08-16 16:49:22.084  9286-9286  DeferrableSurface       com.msidecoder.scanner               D  Surface created[total_surfaces=2, used_surfaces=0](androidx.camera.core.processing.SurfaceEdge$SettableSurface@5988b32}
+2025-08-16 16:49:22.088  9286-9318  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@100fc52[id=0]} Issue capture request
+2025-08-16 16:49:22.088  9286-9318  UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.Preview-ba5d9b40-8f43-4a90-a16f-7d932f3defe7124048814, androidx.camera.core.ImageAnalysis-43e38970-795f-47bb-a432-b37a7afd4f5a109930345] for camera: 0
+2025-08-16 16:49:22.090  9286-9318  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@100fc52[id=0]} CameraDevice.onOpened()
+2025-08-16 16:49:22.090  9286-9318  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@100fc52[id=0]} Transitioning camera internal state: OPENING --> OPENED
+2025-08-16 16:49:22.090  9286-9318  CameraStateRegistry     com.msidecoder.scanner               D  Recalculating open cameras:
+                                                                                                    Camera                                       State                 
+                                                                                                    -------------------------------------------------------------------
+                                                                                                    Camera@a8e8b9e[id=1]                         UNKNOWN               
+                                                                                                    Camera@100fc52[id=0]                         OPEN                  
+                                                                                                    -------------------------------------------------------------------
+                                                                                                    Open count: 1 (Max allowed: 1)
+2025-08-16 16:49:22.091  9286-9318  CameraStateMachine      com.msidecoder.scanner               D  New public camera state CameraState{type=OPEN, error=null} from OPEN and null
+2025-08-16 16:49:22.091  9286-9318  CameraStateMachine      com.msidecoder.scanner               D  Publishing new public camera state CameraState{type=OPEN, error=null}
+2025-08-16 16:49:22.091  9286-9318  UseCaseAttachState      com.msidecoder.scanner               D  All use case: [androidx.camera.core.Preview-ba5d9b40-8f43-4a90-a16f-7d932f3defe7124048814, androidx.camera.core.ImageAnalysis-43e38970-795f-47bb-a432-b37a7afd4f5a109930345] for camera: 0
+2025-08-16 16:49:22.093  9286-9318  UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.Preview-ba5d9b40-8f43-4a90-a16f-7d932f3defe7124048814, androidx.camera.core.ImageAnalysis-43e38970-795f-47bb-a432-b37a7afd4f5a109930345] for camera: 0
+2025-08-16 16:49:22.094  9286-9318  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@100fc52[id=0]} Use case androidx.camera.core.Preview-ba5d9b40-8f43-4a90-a16f-7d932f3defe7124048814 RESET
+2025-08-16 16:49:22.095  9286-9318  UseCaseAttachState      com.msidecoder.scanner               D  All use case: [androidx.camera.core.Preview-ba5d9b40-8f43-4a90-a16f-7d932f3defe7124048814, androidx.camera.core.ImageAnalysis-43e38970-795f-47bb-a432-b37a7afd4f5a109930345] for camera: 0
+2025-08-16 16:49:22.095  9286-9318  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@100fc52[id=0]} Resetting Capture Session
+2025-08-16 16:49:22.096  9286-9318  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@100fc52[id=0]} Releasing session in state OPENED
+2025-08-16 16:49:22.096  9286-9318  UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.Preview-ba5d9b40-8f43-4a90-a16f-7d932f3defe7124048814, androidx.camera.core.ImageAnalysis-43e38970-795f-47bb-a432-b37a7afd4f5a109930345] for camera: 0
+2025-08-16 16:49:22.099  9286-9318  UseCaseAttachState      com.msidecoder.scanner               D  All use case: [androidx.camera.core.Preview-ba5d9b40-8f43-4a90-a16f-7d932f3defe7124048814, androidx.camera.core.ImageAnalysis-43e38970-795f-47bb-a432-b37a7afd4f5a109930345] for camera: 0
+2025-08-16 16:49:22.100  9286-9318  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@100fc52[id=0]} Unable to configure camera cancelled
+2025-08-16 16:49:22.100  9286-9318  SyncCaptureSessionBase  com.msidecoder.scanner               D  [androidx.camera.camera2.internal.SynchronizedCaptureSessionBaseImpl@df9ca5c] getSurface...done
+2025-08-16 16:49:22.100  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:22.100  9286-9318  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@100fc52[id=0]} Posting surface closed
+                                                                                                    java.lang.Throwable
+                                                                                                      at androidx.camera.camera2.internal.Camera2CameraImpl.postSurfaceClosedError(Camera2CameraImpl.java:1302)
+                                                                                                      at androidx.camera.camera2.internal.Camera2CameraImpl$2.onFailure(Camera2CameraImpl.java:1244)
+                                                                                                      at androidx.camera.core.impl.utils.futures.Futures$CallbackListener.run(Futures.java:345)
+                                                                                                      at androidx.camera.core.impl.utils.executor.SequentialExecutor$QueueWorker.workOnQueue(SequentialExecutor.java:231)
+                                                                                                      at androidx.camera.core.impl.utils.executor.SequentialExecutor$QueueWorker.run(SequentialExecutor.java:173)
+                                                                                                      at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)
+                                                                                                      at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)
+                                                                                                      at java.lang.Thread.run(Thread.java:1119)
+2025-08-16 16:49:22.106  9286-9286  DeferrableSurface       com.msidecoder.scanner               D  surface closed,  useCount=0 closed=true androidx.camera.core.processing.SurfaceEdge$SettableSurface@5988b32
+2025-08-16 16:49:22.106  9286-9286  DeferrableSurface       com.msidecoder.scanner               D  Surface terminated[total_surfaces=1, used_surfaces=0](androidx.camera.core.processing.SurfaceEdge$SettableSurface@5988b32}
+2025-08-16 16:49:22.106  9286-9286  CameraOrientationUtil   com.msidecoder.scanner               D  getRelativeImageRotation: destRotationDegrees=0, sourceRotationDegrees=90, isOppositeFacing=true, result=90
+2025-08-16 16:49:22.106  9286-9286  DeferrableSurface       com.msidecoder.scanner               D  Surface created[total_surfaces=2, used_surfaces=0](androidx.camera.core.processing.SurfaceEdge$SettableSurface@827caeb}
+2025-08-16 16:49:22.107  9286-9286  DeferrableSurface       com.msidecoder.scanner               D  Surface created[total_surfaces=3, used_surfaces=0](androidx.camera.core.SurfaceRequest$2@a362ac7}
+2025-08-16 16:49:22.107  9286-9286  DeferrableSurface       com.msidecoder.scanner               D  New surface in use[total_surfaces=3, used_surfaces=1](androidx.camera.core.SurfaceRequest$2@a362ac7}
+2025-08-16 16:49:22.107  9286-9286  DeferrableSurface       com.msidecoder.scanner               D  use count+1, useCount=1 androidx.camera.core.SurfaceRequest$2@a362ac7
+2025-08-16 16:49:22.108  9286-9286  CameraOrientationUtil   com.msidecoder.scanner               D  getRelativeImageRotation: destRotationDegrees=0, sourceRotationDegrees=90, isOppositeFacing=true, result=90
+2025-08-16 16:49:22.110  9286-9322  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@100fc52[id=0]} Use case androidx.camera.core.Preview-ba5d9b40-8f43-4a90-a16f-7d932f3defe7124048814 RESET
+2025-08-16 16:49:22.110  9286-9286  PreviewView             com.msidecoder.scanner               D  Surface requested by Preview.
+2025-08-16 16:49:22.111  9286-9322  UseCaseAttachState      com.msidecoder.scanner               D  All use case: [androidx.camera.core.Preview-ba5d9b40-8f43-4a90-a16f-7d932f3defe7124048814, androidx.camera.core.ImageAnalysis-43e38970-795f-47bb-a432-b37a7afd4f5a109930345] for camera: 0
+2025-08-16 16:49:22.111  9286-9322  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@100fc52[id=0]} Resetting Capture Session
+2025-08-16 16:49:22.111  9286-9322  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@100fc52[id=0]} Releasing session in state OPENED
+2025-08-16 16:49:22.112  9286-9322  UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.Preview-ba5d9b40-8f43-4a90-a16f-7d932f3defe7124048814, androidx.camera.core.ImageAnalysis-43e38970-795f-47bb-a432-b37a7afd4f5a109930345] for camera: 0
+2025-08-16 16:49:22.113  9286-9286  NtViewRootImpl          com.msidecoder.scanner               D  mPopUpViewOffsets: offset=(0.0, 0.0), scale=(1.0, 1.0)
+2025-08-16 16:49:22.113  9286-9286  PreviewView             com.msidecoder.scanner               D  Preview transformation info updated. TransformationInfo{getCropRect=Rect(0, 0 - 1600, 1200), getRotationDegrees=90, getTargetRotation=0, hasCameraTransform=true, getSensorToBufferTransform=Matrix{[1.0, 0.0, 0.0][0.0, 1.0, 0.0][0.0, 0.0, 1.0]}, getMirroring=false}
+2025-08-16 16:49:22.113  9286-9286  PreviewTransform        com.msidecoder.scanner               D  Transformation info set: TransformationInfo{getCropRect=Rect(0, 0 - 1600, 1200), getRotationDegrees=90, getTargetRotation=0, hasCameraTransform=true, getSensorToBufferTransform=Matrix{[1.0, 0.0, 0.0][0.0, 1.0, 0.0][0.0, 0.0, 1.0]}, getMirroring=false} 1600x1200 false
+2025-08-16 16:49:22.114  9286-9286  CameraOrientationUtil   com.msidecoder.scanner               D  getRelativeImageRotation: destRotationDegrees=0, sourceRotationDegrees=90, isOppositeFacing=true, result=90
+2025-08-16 16:49:22.115  9286-9286  SurfaceViewImpl         com.msidecoder.scanner               D  Surface set on Preview.
+2025-08-16 16:49:22.119  9286-9322  UseCaseAttachState      com.msidecoder.scanner               D  All use case: [androidx.camera.core.Preview-ba5d9b40-8f43-4a90-a16f-7d932f3defe7124048814, androidx.camera.core.ImageAnalysis-43e38970-795f-47bb-a432-b37a7afd4f5a109930345] for camera: 0
+2025-08-16 16:49:22.120  9286-9322  SyncCaptureSessionBase  com.msidecoder.scanner               D  [androidx.camera.camera2.internal.SynchronizedCaptureSessionBaseImpl@9b953b7] getSurface...done
+2025-08-16 16:49:22.121  9286-9322  CaptureSession          com.msidecoder.scanner               D  Opening capture session.
+2025-08-16 16:49:22.124  9286-9322  DeferrableSurface       com.msidecoder.scanner               D  use count+1, useCount=2 androidx.camera.core.SurfaceRequest$2@a362ac7
+2025-08-16 16:49:22.124  9286-9322  DeferrableSurface       com.msidecoder.scanner               D  New surface in use[total_surfaces=3, used_surfaces=2](androidx.camera.core.impl.ImmediateSurface@90960ab}
+2025-08-16 16:49:22.124  9286-9322  DeferrableSurface       com.msidecoder.scanner               D  use count+1, useCount=1 androidx.camera.core.impl.ImmediateSurface@90960ab
+2025-08-16 16:49:22.200  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:22.301  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:22.351  9286-9322  CaptureSession          com.msidecoder.scanner               D  Attempting to send capture request onConfigured
+2025-08-16 16:49:22.351  9286-9322  CaptureSession          com.msidecoder.scanner               D  Issuing request for session.
+2025-08-16 16:49:22.352  9286-9322  Camera2Cap...estBuilder com.msidecoder.scanner               D  createCaptureRequest
+2025-08-16 16:49:22.354  9286-9322  CaptureSession          com.msidecoder.scanner               D  Issuing capture request.
+2025-08-16 16:49:22.354  9286-9322  CaptureSession          com.msidecoder.scanner               D  Skipping capture request with invalid surface: androidx.camera.core.SurfaceRequest$2@d5bb4e0
+2025-08-16 16:49:22.354  9286-9322  CaptureSession          com.msidecoder.scanner               D  Skipping issuing burst request due to no valid request elements
+2025-08-16 16:49:22.354  9286-9322  CaptureSession          com.msidecoder.scanner               D  CameraCaptureSession.onConfigured() mState=OPENED
+2025-08-16 16:49:22.354  9286-9322  CaptureSession          com.msidecoder.scanner               D  CameraCaptureSession.onReady() OPENED
+2025-08-16 16:49:22.403  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:22.504  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:22.594  9286-9286  CameraOrientationUtil   com.msidecoder.scanner               D  getRelativeImageRotation: destRotationDegrees=0, sourceRotationDegrees=90, isOppositeFacing=true, result=90
+2025-08-16 16:49:22.602  9286-9318  StreamStateObserver     com.msidecoder.scanner               D  Update Preview stream state to STREAMING
+2025-08-16 16:49:22.604  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:22.625  9286-9313  TransportR...EventStore com.msidecoder.scanner               D  Storing event with priority=VERY_LOW, name=FIREBASE_ML_SDK for destination cct
+2025-08-16 16:49:22.628  9286-9313  TransportR...oScheduler com.msidecoder.scanner               D  Upload for context TransportContext(cct, VERY_LOW, MSRodHRwczovL2ZpcmViYXNlbG9nZ2luZy5nb29nbGVhcGlzLmNvbS92MGNjL2xvZy9iYXRjaD9mb3JtYXQ9anNvbl9wcm90bzNc) is already scheduled. Returning...
+2025-08-16 16:49:22.631  9286-9286  MLKitScanner            com.msidecoder.scanner               D  ML Kit: no barcodes detected in 17ms
+2025-08-16 16:49:22.632  9286-9286  ScannerArbitrator       com.msidecoder.scanner               D  ML Kit no result → trying MSI fallback
+2025-08-16 16:49:22.632  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: Starting ROI detection 640x480, rotation=90
+2025-08-16 16:49:22.632  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  Starting ROI detection: 640x480, rotation=90
+2025-08-16 16:49:22.634  9286-9313  TransportR...EventStore com.msidecoder.scanner               D  Storing event with priority=VERY_LOW, name=FIREBASE_ML_SDK for destination cct
+2025-08-16 16:49:22.636  9286-9313  TransportR...oScheduler com.msidecoder.scanner               D  Upload for context TransportContext(cct, VERY_LOW, MSRodHRwczovL2ZpcmViYXNlbG9nZ2luZy5nb29nbGVhcGlzLmNvbS92MGNjL2xvZy9iYXRjaD9mb3JtYXQ9anNvbl9wcm90bzNc) is already scheduled. Returning...
+2025-08-16 16:49:22.638  9286-9313  TransportR...EventStore com.msidecoder.scanner               D  Storing event with priority=VERY_LOW, name=FIREBASE_ML_SDK for destination cct
+2025-08-16 16:49:22.640  9286-9313  TransportR...oScheduler com.msidecoder.scanner               D  Upload for context TransportContext(cct, VERY_LOW, MSRodHRwczovL2ZpcmViYXNlbG9nZ2luZy5nb29nbGVhcGlzLmNvbS92MGNjL2xvZy9iYXRjaD9mb3JtYXQ9anNvbl9wcm90bzNc) is already scheduled. Returning...
+2025-08-16 16:49:22.705  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:22.805  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:22.905  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:22.942  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  ROI detection completed in 310ms, found 0 candidates
+2025-08-16 16:49:22.942  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: No ROI candidates found in 310ms
+2025-08-16 16:49:22.942  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Adding empty ROI stats to manager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:22.942  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Updating stage to COMPLETE (no candidates)
+2025-08-16 16:49:22.943  9286-9514  ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-16 16:49:22.951  9286-9286  MLKitScanner            com.msidecoder.scanner               D  ML Kit: no barcodes detected in 7ms
+2025-08-16 16:49:22.951  9286-9286  ScannerArbitrator       com.msidecoder.scanner               D  ML Kit no result → trying MSI fallback
+2025-08-16 16:49:22.951  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: Starting ROI detection 640x480, rotation=90
+2025-08-16 16:49:22.951  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  Starting ROI detection: 640x480, rotation=90
+2025-08-16 16:49:22.963  9286-9286  MLKitScanner            com.msidecoder.scanner               D  ML Kit: no barcodes detected in 18ms
+2025-08-16 16:49:22.963  9286-9286  ScannerArbitrator       com.msidecoder.scanner               D  ML Kit no result → trying MSI fallback
+2025-08-16 16:49:23.006  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:23.107  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:23.208  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:23.287  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  ROI detection completed in 336ms, found 0 candidates
+2025-08-16 16:49:23.287  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: No ROI candidates found in 336ms
+2025-08-16 16:49:23.287  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Adding empty ROI stats to manager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:23.287  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Updating stage to COMPLETE (no candidates)
+2025-08-16 16:49:23.287  9286-9514  ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-16 16:49:23.287  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: Starting ROI detection 640x480, rotation=90
+2025-08-16 16:49:23.287  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  Starting ROI detection: 640x480, rotation=90
+2025-08-16 16:49:23.309  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:23.410  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:23.426  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  ROI detection completed in 139ms, found 0 candidates
+2025-08-16 16:49:23.426  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: No ROI candidates found in 139ms
+2025-08-16 16:49:23.426  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Adding empty ROI stats to manager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:23.426  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Updating stage to COMPLETE (no candidates)
+2025-08-16 16:49:23.426  9286-9514  ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-16 16:49:23.442  9286-9286  MLKitScanner            com.msidecoder.scanner               D  ML Kit: no barcodes detected in 15ms
+2025-08-16 16:49:23.442  9286-9286  ScannerArbitrator       com.msidecoder.scanner               D  ML Kit no result → trying MSI fallback
+2025-08-16 16:49:23.443  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: Starting ROI detection 640x480, rotation=90
+2025-08-16 16:49:23.443  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  Starting ROI detection: 640x480, rotation=90
+2025-08-16 16:49:23.455  9286-9286  MLKitScanner            com.msidecoder.scanner               D  ML Kit: no barcodes detected in 26ms
+2025-08-16 16:49:23.455  9286-9286  ScannerArbitrator       com.msidecoder.scanner               D  ML Kit no result → trying MSI fallback
+2025-08-16 16:49:23.467  9286-9286  MLKitScanner            com.msidecoder.scanner               D  ML Kit: no barcodes detected in 26ms
+2025-08-16 16:49:23.468  9286-9286  ScannerArbitrator       com.msidecoder.scanner               D  ML Kit no result → trying MSI fallback
+2025-08-16 16:49:23.510  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:23.577  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  ROI detection completed in 134ms, found 0 candidates
+2025-08-16 16:49:23.577  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: No ROI candidates found in 134ms
+2025-08-16 16:49:23.577  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Adding empty ROI stats to manager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:23.577  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Updating stage to COMPLETE (no candidates)
+2025-08-16 16:49:23.577  9286-9514  ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-16 16:49:23.577  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: Starting ROI detection 640x480, rotation=90
+2025-08-16 16:49:23.577  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  Starting ROI detection: 640x480, rotation=90
+2025-08-16 16:49:23.611  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:23.712  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:23.758  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  ROI detection completed in 181ms, found 0 candidates
+2025-08-16 16:49:23.758  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: No ROI candidates found in 181ms
+2025-08-16 16:49:23.758  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Adding empty ROI stats to manager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:23.758  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Updating stage to COMPLETE (no candidates)
+2025-08-16 16:49:23.758  9286-9514  ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-16 16:49:23.758  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: Starting ROI detection 640x480, rotation=90
+2025-08-16 16:49:23.758  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  Starting ROI detection: 640x480, rotation=90
+2025-08-16 16:49:23.812  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:23.913  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:23.922  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  ROI detection completed in 164ms, found 0 candidates
+2025-08-16 16:49:23.922  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: No ROI candidates found in 164ms
+2025-08-16 16:49:23.922  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Adding empty ROI stats to manager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:23.922  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Updating stage to COMPLETE (no candidates)
+2025-08-16 16:49:23.922  9286-9514  ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-16 16:49:23.946  9286-9286  MLKitScanner            com.msidecoder.scanner               D  ML Kit: no barcodes detected in 21ms
+2025-08-16 16:49:23.946  9286-9286  ScannerArbitrator       com.msidecoder.scanner               D  ML Kit no result → trying MSI fallback
+2025-08-16 16:49:23.946  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: Starting ROI detection 640x480, rotation=90
+2025-08-16 16:49:23.946  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  Starting ROI detection: 640x480, rotation=90
+2025-08-16 16:49:23.959  9286-9286  MLKitScanner            com.msidecoder.scanner               D  ML Kit: no barcodes detected in 32ms
+2025-08-16 16:49:23.959  9286-9286  ScannerArbitrator       com.msidecoder.scanner               D  ML Kit no result → trying MSI fallback
+2025-08-16 16:49:23.970  9286-9286  MLKitScanner            com.msidecoder.scanner               D  ML Kit: no barcodes detected in 30ms
+2025-08-16 16:49:23.970  9286-9286  ScannerArbitrator       com.msidecoder.scanner               D  ML Kit no result → trying MSI fallback
+2025-08-16 16:49:24.014  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:24.090  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  ROI detection completed in 144ms, found 0 candidates
+2025-08-16 16:49:24.090  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: No ROI candidates found in 144ms
+2025-08-16 16:49:24.090  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Adding empty ROI stats to manager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:24.091  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Updating stage to COMPLETE (no candidates)
+2025-08-16 16:49:24.091  9286-9514  ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-16 16:49:24.091  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: Starting ROI detection 640x480, rotation=90
+2025-08-16 16:49:24.091  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  Starting ROI detection: 640x480, rotation=90
+2025-08-16 16:49:24.241  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: No ROI candidates found in 150ms
+2025-08-16 16:49:24.241  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Adding empty ROI stats to manager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:24.242  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Updating stage to COMPLETE (no candidates)
+2025-08-16 16:49:24.242  9286-9514  ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-16 16:49:24.242  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: Starting ROI detection 640x480, rotation=90
+2025-08-16 16:49:24.242  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  Starting ROI detection: 640x480, rotation=90
+2025-08-16 16:49:24.315  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:24.399  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  ROI detection completed in 157ms, found 0 candidates
+2025-08-16 16:49:24.399  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: No ROI candidates found in 157ms
+2025-08-16 16:49:24.399  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Adding empty ROI stats to manager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:24.399  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Updating stage to COMPLETE (no candidates)
+2025-08-16 16:49:24.399  9286-9514  ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-16 16:49:24.415  9286-9286  MLKitScanner            com.msidecoder.scanner               D  ML Kit: no barcodes detected in 15ms
+2025-08-16 16:49:24.415  9286-9286  ScannerArbitrator       com.msidecoder.scanner               D  ML Kit no result → trying MSI fallback
+2025-08-16 16:49:24.415  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: Starting ROI detection 640x480, rotation=90
+2025-08-16 16:49:24.415  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  Starting ROI detection: 640x480, rotation=90
+2025-08-16 16:49:24.417  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:24.429  9286-9286  MLKitScanner            com.msidecoder.scanner               D  ML Kit: no barcodes detected in 27ms
+2025-08-16 16:49:24.429  9286-9286  ScannerArbitrator       com.msidecoder.scanner               D  ML Kit no result → trying MSI fallback
+2025-08-16 16:49:24.441  9286-9286  MLKitScanner            com.msidecoder.scanner               D  ML Kit: no barcodes detected in 35ms
+2025-08-16 16:49:24.441  9286-9286  ScannerArbitrator       com.msidecoder.scanner               D  ML Kit no result → trying MSI fallback
+2025-08-16 16:49:24.517  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:24.575  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  ROI detection completed in 160ms, found 0 candidates
+2025-08-16 16:49:24.575  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: No ROI candidates found in 160ms
+2025-08-16 16:49:24.575  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Adding empty ROI stats to manager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:24.575  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Updating stage to COMPLETE (no candidates)
+2025-08-16 16:49:24.575  9286-9514  ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-16 16:49:24.575  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: Starting ROI detection 640x480, rotation=90
+2025-08-16 16:49:24.575  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  Starting ROI detection: 640x480, rotation=90
+2025-08-16 16:49:24.619  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:24.720  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:24.745  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  ROI detection completed in 170ms, found 0 candidates
+2025-08-16 16:49:24.745  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: No ROI candidates found in 170ms
+2025-08-16 16:49:24.745  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Adding empty ROI stats to manager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:24.745  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Updating stage to COMPLETE (no candidates)
+2025-08-16 16:49:24.745  9286-9514  ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-16 16:49:24.747  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: Starting ROI detection 640x480, rotation=90
+2025-08-16 16:49:24.747  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  Starting ROI detection: 640x480, rotation=90
+2025-08-16 16:49:24.780  9286-9286  MLKitScanner            com.msidecoder.scanner               D  ML Kit: no barcodes detected in 34ms
+2025-08-16 16:49:24.780  9286-9286  ScannerArbitrator       com.msidecoder.scanner               D  ML Kit no result → trying MSI fallback
+2025-08-16 16:49:24.820  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:24.921  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:24.929  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  ROI detection completed in 182ms, found 0 candidates
+2025-08-16 16:49:24.929  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: No ROI candidates found in 182ms
+2025-08-16 16:49:24.929  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Adding empty ROI stats to manager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:24.929  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Updating stage to COMPLETE (no candidates)
+2025-08-16 16:49:24.929  9286-9514  ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-16 16:49:24.932  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: Starting ROI detection 640x480, rotation=90
+2025-08-16 16:49:24.932  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  Starting ROI detection: 640x480, rotation=90
+2025-08-16 16:49:24.948  9286-9286  MLKitScanner            com.msidecoder.scanner               D  ML Kit: no barcodes detected in 17ms
+2025-08-16 16:49:24.948  9286-9286  ScannerArbitrator       com.msidecoder.scanner               D  ML Kit no result → trying MSI fallback
+2025-08-16 16:49:25.022  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:25.123  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:25.125  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  ROI detection completed in 193ms, found 0 candidates
+2025-08-16 16:49:25.125  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: No ROI candidates found in 193ms
+2025-08-16 16:49:25.125  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Adding empty ROI stats to manager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:25.125  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Updating stage to COMPLETE (no candidates)
+2025-08-16 16:49:25.125  9286-9514  ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-16 16:49:25.128  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: Starting ROI detection 640x480, rotation=90
+2025-08-16 16:49:25.128  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  Starting ROI detection: 640x480, rotation=90
+2025-08-16 16:49:25.147  9286-9286  MLKitScanner            com.msidecoder.scanner               D  ML Kit: no barcodes detected in 20ms
+2025-08-16 16:49:25.147  9286-9286  ScannerArbitrator       com.msidecoder.scanner               D  ML Kit no result → trying MSI fallback
+2025-08-16 16:49:25.224  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:25.320  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  ROI detection completed in 192ms, found 0 candidates
+2025-08-16 16:49:25.320  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: No ROI candidates found in 192ms
+2025-08-16 16:49:25.320  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Adding empty ROI stats to manager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:25.320  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Updating stage to COMPLETE (no candidates)
+2025-08-16 16:49:25.320  9286-9514  ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-16 16:49:25.321  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: Starting ROI detection 640x480, rotation=90
+2025-08-16 16:49:25.321  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  Starting ROI detection: 640x480, rotation=90
+2025-08-16 16:49:25.325  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:25.341  9286-9286  MLKitScanner            com.msidecoder.scanner               D  ML Kit: no barcodes detected in 20ms
+2025-08-16 16:49:25.341  9286-9286  ScannerArbitrator       com.msidecoder.scanner               D  ML Kit no result → trying MSI fallback
+2025-08-16 16:49:25.425  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:25.514  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  ROI detection completed in 193ms, found 0 candidates
+2025-08-16 16:49:25.514  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: No ROI candidates found in 193ms
+2025-08-16 16:49:25.514  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Adding empty ROI stats to manager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:25.514  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Updating stage to COMPLETE (no candidates)
+2025-08-16 16:49:25.514  9286-9514  ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-16 16:49:25.516  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: Starting ROI detection 640x480, rotation=90
+2025-08-16 16:49:25.516  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  Starting ROI detection: 640x480, rotation=90
+2025-08-16 16:49:25.526  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:25.541  9286-9286  MLKitScanner            com.msidecoder.scanner               D  ML Kit: no barcodes detected in 26ms
+2025-08-16 16:49:25.541  9286-9286  ScannerArbitrator       com.msidecoder.scanner               D  ML Kit no result → trying MSI fallback
+2025-08-16 16:49:25.627  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:25.705  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Estimating orientation for ROI: 176,60 67x20
+2025-08-16 16:49:25.705  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Structure tensor: Gxx=0,0257, Gyy=0,0428, Gxy=0,0033
+2025-08-16 16:49:25.705  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Orientation estimated: 79,4° in 0ms
+2025-08-16 16:49:25.705  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  ROI detection completed in 189ms, found 1 candidates
+2025-08-16 16:49:25.705  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: Found 1 ROI candidates, best: 176,60 67x20 score=0.6474721
+2025-08-16 16:49:25.705  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Adding ROI stats to manager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:25.705  9286-9514  MsiDebugManager         com.msidecoder.scanner               D  T-101: ROI détecté - sauvegarde pour persistance (1 candidats)
+2025-08-16 16:49:25.705  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Updating stage to COMPLETE
+2025-08-16 16:49:25.705  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: ROI detection completed in 189ms - no decoding yet (Phase 1)
+2025-08-16 16:49:25.705  9286-9514  ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-16 16:49:25.707  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: Starting ROI detection 640x480, rotation=90
+2025-08-16 16:49:25.707  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  Starting ROI detection: 640x480, rotation=90
+2025-08-16 16:49:25.720  9286-9286  MLKitScanner            com.msidecoder.scanner               D  ML Kit: no barcodes detected in 14ms
+2025-08-16 16:49:25.720  9286-9286  ScannerArbitrator       com.msidecoder.scanner               D  ML Kit no result → trying MSI fallback
+2025-08-16 16:49:25.728  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:25.728  9286-9286  MsiDebugManager         com.msidecoder.scanner               D  T-101: Utilisation ROI persistante (23ms ago)
+2025-08-16 16:49:25.828  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:25.828  9286-9286  MsiDebugManager         com.msidecoder.scanner               D  T-101: Utilisation ROI persistante (123ms ago)
+2025-08-16 16:49:25.882  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Estimating orientation for ROI: 503,27 67x22
+2025-08-16 16:49:25.882  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Structure tensor: Gxx=0,0296, Gyy=0,0210, Gxy=-0,0161
+2025-08-16 16:49:25.882  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Orientation estimated: -37,5° in 0ms
+2025-08-16 16:49:25.882  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  ROI detection completed in 175ms, found 1 candidates
+2025-08-16 16:49:25.882  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: Found 1 ROI candidates, best: 503,27 67x22 score=0.61784923
+2025-08-16 16:49:25.882  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Adding ROI stats to manager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:25.882  9286-9514  MsiDebugManager         com.msidecoder.scanner               D  T-101: ROI détecté - sauvegarde pour persistance (1 candidats)
+2025-08-16 16:49:25.882  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Updating stage to COMPLETE
+2025-08-16 16:49:25.882  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: ROI detection completed in 175ms - no decoding yet (Phase 1)
+2025-08-16 16:49:25.882  9286-9514  ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-16 16:49:25.885  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: Starting ROI detection 640x480, rotation=90
+2025-08-16 16:49:25.885  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  Starting ROI detection: 640x480, rotation=90
+2025-08-16 16:49:25.899  9286-9286  MLKitScanner            com.msidecoder.scanner               D  ML Kit: no barcodes detected in 15ms
+2025-08-16 16:49:25.899  9286-9286  ScannerArbitrator       com.msidecoder.scanner               D  ML Kit no result → trying MSI fallback
+2025-08-16 16:49:25.928  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:25.928  9286-9286  MsiDebugManager         com.msidecoder.scanner               D  T-101: Utilisation ROI persistante (46ms ago)
+2025-08-16 16:49:26.028  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:26.029  9286-9286  MsiDebugManager         com.msidecoder.scanner               D  T-101: Utilisation ROI persistante (146ms ago)
+2025-08-16 16:49:26.062  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Estimating orientation for ROI: 546,444 94x23
+2025-08-16 16:49:26.062  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Structure tensor: Gxx=0,0336, Gyy=0,0197, Gxy=-0,0191
+2025-08-16 16:49:26.062  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Orientation estimated: -35,0° in 1ms
+2025-08-16 16:49:26.062  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  ROI detection completed in 177ms, found 1 candidates
+2025-08-16 16:49:26.062  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: Found 1 ROI candidates, best: 546,444 94x23 score=0.72252905
+2025-08-16 16:49:26.062  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Adding ROI stats to manager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:26.062  9286-9514  MsiDebugManager         com.msidecoder.scanner               D  T-101: ROI détecté - sauvegarde pour persistance (1 candidats)
+2025-08-16 16:49:26.062  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Updating stage to COMPLETE
+2025-08-16 16:49:26.062  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: ROI detection completed in 177ms - no decoding yet (Phase 1)
+2025-08-16 16:49:26.062  9286-9514  ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-16 16:49:26.065  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: Starting ROI detection 640x480, rotation=90
+2025-08-16 16:49:26.065  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  Starting ROI detection: 640x480, rotation=90
+2025-08-16 16:49:26.081  9286-9286  MLKitScanner            com.msidecoder.scanner               D  ML Kit: no barcodes detected in 17ms
+2025-08-16 16:49:26.081  9286-9286  ScannerArbitrator       com.msidecoder.scanner               D  ML Kit no result → trying MSI fallback
+2025-08-16 16:49:26.129  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:26.129  9286-9286  MsiDebugManager         com.msidecoder.scanner               D  T-101: Utilisation ROI persistante (67ms ago)
+2025-08-16 16:49:26.230  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:26.230  9286-9286  MsiDebugManager         com.msidecoder.scanner               D  T-101: Utilisation ROI persistante (168ms ago)
+2025-08-16 16:49:26.255  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Estimating orientation for ROI: 465,1 116x29
+2025-08-16 16:49:26.256  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Structure tensor: Gxx=0,0289, Gyy=0,0199, Gxy=-0,0133
+2025-08-16 16:49:26.256  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Orientation estimated: -35,7° in 1ms
+2025-08-16 16:49:26.256  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Estimating orientation for ROI: 183,1 118x24
+2025-08-16 16:49:26.256  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Structure tensor: Gxx=0,0270, Gyy=0,0132, Gxy=-0,0124
+2025-08-16 16:49:26.256  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Orientation estimated: -30,5° in 0ms
+2025-08-16 16:49:26.256  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  ROI detection completed in 191ms, found 2 candidates
+2025-08-16 16:49:26.256  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: Found 2 ROI candidates, best: 465,1 116x29 score=0.7126269
+2025-08-16 16:49:26.256  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Adding ROI stats to manager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:26.256  9286-9514  MsiDebugManager         com.msidecoder.scanner               D  T-101: ROI détecté - sauvegarde pour persistance (2 candidats)
+2025-08-16 16:49:26.256  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Updating stage to COMPLETE
+2025-08-16 16:49:26.256  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: ROI detection completed in 191ms - no decoding yet (Phase 1)
+2025-08-16 16:49:26.256  9286-9514  ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-16 16:49:26.258  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: Starting ROI detection 640x480, rotation=90
+2025-08-16 16:49:26.258  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  Starting ROI detection: 640x480, rotation=90
+2025-08-16 16:49:26.271  9286-9286  MLKitScanner            com.msidecoder.scanner               D  ML Kit: no barcodes detected in 14ms
+2025-08-16 16:49:26.271  9286-9286  ScannerArbitrator       com.msidecoder.scanner               D  ML Kit no result → trying MSI fallback
+2025-08-16 16:49:26.330  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:26.330  9286-9286  MsiDebugManager         com.msidecoder.scanner               D  T-101: Utilisation ROI persistante (74ms ago)
+2025-08-16 16:49:26.431  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:26.431  9286-9286  MsiDebugManager         com.msidecoder.scanner               D  T-101: Utilisation ROI persistante (175ms ago)
+2025-08-16 16:49:26.452  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Estimating orientation for ROI: 191,61 97x25
+2025-08-16 16:49:26.452  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Structure tensor: Gxx=0,0265, Gyy=0,0559, Gxy=0,0122
+2025-08-16 16:49:26.453  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Orientation estimated: 70,2° in 0ms
+2025-08-16 16:49:26.453  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Estimating orientation for ROI: 237,10 88x23
+2025-08-16 16:49:26.453  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Structure tensor: Gxx=0,0365, Gyy=0,0176, Gxy=-0,0157
+2025-08-16 16:49:26.453  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Orientation estimated: -29,5° in 0ms
+2025-08-16 16:49:26.453  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Estimating orientation for ROI: 473,4 108x30
+2025-08-16 16:49:26.453  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Structure tensor: Gxx=0,0282, Gyy=0,0190, Gxy=-0,0131
+2025-08-16 16:49:26.453  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Orientation estimated: -35,3° in 0ms
+2025-08-16 16:49:26.453  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  ROI detection completed in 195ms, found 3 candidates
+2025-08-16 16:49:26.453  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: Found 3 ROI candidates, best: 191,61 97x25 score=0.7029302
+2025-08-16 16:49:26.453  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Adding ROI stats to manager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:26.453  9286-9514  MsiDebugManager         com.msidecoder.scanner               D  T-101: ROI détecté - sauvegarde pour persistance (3 candidats)
+2025-08-16 16:49:26.453  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Updating stage to COMPLETE
+2025-08-16 16:49:26.453  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: ROI detection completed in 195ms - no decoding yet (Phase 1)
+2025-08-16 16:49:26.453  9286-9514  ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-16 16:49:26.455  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: Starting ROI detection 640x480, rotation=90
+2025-08-16 16:49:26.455  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  Starting ROI detection: 640x480, rotation=90
+2025-08-16 16:49:26.477  9286-9286  MLKitScanner            com.msidecoder.scanner               D  ML Kit: no barcodes detected in 23ms
+2025-08-16 16:49:26.477  9286-9286  ScannerArbitrator       com.msidecoder.scanner               D  ML Kit no result → trying MSI fallback
+2025-08-16 16:49:26.531  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:26.531  9286-9286  MsiDebugManager         com.msidecoder.scanner               D  T-101: Utilisation ROI persistante (78ms ago)
+2025-08-16 16:49:26.631  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:26.632  9286-9286  MsiDebugManager         com.msidecoder.scanner               D  T-101: Utilisation ROI persistante (179ms ago)
+2025-08-16 16:49:26.637  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Estimating orientation for ROI: 244,12 79x23
+2025-08-16 16:49:26.637  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Structure tensor: Gxx=0,0383, Gyy=0,0182, Gxy=-0,0163
+2025-08-16 16:49:26.637  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Orientation estimated: -29,2° in 0ms
+2025-08-16 16:49:26.637  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Estimating orientation for ROI: 558,150 82x27
+2025-08-16 16:49:26.637  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Structure tensor: Gxx=0,0305, Gyy=0,0208, Gxy=-0,0175
+2025-08-16 16:49:26.637  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Orientation estimated: -37,3° in 0ms
+2025-08-16 16:49:26.637  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  ROI detection completed in 182ms, found 2 candidates
+2025-08-16 16:49:26.638  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: Found 2 ROI candidates, best: 244,12 79x23 score=0.659941
+2025-08-16 16:49:26.638  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Adding ROI stats to manager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:26.638  9286-9514  MsiDebugManager         com.msidecoder.scanner               D  T-101: ROI détecté - sauvegarde pour persistance (2 candidats)
+2025-08-16 16:49:26.638  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Updating stage to COMPLETE
+2025-08-16 16:49:26.638  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: ROI detection completed in 182ms - no decoding yet (Phase 1)
+2025-08-16 16:49:26.638  9286-9514  ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-16 16:49:26.640  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: Starting ROI detection 640x480, rotation=90
+2025-08-16 16:49:26.640  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  Starting ROI detection: 640x480, rotation=90
+2025-08-16 16:49:26.655  9286-9286  MLKitScanner            com.msidecoder.scanner               D  ML Kit: no barcodes detected in 16ms
+2025-08-16 16:49:26.655  9286-9286  ScannerArbitrator       com.msidecoder.scanner               D  ML Kit no result → trying MSI fallback
+2025-08-16 16:49:26.732  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:26.732  9286-9286  MsiDebugManager         com.msidecoder.scanner               D  T-101: Utilisation ROI persistante (94ms ago)
+2025-08-16 16:49:26.826  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Estimating orientation for ROI: 559,42 81x24
+2025-08-16 16:49:26.826  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Structure tensor: Gxx=0,0262, Gyy=0,0195, Gxy=-0,0117
+2025-08-16 16:49:26.826  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Orientation estimated: -37,0° in 0ms
+2025-08-16 16:49:26.827  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Estimating orientation for ROI: 557,315 63x20
+2025-08-16 16:49:26.827  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Structure tensor: Gxx=0,0317, Gyy=0,0206, Gxy=-0,0188
+2025-08-16 16:49:26.827  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Orientation estimated: -36,8° in 0ms
+2025-08-16 16:49:26.827  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  ROI detection completed in 187ms, found 2 candidates
+2025-08-16 16:49:26.827  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: Found 2 ROI candidates, best: 559,42 81x24 score=0.6490192
+2025-08-16 16:49:26.827  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Adding ROI stats to manager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:26.827  9286-9514  MsiDebugManager         com.msidecoder.scanner               D  T-101: ROI détecté - sauvegarde pour persistance (2 candidats)
+2025-08-16 16:49:26.827  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Updating stage to COMPLETE
+2025-08-16 16:49:26.827  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: ROI detection completed in 187ms - no decoding yet (Phase 1)
+2025-08-16 16:49:26.827  9286-9514  ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-16 16:49:26.829  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: Starting ROI detection 640x480, rotation=90
+2025-08-16 16:49:26.829  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  Starting ROI detection: 640x480, rotation=90
+2025-08-16 16:49:26.833  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:26.833  9286-9286  MsiDebugManager         com.msidecoder.scanner               D  T-101: Utilisation ROI persistante (6ms ago)
+2025-08-16 16:49:26.844  9286-9286  MLKitScanner            com.msidecoder.scanner               D  ML Kit: no barcodes detected in 16ms
+2025-08-16 16:49:26.845  9286-9286  ScannerArbitrator       com.msidecoder.scanner               D  ML Kit no result → trying MSI fallback
+2025-08-16 16:49:26.933  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:26.933  9286-9286  MsiDebugManager         com.msidecoder.scanner               D  T-101: Utilisation ROI persistante (106ms ago)
+2025-08-16 16:49:27.026  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Estimating orientation for ROI: 190,54 98x26
+2025-08-16 16:49:27.026  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Structure tensor: Gxx=0,0262, Gyy=0,0548, Gxy=0,0113
+2025-08-16 16:49:27.026  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Orientation estimated: 70,9° in 0ms
+2025-08-16 16:49:27.026  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Estimating orientation for ROI: 485,1 92x26
+2025-08-16 16:49:27.026  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Structure tensor: Gxx=0,0319, Gyy=0,0199, Gxy=-0,0149
+2025-08-16 16:49:27.027  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Orientation estimated: -34,1° in 1ms
+2025-08-16 16:49:27.027  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  ROI detection completed in 198ms, found 2 candidates
+2025-08-16 16:49:27.027  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: Found 2 ROI candidates, best: 190,54 98x26 score=0.69145155
+2025-08-16 16:49:27.027  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Adding ROI stats to manager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:27.027  9286-9514  MsiDebugManager         com.msidecoder.scanner               D  T-101: ROI détecté - sauvegarde pour persistance (2 candidats)
+2025-08-16 16:49:27.027  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Updating stage to COMPLETE
+2025-08-16 16:49:27.027  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: ROI detection completed in 198ms - no decoding yet (Phase 1)
+2025-08-16 16:49:27.027  9286-9514  ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-16 16:49:27.029  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: Starting ROI detection 640x480, rotation=90
+2025-08-16 16:49:27.029  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  Starting ROI detection: 640x480, rotation=90
+2025-08-16 16:49:27.034  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:27.034  9286-9286  MsiDebugManager         com.msidecoder.scanner               D  T-101: Utilisation ROI persistante (7ms ago)
+2025-08-16 16:49:27.053  9286-9286  MLKitScanner            com.msidecoder.scanner               D  ML Kit: no barcodes detected in 24ms
+2025-08-16 16:49:27.053  9286-9286  ScannerArbitrator       com.msidecoder.scanner               D  ML Kit no result → trying MSI fallback
+2025-08-16 16:49:27.135  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:27.135  9286-9286  MsiDebugManager         com.msidecoder.scanner               D  T-101: Utilisation ROI persistante (108ms ago)
+2025-08-16 16:49:27.218  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Estimating orientation for ROI: 148,46 141x26
+2025-08-16 16:49:27.218  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Structure tensor: Gxx=0,0258, Gyy=0,0402, Gxy=0,0039
+2025-08-16 16:49:27.218  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Orientation estimated: 75,8° in 0ms
+2025-08-16 16:49:27.218  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Estimating orientation for ROI: 513,77 72x23
+2025-08-16 16:49:27.218  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Structure tensor: Gxx=0,0317, Gyy=0,0209, Gxy=-0,0175
+2025-08-16 16:49:27.219  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Orientation estimated: -36,5° in 1ms
+2025-08-16 16:49:27.219  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  ROI detection completed in 190ms, found 2 candidates
+2025-08-16 16:49:27.219  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: Found 2 ROI candidates, best: 148,46 141x26 score=0.855045
+2025-08-16 16:49:27.219  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Adding ROI stats to manager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:27.219  9286-9514  MsiDebugManager         com.msidecoder.scanner               D  T-101: ROI détecté - sauvegarde pour persistance (2 candidats)
+2025-08-16 16:49:27.219  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Updating stage to COMPLETE
+2025-08-16 16:49:27.219  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: ROI detection completed in 190ms - no decoding yet (Phase 1)
+2025-08-16 16:49:27.219  9286-9514  ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-16 16:49:27.221  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: Starting ROI detection 640x480, rotation=90
+2025-08-16 16:49:27.221  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  Starting ROI detection: 640x480, rotation=90
+2025-08-16 16:49:27.230  9286-9286  MSIScanner              com.msidecoder.scanner               D  Stopping scanner
+2025-08-16 16:49:27.231  9286-9286  DeferrableSurface       com.msidecoder.scanner               D  surface closed,  useCount=1 closed=true androidx.camera.core.impl.ImmediateSurface@90960ab
+2025-08-16 16:49:27.231  9286-9286  MSIScanner              com.msidecoder.scanner               D  Scanner stopped - ImageAnalysis unbound
+2025-08-16 16:49:27.233  9286-9322  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@100fc52[id=0]} Use cases [androidx.camera.core.ImageAnalysis-43e38970-795f-47bb-a432-b37a7afd4f5a109930345] now DETACHED for camera
+2025-08-16 16:49:27.235  9286-9322  UseCaseAttachState      com.msidecoder.scanner               D  All use case: [androidx.camera.core.Preview-ba5d9b40-8f43-4a90-a16f-7d932f3defe7124048814] for camera: 0
+2025-08-16 16:49:27.237  9286-9322  UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.Preview-ba5d9b40-8f43-4a90-a16f-7d932f3defe7124048814] for camera: 0
+2025-08-16 16:49:27.241  9286-9322  CaptureSession          com.msidecoder.scanner               D  Attempting to submit CaptureRequest after setting
+2025-08-16 16:49:27.241  9286-9322  CaptureSession          com.msidecoder.scanner               D  Issuing request for session.
+2025-08-16 16:49:27.243  9286-9322  Camera2Cap...estBuilder com.msidecoder.scanner               D  createCaptureRequest
+2025-08-16 16:49:27.244  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:27.244  9286-9286  MsiDebugManager         com.msidecoder.scanner               D  T-101: Utilisation ROI persistante (25ms ago)
+2025-08-16 16:49:27.246  9286-9322  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@100fc52[id=0]} Resetting Capture Session
+2025-08-16 16:49:27.256  9286-9286  MLKitScanner            com.msidecoder.scanner               D  ML Kit: no barcodes detected in 36ms
+2025-08-16 16:49:27.256  9286-9286  ScannerArbitrator       com.msidecoder.scanner               D  ML Kit no result → trying MSI fallback
+2025-08-16 16:49:27.266  9286-9322  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@100fc52[id=0]} Releasing session in state OPENED
+2025-08-16 16:49:27.267  9286-9322  UseCaseAttachState      com.msidecoder.scanner               D  All use case: [androidx.camera.core.Preview-ba5d9b40-8f43-4a90-a16f-7d932f3defe7124048814] for camera: 0
+2025-08-16 16:49:27.268  9286-9322  CaptureSession          com.msidecoder.scanner               D  onSessionFinished()
+2025-08-16 16:49:27.268  9286-9322  SyncCaptureSessionBase  com.msidecoder.scanner               D  [androidx.camera.camera2.internal.SynchronizedCaptureSessionBaseImpl@5afa869] getSurface...done
+2025-08-16 16:49:27.268  9286-9322  CaptureSession          com.msidecoder.scanner               D  Opening capture session.
+2025-08-16 16:49:27.270  9286-9322  DeferrableSurface       com.msidecoder.scanner               D  use count+1, useCount=3 androidx.camera.core.SurfaceRequest$2@a362ac7
+2025-08-16 16:49:27.344  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:27.344  9286-9286  MsiDebugManager         com.msidecoder.scanner               D  T-101: Utilisation ROI persistante (125ms ago)
+2025-08-16 16:49:27.404  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  ROI detection completed in 183ms, found 0 candidates
+2025-08-16 16:49:27.404  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: No ROI candidates found in 183ms
+2025-08-16 16:49:27.404  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Adding empty ROI stats to manager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:27.404  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Updating stage to COMPLETE (no candidates)
+2025-08-16 16:49:27.404  9286-9514  ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-16 16:49:27.405  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: Starting ROI detection 640x480, rotation=90
+2025-08-16 16:49:27.405  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  Starting ROI detection: 640x480, rotation=90
+2025-08-16 16:49:27.444  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:27.444  9286-9286  MsiDebugManager         com.msidecoder.scanner               D  T-101: Utilisation ROI persistante (225ms ago)
+2025-08-16 16:49:27.545  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:27.545  9286-9286  MsiDebugManager         com.msidecoder.scanner               D  T-101: Utilisation ROI persistante (326ms ago)
+2025-08-16 16:49:27.608  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Estimating orientation for ROI: 81,453 91x26
+2025-08-16 16:49:27.609  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Structure tensor: Gxx=0,0275, Gyy=0,0116, Gxy=-0,0092
+2025-08-16 16:49:27.609  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Orientation estimated: -24,6° in 1ms
+2025-08-16 16:49:27.609  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Estimating orientation for ROI: 157,47 78x24
+2025-08-16 16:49:27.609  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Structure tensor: Gxx=0,0273, Gyy=0,0137, Gxy=-0,0122
+2025-08-16 16:49:27.609  9286-9514  OrientationEstimator    com.msidecoder.scanner               D  Orientation estimated: -30,4° in 0ms
+2025-08-16 16:49:27.609  9286-9514  MsiRoiDetector          com.msidecoder.scanner               D  ROI detection completed in 204ms, found 2 candidates
+2025-08-16 16:49:27.609  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: Found 2 ROI candidates, best: 81,453 91x26 score=0.66109556
+2025-08-16 16:49:27.609  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Adding ROI stats to manager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:27.609  9286-9514  MsiDebugManager         com.msidecoder.scanner               D  T-101: ROI détecté - sauvegarde pour persistance (2 candidats)
+2025-08-16 16:49:27.609  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: DEBUG - Updating stage to COMPLETE
+2025-08-16 16:49:27.609  9286-9514  MSIScanner              com.msidecoder.scanner               D  T-101: ROI detection completed in 204ms - no decoding yet (Phase 1)
+2025-08-16 16:49:27.609  9286-9514  ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-16 16:49:27.645  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:27.746  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:27.806  9286-9322  DeferrableSurface       com.msidecoder.scanner               D  use count-1,  useCount=2 closed=false androidx.camera.core.SurfaceRequest$2@a362ac7
+2025-08-16 16:49:27.806  9286-9322  DeferrableSurface       com.msidecoder.scanner               D  use count-1,  useCount=0 closed=true androidx.camera.core.impl.ImmediateSurface@90960ab
+2025-08-16 16:49:27.806  9286-9322  DeferrableSurface       com.msidecoder.scanner               D  Surface no longer in use[total_surfaces=3, used_surfaces=1](androidx.camera.core.impl.ImmediateSurface@90960ab}
+2025-08-16 16:49:27.806  9286-9322  DeferrableSurface       com.msidecoder.scanner               D  Surface terminated[total_surfaces=2, used_surfaces=1](androidx.camera.core.impl.ImmediateSurface@90960ab}
+2025-08-16 16:49:27.807  9286-9322  CaptureSession          com.msidecoder.scanner               D  Attempting to send capture request onConfigured
+2025-08-16 16:49:27.807  9286-9322  CaptureSession          com.msidecoder.scanner               D  Issuing request for session.
+2025-08-16 16:49:27.807  9286-9322  Camera2Cap...estBuilder com.msidecoder.scanner               D  createCaptureRequest
+2025-08-16 16:49:27.810  9286-9322  CaptureSession          com.msidecoder.scanner               D  CameraCaptureSession.onConfigured() mState=OPENED
+2025-08-16 16:49:27.810  9286-9322  CaptureSession          com.msidecoder.scanner               D  CameraCaptureSession.onReady() OPENED
+2025-08-16 16:49:27.818  9286-9318  CaptureSession          com.msidecoder.scanner               D  CameraCaptureSession.onReady() OPENED
+2025-08-16 16:49:27.846  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:27.946  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:28.047  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:28.148  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:28.249  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:28.350  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:28.451  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:28.551  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:28.651  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:28.751  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:28.851  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:28.953  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:29.053  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:29.155  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:29.255  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:29.355  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:29.455  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:29.555  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:29.656  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:29.757  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:29.858  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:29.959  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:30.060  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:30.161  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:30.262  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:30.363  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:30.464  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:30.564  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:30.665  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:30.766  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:30.867  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:30.967  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:31.068  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:31.169  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b
+2025-08-16 16:49:31.270  9286-9286  SnapshotManager         com.msidecoder.scanner               D  T-101: DEBUG - Returning MsiDebugManager: com.msidecoder.scanner.msi.MsiDebugManager@244b47b

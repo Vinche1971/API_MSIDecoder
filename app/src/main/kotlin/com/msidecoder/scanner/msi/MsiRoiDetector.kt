@@ -17,6 +17,9 @@ import kotlin.math.min
  */
 class MsiRoiDetector {
     
+    // T-102: Orientation estimator for angle calculation
+    private val orientationEstimator = OrientationEstimator()
+    
     companion object {
         private const val TAG = "MsiRoiDetector"
         
@@ -72,10 +75,18 @@ class MsiRoiDetector {
             // Step 6: Filter and score candidates
             val filteredCandidates = filterAndScoreCandidates(candidates, gradientMap, width, height)
             
-            val processingTime = System.currentTimeMillis() - startTime
-            Log.d(TAG, "ROI detection completed in ${processingTime}ms, found ${filteredCandidates.size} candidates")
+            // Step 7: T-102: Estimate orientation for best candidates
+            val candidatesWithOrientation = addOrientationToCandidates(
+                nv21Data, 
+                width, 
+                height, 
+                filteredCandidates.take(MAX_ROI_CANDIDATES)
+            )
             
-            return filteredCandidates.take(MAX_ROI_CANDIDATES)
+            val processingTime = System.currentTimeMillis() - startTime
+            Log.d(TAG, "ROI detection completed in ${processingTime}ms, found ${candidatesWithOrientation.size} candidates")
+            
+            return candidatesWithOrientation
             
         } catch (exception: Exception) {
             val processingTime = System.currentTimeMillis() - startTime
@@ -415,6 +426,27 @@ class MsiRoiDetector {
     }
     
     /**
+     * T-102: Add orientation estimation to ROI candidates
+     */
+    private fun addOrientationToCandidates(
+        nv21Data: ByteArray,
+        frameWidth: Int,
+        frameHeight: Int,
+        candidates: List<RoiCandidate>
+    ): List<RoiCandidate> {
+        
+        return candidates.map { candidate ->
+            // Estimate orientation for this ROI
+            val estimatedAngle = orientationEstimator.estimateOrientation(
+                nv21Data, frameWidth, frameHeight, candidate
+            )
+            
+            // Create new candidate with orientation information
+            candidate.copy(orientationDegrees = estimatedAngle)
+        }
+    }
+    
+    /**
      * Internal data class for bounding box detection
      */
     private data class BoundingBox(
@@ -428,6 +460,7 @@ class MsiRoiDetector {
 
 /**
  * ROI Candidate result
+ * T-102: Extended with orientation estimation
  */
 data class RoiCandidate(
     val x: Int,
@@ -435,5 +468,6 @@ data class RoiCandidate(
     val width: Int,
     val height: Int,
     val score: Float,
-    val gradientVariance: Float
+    val gradientVariance: Float,
+    val orientationDegrees: Float = 0.0f  // T-102: Estimated angle in degrees [-90, +90]
 )

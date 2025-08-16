@@ -229,9 +229,10 @@ L'infrastructure Phase 0 fournit :
 
 ## 📋 Progression Phase 1
 
-### Mini-lots Phase 1 (2/8) ✅ 
+### Mini-lots Phase 1 (3/8) ✅ 
 - **T-100** ✅ : **Diagnostic & Debug Snapshot (APPROVED)**
 - **T-101** ✅ : **ROI Detection Anisotrope + Overlay Unifié (APPROVED)**
+- **T-102** ✅ : **Orientation Estimation Structure Tensor (APPROVED)**
 
 ### T-100 : Monitoring System MSI ⭐
 - ✅ **MsiDebugSnapshot** : Data classes pipeline stages + metrics complètes
@@ -252,14 +253,24 @@ L'infrastructure Phase 0 fournit :
 - ✅ **ROI persistance** : Détections visibles 2.5s (fini le flash invisible)
 - ✅ **Interface temps réel** : Candidats, scores, coordonnées, temps affichés en continu
 
+### T-102 : Orientation Estimation Structure Tensor ⭐⭐⭐
+- ✅ **Structure Tensor** : Algorithme Gx², Gy², GxGy → ½ atan2(2·GxGy, Gxx−Gyy) 
+- ✅ **OrientationEstimator complet** : Pipeline ROI → downsample → gradients Sobel → Structure Tensor → angle
+- ✅ **Performance exceptionnelle** : 0-1ms par ROI, overhead negligible <5ms
+- ✅ **Angles multiples validés** : -37.5°, +79.4°, -35.0°, +70.2°, etc. précision cohérente
+- ✅ **Integration transparente** : RoiCandidate enrichi avec orientationDegrees automatique
+- ✅ **Debug professionnel** : Logs Structure Tensor (Gxx, Gyy, Gxy) + JSON export angle
+- ✅ **Overlay temps réel Enhanced** : "Orientation: X.X° (Structure Tensor)" en continu
+- ✅ **Downsampling intelligent** : Bilinear interpolation pour ROI >32px, performance optimisée
+
 ### Prochains Mini-lots Phase 1
-- **T-102** : Normalisation & Filtrage signal 1D (ROI → signal extraction)
-- **T-103** : Binarisation adaptative  
-- **T-104** : Extraction runs consécutifs
-- **T-105** : Normalisation runs (base module)
-- **T-106** : Intégration overlay & snapshot
-- **T-109** : Overlay visuel ROI (cadres orange/vert sur preview)
+- **T-103** : Rectification Perspective (ROI + angle → image rectifiée)
+- **T-104** : Profils Multi-Lignes Médiane
+- **T-105** : Seuil 1D Adaptatif
+- **T-106** : Récupération Horloge & Quantification
+- **T-107** : Agrégation Multi-ROI et Multi-Profils
+- **T-108** : Overlay & Snapshot Integration
 
 ---
 *Document vivant mis à jour à chaque phase*
-*Dernière révision: **T-101 ROI DETECTION APPROVED** - Overlay MSI Unifié Revolutionary (2025-08-16)*
+*Dernière révision: **T-102 ORIENTATION ESTIMATION APPROVED** - Structure Tensor Exceptional Performance (2025-08-16)*

@@ -95,6 +95,7 @@ data class SignalStats(
 
 /**
  * T-101: ROI Detection statistics
+ * T-102: Extended with orientation information
  */
 data class RoiStats(
     val candidatesFound: Int,              // Number of ROI candidates detected
@@ -102,7 +103,8 @@ data class RoiStats(
     val bestCandidate: RoiCandidate?,      // Best ROI candidate details
     val processingTimeMs: Long,            // ROI detection processing time
     val gradientThreshold: Float,          // Gradient threshold used
-    val morphoKernelSize: Int              // Morphological kernel size
+    val morphoKernelSize: Int,             // Morphological kernel size
+    val estimatedAngle: Float = 0.0f       // T-102: Estimated orientation angle (degrees)
 ) {
     
     fun toMap(): Map<String, Any> {
@@ -114,7 +116,8 @@ data class RoiStats(
             } ?: "none"),
             "procTimeMs" to processingTimeMs,
             "gradThresh" to gradientThreshold,
-            "morphKernel" to morphoKernelSize
+            "morphKernel" to morphoKernelSize,
+            "angle" to "%.1f°".format(estimatedAngle)  // T-102: Include orientation angle
         )
     }
 }
