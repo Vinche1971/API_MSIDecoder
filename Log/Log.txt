@@ -1,430 +1,322 @@
-2025-08-15 17:12:27.167 28668-28668 MSIScanner              com.msidecoder.scanner               D  === ZOOM BUTTON CLICKED ===
-2025-08-15 17:12:27.167 28668-28668 MSIScanner              com.msidecoder.scanner               D  Before click - CameraControlsManager: ZOOM_3X
-2025-08-15 17:12:27.168 28668-28668 MSIScanner              com.msidecoder.scanner               D  Before click - Camera zoom: 3.0
-2025-08-15 17:12:27.169 28668-28668 MSIScanner              com.msidecoder.scanner               D  Camera controls updated: Torch=false, Zoom=1×
-2025-08-15 17:12:27.171 28668-28668 MSIScanner              com.msidecoder.scanner               D  After click - CameraControlsManager: ZOOM_1X
-2025-08-15 17:12:27.171 28668-28668 MSIScanner              com.msidecoder.scanner               D  === ZOOM BUTTON CLICK COMPLETE ===
-2025-08-15 17:12:27.171 28668-28697 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Issue capture request
-2025-08-15 17:12:27.172 28668-28697 CaptureSession          com.msidecoder.scanner               D  Issuing capture request.
-2025-08-15 17:12:27.186 28668-28697 Camera2Cap...estBuilder com.msidecoder.scanner               D  createCaptureRequest
-2025-08-15 17:12:27.190 28668-28697 UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645] for camera: 0
-2025-08-15 17:12:27.192 28668-28697 CaptureSession          com.msidecoder.scanner               D  Attempting to submit CaptureRequest after setting
-2025-08-15 17:12:27.192 28668-28697 CaptureSession          com.msidecoder.scanner               D  Issuing request for session.
-2025-08-15 17:12:27.192 28668-28697 Camera2Cap...estBuilder com.msidecoder.scanner               D  createCaptureRequest
-2025-08-15 17:12:27.198 28668-28697 UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645] for camera: 0
-2025-08-15 17:12:27.200 28668-28697 CaptureSession          com.msidecoder.scanner               D  Attempting to submit CaptureRequest after setting
-2025-08-15 17:12:27.200 28668-28697 CaptureSession          com.msidecoder.scanner               D  Issuing request for session.
-2025-08-15 17:12:27.201 28668-28697 Camera2Cap...estBuilder com.msidecoder.scanner               D  createCaptureRequest
-2025-08-15 17:12:28.932 28668-28668 MSIScanner              com.msidecoder.scanner               D  === ZOOM BUTTON CLICKED ===
-2025-08-15 17:12:28.932 28668-28668 MSIScanner              com.msidecoder.scanner               D  Before click - CameraControlsManager: ZOOM_1X
-2025-08-15 17:12:28.932 28668-28668 MSIScanner              com.msidecoder.scanner               D  Before click - Camera zoom: 1.0
-2025-08-15 17:12:28.933 28668-28668 MSIScanner              com.msidecoder.scanner               D  Camera controls updated: Torch=false, Zoom=2×
-2025-08-15 17:12:28.933 28668-28668 MSIScanner              com.msidecoder.scanner               D  After click - CameraControlsManager: ZOOM_2X
-2025-08-15 17:12:28.933 28668-28668 MSIScanner              com.msidecoder.scanner               D  === ZOOM BUTTON CLICK COMPLETE ===
-2025-08-15 17:12:28.935 28668-28694 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Issue capture request
-2025-08-15 17:12:28.935 28668-28694 CaptureSession          com.msidecoder.scanner               D  Issuing capture request.
-2025-08-15 17:12:28.949 28668-28694 Camera2Cap...estBuilder com.msidecoder.scanner               D  createCaptureRequest
-2025-08-15 17:12:28.954 28668-28694 UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645] for camera: 0
-2025-08-15 17:12:28.956 28668-28694 CaptureSession          com.msidecoder.scanner               D  Attempting to submit CaptureRequest after setting
-2025-08-15 17:12:28.956 28668-28694 CaptureSession          com.msidecoder.scanner               D  Issuing request for session.
-2025-08-15 17:12:28.957 28668-28694 Camera2Cap...estBuilder com.msidecoder.scanner               D  createCaptureRequest
-2025-08-15 17:12:28.961 28668-28694 UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645] for camera: 0
-2025-08-15 17:12:28.963 28668-28694 CaptureSession          com.msidecoder.scanner               D  Attempting to submit CaptureRequest after setting
-2025-08-15 17:12:28.963 28668-28694 CaptureSession          com.msidecoder.scanner               D  Issuing request for session.
-2025-08-15 17:12:28.964 28668-28694 Camera2Cap...estBuilder com.msidecoder.scanner               D  createCaptureRequest
-2025-08-15 17:12:30.852 28668-28668 CameraOrientationUtil   com.msidecoder.scanner               D  getRelativeImageRotation: destRotationDegrees=0, sourceRotationDegrees=90, isOppositeFacing=true, result=90
-2025-08-15 17:12:31.413 28668-28668 VRI[MainActivity]       com.msidecoder.scanner               D  visibilityChanged oldVisibility=true newVisibility=false
-2025-08-15 17:12:31.418 28668-28694 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Use cases [androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645] now DETACHED for camera
-2025-08-15 17:12:31.419 28668-28694 UseCaseAttachState      com.msidecoder.scanner               D  All use case: [] for camera: 0
-2025-08-15 17:12:31.419 28668-28694 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Resetting Capture Session
-2025-08-15 17:12:31.426 28668-28668 SurfaceViewImpl         com.msidecoder.scanner               D  Surface destroyed.
-2025-08-15 17:12:31.427 28668-28668 SurfaceViewImpl         com.msidecoder.scanner               D  Surface closed androidx.camera.core.SurfaceRequest@c799be9
-2025-08-15 17:12:31.427 28668-28668 DeferrableSurface       com.msidecoder.scanner               D  surface closed,  useCount=2 closed=true androidx.camera.core.SurfaceRequest$2@c7e906e
-2025-08-15 17:12:31.448 28668-28706 BufferQueueProducer     com.msidecoder.scanner               E  [SurfaceView[com.msidecoder.scanner/com.msidecoder.scanner.MainActivity]#1(BLAST Consumer)1](id:6ffc00000001,api:4,p:1826,c:28668) queueBuffer: BufferQueue has been abandoned
-2025-08-15 17:12:31.467 28668-28668 DeferrableSurface       com.msidecoder.scanner               D  surface closed,  useCount=0 closed=true androidx.camera.core.processing.SurfaceEdge$SettableSurface@4db5422
-2025-08-15 17:12:31.467 28668-28668 DeferrableSurface       com.msidecoder.scanner               D  Surface terminated[total_surfaces=1, used_surfaces=1](androidx.camera.core.processing.SurfaceEdge$SettableSurface@4db5422}
-2025-08-15 17:12:31.467 28668-28668 DeferrableSurface       com.msidecoder.scanner               D  use count-1,  useCount=1 closed=true androidx.camera.core.SurfaceRequest$2@c7e906e
-2025-08-15 17:12:31.479 28668-28680 BufferQueueProducer     com.msidecoder.scanner               E  [SurfaceView[com.msidecoder.scanner/com.msidecoder.scanner.MainActivity]#1(BLAST Consumer)1](id:6ffc00000001,api:4,p:1826,c:28668) queueBuffer: BufferQueue has been abandoned
-2025-08-15 17:12:31.517 28668-28680 BufferQueueProducer     com.msidecoder.scanner               E  [SurfaceView[com.msidecoder.scanner/com.msidecoder.scanner.MainActivity]#1(BLAST Consumer)1](id:6ffc00000001,api:4,p:1826,c:28668) queueBuffer: BufferQueue has been abandoned
-2025-08-15 17:12:31.540 28668-28694 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Releasing session in state OPENED
-2025-08-15 17:12:31.541 28668-28694 UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [] for camera: 0
-2025-08-15 17:12:31.544 28668-28694 UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [] for camera: 0
-2025-08-15 17:12:31.545 28668-28706 BufferQueueProducer     com.msidecoder.scanner               E  [SurfaceView[com.msidecoder.scanner/com.msidecoder.scanner.MainActivity]#1(BLAST Consumer)1](id:6ffc00000001,api:4,p:1826,c:28668) queueBuffer: BufferQueue has been abandoned
-2025-08-15 17:12:31.547 28668-28694 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Closing camera.
-2025-08-15 17:12:31.547 28668-28694 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Transitioning camera internal state: OPENED --> CLOSING
-2025-08-15 17:12:31.548 28668-28694 CameraStateRegistry     com.msidecoder.scanner               D  Recalculating open cameras:
-                                                                                                    Camera                                       State                 
-                                                                                                    -------------------------------------------------------------------
-                                                                                                    Camera@d53e574[id=0]                         CLOSING               
-                                                                                                    Camera@d24e399[id=1]                         UNKNOWN               
-                                                                                                    -------------------------------------------------------------------
-                                                                                                    Open count: 1 (Max allowed: 1)
-2025-08-15 17:12:31.549 28668-28694 CameraStateMachine      com.msidecoder.scanner               D  New public camera state CameraState{type=CLOSING, error=null} from CLOSING and null
-2025-08-15 17:12:31.549 28668-28694 CameraStateMachine      com.msidecoder.scanner               D  Publishing new public camera state CameraState{type=CLOSING, error=null}
-2025-08-15 17:12:31.549 28668-28694 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Resetting Capture Session
-2025-08-15 17:12:31.550 28668-28668 StreamStateObserver     com.msidecoder.scanner               D  Update Preview stream state to IDLE
-2025-08-15 17:12:31.550 28668-28694 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Releasing session in state CLOSING
-2025-08-15 17:12:31.550 28668-28694 CaptureSession          com.msidecoder.scanner               D  onSessionFinished()
-2025-08-15 17:12:31.558 28668-28704 BufferQueueProducer     com.msidecoder.scanner               E  [SurfaceView[com.msidecoder.scanner/com.msidecoder.scanner.MainActivity]#1(BLAST Consumer)1](id:6ffc00000001,api:4,p:1826,c:28668) cancelBuffer: BufferQueue has been abandoned
-2025-08-15 17:12:31.559 28668-28704 BufferQueueProducer     com.msidecoder.scanner               E  [SurfaceView[com.msidecoder.scanner/com.msidecoder.scanner.MainActivity]#1(BLAST Consumer)1](id:6ffc00000001,api:4,p:1826,c:28668) cancelBuffer: BufferQueue has been abandoned
-2025-08-15 17:12:31.559 28668-28704 BufferQueueProducer     com.msidecoder.scanner               E  [SurfaceView[com.msidecoder.scanner/com.msidecoder.scanner.MainActivity]#1(BLAST Consumer)1](id:6ffc00000001,api:4,p:1826,c:28668) cancelBuffer: BufferQueue has been abandoned
-2025-08-15 17:12:31.691 28668-28704 libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.camera.aux.packagelist"
-2025-08-15 17:12:31.693 28668-28704 libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.camera.aux.packagelist"
-2025-08-15 17:12:31.693 28668-28704 CameraManagerGlobal     com.msidecoder.scanner               W  ignore the torch status update of camera: 2
-2025-08-15 17:12:31.694 28668-28704 libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.camera.aux.packagelist"
-2025-08-15 17:12:31.694 28668-28704 CameraManagerGlobal     com.msidecoder.scanner               W  ignore the torch status update of camera: 3
-2025-08-15 17:12:31.699 28668-28704 CameraManagerGlobal     com.msidecoder.scanner               E  Camera 3 is not present. Ignore physical camera status change
-2025-08-15 17:12:31.702 28668-28694 UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [] for camera: 0
-2025-08-15 17:12:31.700 28668-28704 libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.camera.aux.packagelist"
-2025-08-15 17:12:31.706 28668-28694 DeferrableSurface       com.msidecoder.scanner               D  use count-1,  useCount=0 closed=true androidx.camera.core.SurfaceRequest$2@c7e906e
-2025-08-15 17:12:31.706 28668-28694 DeferrableSurface       com.msidecoder.scanner               D  Surface no longer in use[total_surfaces=1, used_surfaces=0](androidx.camera.core.SurfaceRequest$2@c7e906e}
-2025-08-15 17:12:31.706 28668-28694 DeferrableSurface       com.msidecoder.scanner               D  Surface terminated[total_surfaces=0, used_surfaces=0](androidx.camera.core.SurfaceRequest$2@c7e906e}
-2025-08-15 17:12:31.708 28668-28694 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} CameraDevice.onClosed()
-2025-08-15 17:12:31.708 28668-28668 SurfaceViewImpl         com.msidecoder.scanner               D  Safe to release surface.
-2025-08-15 17:12:31.708 28668-28694 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Transitioning camera internal state: CLOSING --> INITIALIZED
-2025-08-15 17:12:31.709 28668-28694 CameraStateRegistry     com.msidecoder.scanner               D  Recalculating open cameras:
-                                                                                                    Camera                                       State                 
-                                                                                                    -------------------------------------------------------------------
-                                                                                                    Camera@d53e574[id=0]                         CLOSED                
-                                                                                                    Camera@d24e399[id=1]                         UNKNOWN               
-                                                                                                    -------------------------------------------------------------------
-                                                                                                    Open count: 0 (Max allowed: 1)
-2025-08-15 17:12:31.709 28668-28694 CameraStateMachine      com.msidecoder.scanner               D  New public camera state CameraState{type=CLOSED, error=null} from CLOSED and null
-2025-08-15 17:12:31.710 28668-28694 CameraStateMachine      com.msidecoder.scanner               D  Publishing new public camera state CameraState{type=CLOSED, error=null}
-2025-08-15 17:12:33.049 28668-28668 MSIScanner              com.msidecoder.scanner               D  === ON RESUME ===
-2025-08-15 17:12:33.049 28668-28668 MSIScanner              com.msidecoder.scanner               D  CameraControlsManager state on resume: CameraControlsState(torchEnabled=false, zoomLevel=ZOOM_2X, zoomType=DIGITAL)
-2025-08-15 17:12:33.049 28668-28668 MSIScanner              com.msidecoder.scanner               D  Applying zoom on resume: 2.0
-2025-08-15 17:12:33.049 28668-28668 MSIScanner              com.msidecoder.scanner               D  === ON RESUME COMPLETE ===
-2025-08-15 17:12:33.051 28668-28697 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Use cases [androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645] now ATTACHED
-2025-08-15 17:12:33.052 28668-28697 UseCaseAttachState      com.msidecoder.scanner               D  All use case: [androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645] for camera: 0
-2025-08-15 17:12:33.052 28668-28697 UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [] for camera: 0
-2025-08-15 17:12:33.056 28668-28697 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Resetting Capture Session
-2025-08-15 17:12:33.056 28668-28697 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Releasing session in state INITIALIZED
-2025-08-15 17:12:33.057 28668-28697 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Attempting to force open the camera.
-2025-08-15 17:12:33.057 28668-28697 CameraStateRegistry     com.msidecoder.scanner               D  tryOpenCamera(Camera@d53e574[id=0]) [Available Cameras: 1, Already Open: false (Previous state: CLOSED)] --> SUCCESS
-2025-08-15 17:12:33.057 28668-28697 CameraStateRegistry     com.msidecoder.scanner               D  Recalculating open cameras:
-                                                                                                    Camera                                       State                 
-                                                                                                    -------------------------------------------------------------------
-                                                                                                    Camera@d53e574[id=0]                         OPENING               
-                                                                                                    Camera@d24e399[id=1]                         UNKNOWN               
-                                                                                                    -------------------------------------------------------------------
-                                                                                                    Open count: 1 (Max allowed: 1)
-2025-08-15 17:12:33.057 28668-28697 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Opening camera.
-2025-08-15 17:12:33.057 28668-28697 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Transitioning camera internal state: INITIALIZED --> OPENING
-2025-08-15 17:12:33.057 28668-28697 CameraStateMachine      com.msidecoder.scanner               D  New public camera state CameraState{type=OPENING, error=null} from OPENING and null
-2025-08-15 17:12:33.057 28668-28697 CameraStateMachine      com.msidecoder.scanner               D  Publishing new public camera state CameraState{type=OPENING, error=null}
-2025-08-15 17:12:33.058 28668-28697 UseCaseAttachState      com.msidecoder.scanner               D  All use case: [androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645] for camera: 0
-2025-08-15 17:12:33.062 28668-28697 libc                    com.msidecoder.scanner               W  Access denied finding property "persist.vendor.camera.privapp.list"
-2025-08-15 17:12:33.063  1826-11474 CameraService           cameraserver                         E  CameraService::connect call (PID 28668 "com.msidecoder.scanner", camera ID 0) and Camera API version 2
-2025-08-15 17:12:33.067 28668-28668 libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.display.enable_optimal_refresh_rate"
-2025-08-15 17:12:33.067 28668-28668 libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.gpp.create_frc_extension"
-2025-08-15 17:12:33.063 28668-28668 decoder.scanner         com.msidecoder.scanner               W  type=1400 audit(0.0:2078): avc:  denied  { read } for  name="u:object_r:vendor_display_prop:s0" dev="tmpfs" ino=1465 scontext=u:r:untrusted_app:s0:c72,c256,c512,c768 tcontext=u:object_r:vendor_display_prop:s0 tclass=file permissive=0 app=com.msidecoder.scanner
-2025-08-15 17:12:33.069 28668-28706 libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.camera.aux.packagelist"
-2025-08-15 17:12:33.073 28668-28668 libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.display.enable_optimal_refresh_rate"
-2025-08-15 17:12:33.074 28668-28668 libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.gpp.create_frc_extension"
-2025-08-15 17:12:33.074 28668-28668 SurfaceViewImpl         com.msidecoder.scanner               D  Surface created.
-2025-08-15 17:12:33.075 28668-28668 SurfaceViewImpl         com.msidecoder.scanner               D  Surface changed. Size: 1600x1200
-2025-08-15 17:12:33.075 28668-28706 CameraManagerGlobal     com.msidecoder.scanner               E  Camera 3 is not present. Ignore physical camera status change
-2025-08-15 17:12:33.076 28668-28706 libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.camera.aux.packagelist"
-2025-08-15 17:12:33.076 28668-28706 libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.camera.aux.packagelist"
-2025-08-15 17:12:33.076 28668-28706 CameraManagerGlobal     com.msidecoder.scanner               W  ignore the torch status update of camera: 2
-2025-08-15 17:12:33.071 28668-28668 decoder.scanner         com.msidecoder.scanner               W  type=1400 audit(0.0:2079): avc:  denied  { read } for  name="u:object_r:vendor_display_prop:s0" dev="tmpfs" ino=1465 scontext=u:r:untrusted_app:s0:c72,c256,c512,c768 tcontext=u:object_r:vendor_display_prop:s0 tclass=file permissive=0 app=com.msidecoder.scanner
-2025-08-15 17:12:33.076 28668-28706 libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.camera.aux.packagelist"
-2025-08-15 17:12:33.076 28668-28706 CameraManagerGlobal     com.msidecoder.scanner               W  ignore the torch status update of camera: 3
-2025-08-15 17:12:33.077 28668-28668 SurfaceView             com.msidecoder.scanner               I  surfaceview vote min fps
-2025-08-15 17:12:33.097 28668-28668 DeferrableSurface       com.msidecoder.scanner               D  Surface created[total_surfaces=1, used_surfaces=0](androidx.camera.core.processing.SurfaceEdge$SettableSurface@7e456de}
-2025-08-15 17:12:33.106 28668-28697 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Use case androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645 ACTIVE
-2025-08-15 17:12:33.107 28668-28697 UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645] for camera: 0
-2025-08-15 17:12:33.112 28668-28697 UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645] for camera: 0
-2025-08-15 17:12:33.117 28668-28697 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Use case androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645 RESET
-2025-08-15 17:12:33.117 28668-28697 UseCaseAttachState      com.msidecoder.scanner               D  All use case: [androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645] for camera: 0
-2025-08-15 17:12:33.118 28668-28697 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Resetting Capture Session
-2025-08-15 17:12:33.118 28668-28697 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Releasing session in state OPENING
-2025-08-15 17:12:33.118 28668-28668 NtViewRootImpl          com.msidecoder.scanner               D  mPopUpViewOffsets: offset=(0.0, 0.0), scale=(1.0, 1.0)
-2025-08-15 17:12:33.118 28668-28697 UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645] for camera: 0
-2025-08-15 17:12:33.121 28668-28697 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} CameraDevice.onOpened()
-2025-08-15 17:12:33.121 28668-28697 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Transitioning camera internal state: OPENING --> OPENED
-2025-08-15 17:12:33.122 28668-28697 CameraStateRegistry     com.msidecoder.scanner               D  Recalculating open cameras:
-                                                                                                    Camera                                       State                 
-                                                                                                    -------------------------------------------------------------------
-                                                                                                    Camera@d53e574[id=0]                         OPEN                  
-                                                                                                    Camera@d24e399[id=1]                         UNKNOWN               
-                                                                                                    -------------------------------------------------------------------
-                                                                                                    Open count: 1 (Max allowed: 1)
-2025-08-15 17:12:33.122 28668-28697 CameraStateMachine      com.msidecoder.scanner               D  New public camera state CameraState{type=OPEN, error=null} from OPEN and null
-2025-08-15 17:12:33.122 28668-28697 CameraStateMachine      com.msidecoder.scanner               D  Publishing new public camera state CameraState{type=OPEN, error=null}
-2025-08-15 17:12:33.124 28668-28697 UseCaseAttachState      com.msidecoder.scanner               D  All use case: [androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645] for camera: 0
-2025-08-15 17:12:33.127 28668-28697 UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645] for camera: 0
-2025-08-15 17:12:33.131 28668-28697 SyncCaptureSessionBase  com.msidecoder.scanner               D  [androidx.camera.camera2.internal.SynchronizedCaptureSessionBaseImpl@c31fa9a] getSurface...done
-2025-08-15 17:12:33.132 28668-28697 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Posting surface closed
-                                                                                                    java.lang.Throwable
-                                                                                                        at androidx.camera.camera2.internal.Camera2CameraImpl.postSurfaceClosedError(Camera2CameraImpl.java:1302)
-                                                                                                        at androidx.camera.camera2.internal.Camera2CameraImpl$2.onFailure(Camera2CameraImpl.java:1244)
-                                                                                                        at androidx.camera.core.impl.utils.futures.Futures$CallbackListener.run(Futures.java:345)
-                                                                                                        at androidx.camera.core.impl.utils.executor.SequentialExecutor$QueueWorker.workOnQueue(SequentialExecutor.java:231)
-                                                                                                        at androidx.camera.core.impl.utils.executor.SequentialExecutor$QueueWorker.run(SequentialExecutor.java:173)
-                                                                                                        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)
-                                                                                                        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)
-                                                                                                        at java.lang.Thread.run(Thread.java:1119)
-2025-08-15 17:12:33.133 28668-28668 DeferrableSurface       com.msidecoder.scanner               D  surface closed,  useCount=0 closed=true androidx.camera.core.processing.SurfaceEdge$SettableSurface@7e456de
-2025-08-15 17:12:33.133 28668-28668 DeferrableSurface       com.msidecoder.scanner               D  Surface terminated[total_surfaces=0, used_surfaces=0](androidx.camera.core.processing.SurfaceEdge$SettableSurface@7e456de}
-2025-08-15 17:12:33.133 28668-28668 CameraOrientationUtil   com.msidecoder.scanner               D  getRelativeImageRotation: destRotationDegrees=0, sourceRotationDegrees=90, isOppositeFacing=true, result=90
-2025-08-15 17:12:33.133 28668-28668 DeferrableSurface       com.msidecoder.scanner               D  Surface created[total_surfaces=1, used_surfaces=0](androidx.camera.core.processing.SurfaceEdge$SettableSurface@7956ec1}
-2025-08-15 17:12:33.133 28668-28668 DeferrableSurface       com.msidecoder.scanner               D  Surface created[total_surfaces=2, used_surfaces=0](androidx.camera.core.SurfaceRequest$2@fc935fd}
-2025-08-15 17:12:33.134 28668-28668 DeferrableSurface       com.msidecoder.scanner               D  New surface in use[total_surfaces=2, used_surfaces=1](androidx.camera.core.SurfaceRequest$2@fc935fd}
-2025-08-15 17:12:33.134 28668-28668 DeferrableSurface       com.msidecoder.scanner               D  use count+1, useCount=1 androidx.camera.core.SurfaceRequest$2@fc935fd
-2025-08-15 17:12:33.134 28668-28668 CameraOrientationUtil   com.msidecoder.scanner               D  getRelativeImageRotation: destRotationDegrees=0, sourceRotationDegrees=90, isOppositeFacing=true, result=90
-2025-08-15 17:12:33.135 28668-28694 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Use case androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645 RESET
-2025-08-15 17:12:33.136 28668-28694 UseCaseAttachState      com.msidecoder.scanner               D  All use case: [androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645] for camera: 0
-2025-08-15 17:12:33.136 28668-28694 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Resetting Capture Session
-2025-08-15 17:12:33.137 28668-28694 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Releasing session in state OPENED
-2025-08-15 17:12:33.137 28668-28668 PreviewView             com.msidecoder.scanner               D  Surface requested by Preview.
-2025-08-15 17:12:33.138 28668-28694 UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645] for camera: 0
-2025-08-15 17:12:33.140 28668-28668 PreviewView             com.msidecoder.scanner               D  Preview transformation info updated. TransformationInfo{getCropRect=Rect(0, 0 - 1600, 1200), getRotationDegrees=90, getTargetRotation=0, hasCameraTransform=true, getSensorToBufferTransform=Matrix{[1.0, 0.0, 0.0][0.0, 1.0, 0.0][0.0, 0.0, 1.0]}, getMirroring=false}
-2025-08-15 17:12:33.140 28668-28668 PreviewTransform        com.msidecoder.scanner               D  Transformation info set: TransformationInfo{getCropRect=Rect(0, 0 - 1600, 1200), getRotationDegrees=90, getTargetRotation=0, hasCameraTransform=true, getSensorToBufferTransform=Matrix{[1.0, 0.0, 0.0][0.0, 1.0, 0.0][0.0, 0.0, 1.0]}, getMirroring=false} 1600x1200 false
-2025-08-15 17:12:33.141 28668-28668 CameraOrientationUtil   com.msidecoder.scanner               D  getRelativeImageRotation: destRotationDegrees=0, sourceRotationDegrees=90, isOppositeFacing=true, result=90
-2025-08-15 17:12:33.142 28668-28668 SurfaceViewImpl         com.msidecoder.scanner               D  Surface set on Preview.
-2025-08-15 17:12:33.144 28668-28694 UseCaseAttachState      com.msidecoder.scanner               D  All use case: [androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645] for camera: 0
-2025-08-15 17:12:33.146 28668-28694 SyncCaptureSessionBase  com.msidecoder.scanner               D  [androidx.camera.camera2.internal.SynchronizedCaptureSessionBaseImpl@e38986d] getSurface...done
-2025-08-15 17:12:33.146 28668-28694 CaptureSession          com.msidecoder.scanner               D  Opening capture session.
-2025-08-15 17:12:33.148 28668-28694 DeferrableSurface       com.msidecoder.scanner               D  use count+1, useCount=2 androidx.camera.core.SurfaceRequest$2@fc935fd
-2025-08-15 17:12:33.302 28668-28694 CaptureSession          com.msidecoder.scanner               D  Attempting to send capture request onConfigured
-2025-08-15 17:12:33.302 28668-28694 CaptureSession          com.msidecoder.scanner               D  Issuing request for session.
-2025-08-15 17:12:33.302 28668-28694 Camera2Cap...estBuilder com.msidecoder.scanner               D  createCaptureRequest
-2025-08-15 17:12:33.308 28668-28694 CaptureSession          com.msidecoder.scanner               D  CameraCaptureSession.onConfigured() mState=OPENED
-2025-08-15 17:12:33.308 28668-28694 CaptureSession          com.msidecoder.scanner               D  CameraCaptureSession.onReady() OPENED
-2025-08-15 17:12:33.461 28668-28697 StreamStateObserver     com.msidecoder.scanner               D  Update Preview stream state to STREAMING
-2025-08-15 17:12:33.634 28668-28668 CameraOrientationUtil   com.msidecoder.scanner               D  getRelativeImageRotation: destRotationDegrees=0, sourceRotationDegrees=90, isOppositeFacing=true, result=90
-2025-08-15 17:12:37.927 28668-28668 MSIScanner              com.msidecoder.scanner               D  === ZOOM BUTTON CLICKED ===
-2025-08-15 17:12:37.927 28668-28668 MSIScanner              com.msidecoder.scanner               D  Before click - CameraControlsManager: ZOOM_2X
-2025-08-15 17:12:37.927 28668-28668 MSIScanner              com.msidecoder.scanner               D  Before click - Camera zoom: 2.0
-2025-08-15 17:12:37.928 28668-28668 MSIScanner              com.msidecoder.scanner               D  Camera controls updated: Torch=false, Zoom=3×
-2025-08-15 17:12:37.929 28668-28668 MSIScanner              com.msidecoder.scanner               D  After click - CameraControlsManager: ZOOM_3X
-2025-08-15 17:12:37.929 28668-28668 MSIScanner              com.msidecoder.scanner               D  === ZOOM BUTTON CLICK COMPLETE ===
-2025-08-15 17:12:37.931 28668-28697 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Issue capture request
-2025-08-15 17:12:37.931 28668-28697 CaptureSession          com.msidecoder.scanner               D  Issuing capture request.
-2025-08-15 17:12:37.939 28668-28697 Camera2Cap...estBuilder com.msidecoder.scanner               D  createCaptureRequest
-2025-08-15 17:12:37.943 28668-28697 UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645] for camera: 0
-2025-08-15 17:12:37.945 28668-28697 CaptureSession          com.msidecoder.scanner               D  Attempting to submit CaptureRequest after setting
-2025-08-15 17:12:37.945 28668-28697 CaptureSession          com.msidecoder.scanner               D  Issuing request for session.
-2025-08-15 17:12:37.946 28668-28697 Camera2Cap...estBuilder com.msidecoder.scanner               D  createCaptureRequest
-2025-08-15 17:12:37.951 28668-28697 UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645] for camera: 0
-2025-08-15 17:12:37.953 28668-28697 CaptureSession          com.msidecoder.scanner               D  Attempting to submit CaptureRequest after setting
-2025-08-15 17:12:37.953 28668-28697 CaptureSession          com.msidecoder.scanner               D  Issuing request for session.
-2025-08-15 17:12:37.954 28668-28697 Camera2Cap...estBuilder com.msidecoder.scanner               D  createCaptureRequest
-2025-08-15 17:12:38.971 28668-28668 MSIScanner              com.msidecoder.scanner               D  === ZOOM BUTTON CLICKED ===
-2025-08-15 17:12:38.971 28668-28668 MSIScanner              com.msidecoder.scanner               D  Before click - CameraControlsManager: ZOOM_3X
-2025-08-15 17:12:38.971 28668-28668 MSIScanner              com.msidecoder.scanner               D  Before click - Camera zoom: 3.0
-2025-08-15 17:12:38.973 28668-28668 MSIScanner              com.msidecoder.scanner               D  Camera controls updated: Torch=false, Zoom=1×
-2025-08-15 17:12:38.973 28668-28668 MSIScanner              com.msidecoder.scanner               D  After click - CameraControlsManager: ZOOM_1X
-2025-08-15 17:12:38.973 28668-28668 MSIScanner              com.msidecoder.scanner               D  === ZOOM BUTTON CLICK COMPLETE ===
-2025-08-15 17:12:38.977 28668-28697 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Issue capture request
-2025-08-15 17:12:38.977 28668-28697 CaptureSession          com.msidecoder.scanner               D  Issuing capture request.
-2025-08-15 17:12:38.984 28668-28697 Camera2Cap...estBuilder com.msidecoder.scanner               D  createCaptureRequest
-2025-08-15 17:12:38.992 28668-28697 UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645] for camera: 0
-2025-08-15 17:12:38.994 28668-28697 CaptureSession          com.msidecoder.scanner               D  Attempting to submit CaptureRequest after setting
-2025-08-15 17:12:38.994 28668-28697 CaptureSession          com.msidecoder.scanner               D  Issuing request for session.
-2025-08-15 17:12:38.994 28668-28697 Camera2Cap...estBuilder com.msidecoder.scanner               D  createCaptureRequest
-2025-08-15 17:12:38.999 28668-28697 UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645] for camera: 0
-2025-08-15 17:12:39.001 28668-28697 CaptureSession          com.msidecoder.scanner               D  Attempting to submit CaptureRequest after setting
-2025-08-15 17:12:39.001 28668-28697 CaptureSession          com.msidecoder.scanner               D  Issuing request for session.
-2025-08-15 17:12:39.001 28668-28697 Camera2Cap...estBuilder com.msidecoder.scanner               D  createCaptureRequest
-2025-08-15 17:12:41.366 28668-28668 MSIScanner              com.msidecoder.scanner               D  === ZOOM BUTTON CLICKED ===
-2025-08-15 17:12:41.366 28668-28668 MSIScanner              com.msidecoder.scanner               D  Before click - CameraControlsManager: ZOOM_1X
-2025-08-15 17:12:41.366 28668-28668 MSIScanner              com.msidecoder.scanner               D  Before click - Camera zoom: 1.0
-2025-08-15 17:12:41.368 28668-28668 MSIScanner              com.msidecoder.scanner               D  Camera controls updated: Torch=false, Zoom=2×
-2025-08-15 17:12:41.368 28668-28668 MSIScanner              com.msidecoder.scanner               D  After click - CameraControlsManager: ZOOM_2X
-2025-08-15 17:12:41.368 28668-28668 MSIScanner              com.msidecoder.scanner               D  === ZOOM BUTTON CLICK COMPLETE ===
-2025-08-15 17:12:41.373 28668-28694 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Issue capture request
-2025-08-15 17:12:41.373 28668-28694 CaptureSession          com.msidecoder.scanner               D  Issuing capture request.
-2025-08-15 17:12:41.377 28668-28694 Camera2Cap...estBuilder com.msidecoder.scanner               D  createCaptureRequest
-2025-08-15 17:12:41.385 28668-28694 UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645] for camera: 0
-2025-08-15 17:12:41.387 28668-28694 CaptureSession          com.msidecoder.scanner               D  Attempting to submit CaptureRequest after setting
-2025-08-15 17:12:41.387 28668-28694 CaptureSession          com.msidecoder.scanner               D  Issuing request for session.
-2025-08-15 17:12:41.388 28668-28694 Camera2Cap...estBuilder com.msidecoder.scanner               D  createCaptureRequest
-2025-08-15 17:12:41.391 28668-28694 UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645] for camera: 0
-2025-08-15 17:12:41.393 28668-28694 CaptureSession          com.msidecoder.scanner               D  Attempting to submit CaptureRequest after setting
-2025-08-15 17:12:41.393 28668-28694 CaptureSession          com.msidecoder.scanner               D  Issuing request for session.
-2025-08-15 17:12:41.393 28668-28694 Camera2Cap...estBuilder com.msidecoder.scanner               D  createCaptureRequest
-2025-08-15 17:12:42.039 28668-28668 MSIScanner              com.msidecoder.scanner               D  === ZOOM BUTTON CLICKED ===
-2025-08-15 17:12:42.039 28668-28668 MSIScanner              com.msidecoder.scanner               D  Before click - CameraControlsManager: ZOOM_2X
-2025-08-15 17:12:42.039 28668-28668 MSIScanner              com.msidecoder.scanner               D  Before click - Camera zoom: 2.0
-2025-08-15 17:12:42.041 28668-28668 MSIScanner              com.msidecoder.scanner               D  Camera controls updated: Torch=false, Zoom=3×
-2025-08-15 17:12:42.041 28668-28668 MSIScanner              com.msidecoder.scanner               D  After click - CameraControlsManager: ZOOM_3X
-2025-08-15 17:12:42.041 28668-28668 MSIScanner              com.msidecoder.scanner               D  === ZOOM BUTTON CLICK COMPLETE ===
-2025-08-15 17:12:42.042 28668-28694 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Issue capture request
-2025-08-15 17:12:42.043 28668-28694 CaptureSession          com.msidecoder.scanner               D  Issuing capture request.
-2025-08-15 17:12:42.049 28668-28694 Camera2Cap...estBuilder com.msidecoder.scanner               D  createCaptureRequest
-2025-08-15 17:12:42.054 28668-28694 UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645] for camera: 0
-2025-08-15 17:12:42.056 28668-28694 CaptureSession          com.msidecoder.scanner               D  Attempting to submit CaptureRequest after setting
-2025-08-15 17:12:42.056 28668-28694 CaptureSession          com.msidecoder.scanner               D  Issuing request for session.
-2025-08-15 17:12:42.056 28668-28694 Camera2Cap...estBuilder com.msidecoder.scanner               D  createCaptureRequest
-2025-08-15 17:12:42.062 28668-28694 UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645] for camera: 0
-2025-08-15 17:12:42.063 28668-28694 CaptureSession          com.msidecoder.scanner               D  Attempting to submit CaptureRequest after setting
-2025-08-15 17:12:42.063 28668-28694 CaptureSession          com.msidecoder.scanner               D  Issuing request for session.
-2025-08-15 17:12:42.064 28668-28694 Camera2Cap...estBuilder com.msidecoder.scanner               D  createCaptureRequest
-2025-08-15 17:12:42.983 28668-28668 CameraOrientationUtil   com.msidecoder.scanner               D  getRelativeImageRotation: destRotationDegrees=0, sourceRotationDegrees=90, isOppositeFacing=true, result=90
-2025-08-15 17:12:43.572 28668-28668 VRI[MainActivity]       com.msidecoder.scanner               D  visibilityChanged oldVisibility=true newVisibility=false
-2025-08-15 17:12:43.578 28668-28668 SurfaceViewImpl         com.msidecoder.scanner               D  Surface destroyed.
-2025-08-15 17:12:43.578 28668-28668 SurfaceViewImpl         com.msidecoder.scanner               D  Surface closed androidx.camera.core.SurfaceRequest@53e3254
-2025-08-15 17:12:43.578 28668-28668 DeferrableSurface       com.msidecoder.scanner               D  surface closed,  useCount=2 closed=true androidx.camera.core.SurfaceRequest$2@fc935fd
-2025-08-15 17:12:43.600 28668-28668 DeferrableSurface       com.msidecoder.scanner               D  surface closed,  useCount=0 closed=true androidx.camera.core.processing.SurfaceEdge$SettableSurface@7956ec1
-2025-08-15 17:12:43.601 28668-28668 DeferrableSurface       com.msidecoder.scanner               D  Surface terminated[total_surfaces=1, used_surfaces=1](androidx.camera.core.processing.SurfaceEdge$SettableSurface@7956ec1}
-2025-08-15 17:12:43.601 28668-28668 DeferrableSurface       com.msidecoder.scanner               D  use count-1,  useCount=1 closed=true androidx.camera.core.SurfaceRequest$2@fc935fd
-2025-08-15 17:12:43.604 28668-28697 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Use cases [androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645] now DETACHED for camera
-2025-08-15 17:12:43.605 28668-28697 UseCaseAttachState      com.msidecoder.scanner               D  All use case: [] for camera: 0
-2025-08-15 17:12:43.605 28668-29136 BufferQueueProducer     com.msidecoder.scanner               E  [SurfaceView[com.msidecoder.scanner/com.msidecoder.scanner.MainActivity]#3(BLAST Consumer)3](id:6ffc00000003,api:4,p:1826,c:28668) dequeueBuffer: BufferQueue has been abandoned
-2025-08-15 17:12:43.605 28668-28697 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Resetting Capture Session
-2025-08-15 17:12:43.607 28668-28681 BufferQueueProducer     com.msidecoder.scanner               E  [SurfaceView[com.msidecoder.scanner/com.msidecoder.scanner.MainActivity]#3(BLAST Consumer)3](id:6ffc00000003,api:4,p:1826,c:28668) queueBuffer: BufferQueue has been abandoned
-2025-08-15 17:12:43.632 28668-28681 BufferQueueProducer     com.msidecoder.scanner               E  [SurfaceView[com.msidecoder.scanner/com.msidecoder.scanner.MainActivity]#3(BLAST Consumer)3](id:6ffc00000003,api:4,p:1826,c:28668) queueBuffer: BufferQueue has been abandoned
-2025-08-15 17:12:43.657 28668-28697 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Releasing session in state OPENED
-2025-08-15 17:12:43.657 28668-28697 UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [] for camera: 0
-2025-08-15 17:12:43.657 28668-29136 CameraDevice-JV-0       com.msidecoder.scanner               V  Resuming stop of failed repeating request with id: 12
-2025-08-15 17:12:43.660 28668-28697 UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [] for camera: 0
-2025-08-15 17:12:43.663 28668-28697 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Closing camera.
-2025-08-15 17:12:43.664 28668-28697 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Transitioning camera internal state: OPENED --> CLOSING
-2025-08-15 17:12:43.665 28668-28697 CameraStateRegistry     com.msidecoder.scanner               D  Recalculating open cameras:
-                                                                                                    Camera                                       State                 
-                                                                                                    -------------------------------------------------------------------
-                                                                                                    Camera@d53e574[id=0]                         CLOSING               
-                                                                                                    Camera@d24e399[id=1]                         UNKNOWN               
-                                                                                                    -------------------------------------------------------------------
-                                                                                                    Open count: 1 (Max allowed: 1)
-2025-08-15 17:12:43.665 28668-28697 CameraStateMachine      com.msidecoder.scanner               D  New public camera state CameraState{type=CLOSING, error=null} from CLOSING and null
-2025-08-15 17:12:43.665 28668-28697 CameraStateMachine      com.msidecoder.scanner               D  Publishing new public camera state CameraState{type=CLOSING, error=null}
-2025-08-15 17:12:43.666 28668-28697 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Resetting Capture Session
-2025-08-15 17:12:43.666 28668-28681 BufferQueueProducer     com.msidecoder.scanner               E  [SurfaceView[com.msidecoder.scanner/com.msidecoder.scanner.MainActivity]#3(BLAST Consumer)3](id:6ffc00000003,api:4,p:1826,c:28668) queueBuffer: BufferQueue has been abandoned
-2025-08-15 17:12:43.666 28668-28668 StreamStateObserver     com.msidecoder.scanner               D  Update Preview stream state to IDLE
-2025-08-15 17:12:43.666 28668-28697 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Releasing session in state CLOSING
-2025-08-15 17:12:43.667 28668-28697 CaptureSession          com.msidecoder.scanner               D  onSessionFinished()
-2025-08-15 17:12:43.681 28668-28681 BufferQueueProducer     com.msidecoder.scanner               E  [SurfaceView[com.msidecoder.scanner/com.msidecoder.scanner.MainActivity]#3(BLAST Consumer)3](id:6ffc00000003,api:4,p:1826,c:28668) cancelBuffer: BufferQueue has been abandoned
-2025-08-15 17:12:43.682 28668-28681 BufferQueueProducer     com.msidecoder.scanner               E  [SurfaceView[com.msidecoder.scanner/com.msidecoder.scanner.MainActivity]#3(BLAST Consumer)3](id:6ffc00000003,api:4,p:1826,c:28668) cancelBuffer: BufferQueue has been abandoned
-2025-08-15 17:12:43.683 28668-28681 BufferQueueProducer     com.msidecoder.scanner               E  [SurfaceView[com.msidecoder.scanner/com.msidecoder.scanner.MainActivity]#3(BLAST Consumer)3](id:6ffc00000003,api:4,p:1826,c:28668) cancelBuffer: BufferQueue has been abandoned
-2025-08-15 17:12:43.687 28668-28697 BufferQueueProducer     com.msidecoder.scanner               E  [SurfaceView[com.msidecoder.scanner/com.msidecoder.scanner.MainActivity]#3(BLAST Consumer)3](id:6ffc00000003,api:4,p:1826,c:28668) cancelBuffer: BufferQueue has been abandoned
-2025-08-15 17:12:43.796 28668-28681 libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.camera.aux.packagelist"
-2025-08-15 17:12:43.796 28668-28681 libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.camera.aux.packagelist"
-2025-08-15 17:12:43.797 28668-28681 CameraManagerGlobal     com.msidecoder.scanner               W  ignore the torch status update of camera: 2
-2025-08-15 17:12:43.797 28668-29127 libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.camera.aux.packagelist"
-2025-08-15 17:12:43.798 28668-29127 CameraManagerGlobal     com.msidecoder.scanner               W  ignore the torch status update of camera: 3
-2025-08-15 17:12:43.803 28668-29127 CameraManagerGlobal     com.msidecoder.scanner               E  Camera 3 is not present. Ignore physical camera status change
-2025-08-15 17:12:43.804 28668-29127 libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.camera.aux.packagelist"
-2025-08-15 17:12:43.807 28668-28697 UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [] for camera: 0
-2025-08-15 17:12:43.809 28668-28697 DeferrableSurface       com.msidecoder.scanner               D  use count-1,  useCount=0 closed=true androidx.camera.core.SurfaceRequest$2@fc935fd
-2025-08-15 17:12:43.810 28668-28697 DeferrableSurface       com.msidecoder.scanner               D  Surface no longer in use[total_surfaces=1, used_surfaces=0](androidx.camera.core.SurfaceRequest$2@fc935fd}
-2025-08-15 17:12:43.810 28668-28697 DeferrableSurface       com.msidecoder.scanner               D  Surface terminated[total_surfaces=0, used_surfaces=0](androidx.camera.core.SurfaceRequest$2@fc935fd}
-2025-08-15 17:12:43.811 28668-28668 SurfaceViewImpl         com.msidecoder.scanner               D  Safe to release surface.
-2025-08-15 17:12:43.811 28668-28697 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} CameraDevice.onClosed()
-2025-08-15 17:12:43.811 28668-28697 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Transitioning camera internal state: CLOSING --> INITIALIZED
-2025-08-15 17:12:43.812 28668-28697 CameraStateRegistry     com.msidecoder.scanner               D  Recalculating open cameras:
-                                                                                                    Camera                                       State                 
-                                                                                                    -------------------------------------------------------------------
-                                                                                                    Camera@d53e574[id=0]                         CLOSED                
-                                                                                                    Camera@d24e399[id=1]                         UNKNOWN               
-                                                                                                    -------------------------------------------------------------------
-                                                                                                    Open count: 0 (Max allowed: 1)
-2025-08-15 17:12:43.812 28668-28697 CameraStateMachine      com.msidecoder.scanner               D  New public camera state CameraState{type=CLOSED, error=null} from CLOSED and null
-2025-08-15 17:12:43.812 28668-28697 CameraStateMachine      com.msidecoder.scanner               D  Publishing new public camera state CameraState{type=CLOSED, error=null}
-2025-08-15 17:12:44.619 28668-28668 MSIScanner              com.msidecoder.scanner               D  === ON RESUME ===
-2025-08-15 17:12:44.619 28668-28668 MSIScanner              com.msidecoder.scanner               D  CameraControlsManager state on resume: CameraControlsState(torchEnabled=false, zoomLevel=ZOOM_3X, zoomType=DIGITAL)
-2025-08-15 17:12:44.619 28668-28668 MSIScanner              com.msidecoder.scanner               D  Applying zoom on resume: 3.0
-2025-08-15 17:12:44.619 28668-28694 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Use cases [androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645] now ATTACHED
-2025-08-15 17:12:44.619 28668-28668 MSIScanner              com.msidecoder.scanner               D  === ON RESUME COMPLETE ===
-2025-08-15 17:12:44.621 28668-28694 UseCaseAttachState      com.msidecoder.scanner               D  All use case: [androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645] for camera: 0
-2025-08-15 17:12:44.624 28668-28694 UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [] for camera: 0
-2025-08-15 17:12:44.625 28668-28694 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Resetting Capture Session
-2025-08-15 17:12:44.625 28668-28694 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Releasing session in state INITIALIZED
-2025-08-15 17:12:44.625 28668-28694 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Attempting to force open the camera.
-2025-08-15 17:12:44.626 28668-28694 CameraStateRegistry     com.msidecoder.scanner               D  tryOpenCamera(Camera@d53e574[id=0]) [Available Cameras: 1, Already Open: false (Previous state: CLOSED)] --> SUCCESS
-2025-08-15 17:12:44.626 28668-28694 CameraStateRegistry     com.msidecoder.scanner               D  Recalculating open cameras:
-                                                                                                    Camera                                       State                 
-                                                                                                    -------------------------------------------------------------------
-                                                                                                    Camera@d53e574[id=0]                         OPENING               
-                                                                                                    Camera@d24e399[id=1]                         UNKNOWN               
-                                                                                                    -------------------------------------------------------------------
-                                                                                                    Open count: 1 (Max allowed: 1)
-2025-08-15 17:12:44.626 28668-28694 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Opening camera.
-2025-08-15 17:12:44.626 28668-28694 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Transitioning camera internal state: INITIALIZED --> OPENING
-2025-08-15 17:12:44.626 28668-28694 CameraStateMachine      com.msidecoder.scanner               D  New public camera state CameraState{type=OPENING, error=null} from OPENING and null
-2025-08-15 17:12:44.626 28668-28694 CameraStateMachine      com.msidecoder.scanner               D  Publishing new public camera state CameraState{type=OPENING, error=null}
-2025-08-15 17:12:44.626 28668-28694 UseCaseAttachState      com.msidecoder.scanner               D  All use case: [androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645] for camera: 0
-2025-08-15 17:12:44.630 28668-28694 libc                    com.msidecoder.scanner               W  Access denied finding property "persist.vendor.camera.privapp.list"
-2025-08-15 17:12:44.631  1826-11474 CameraService           cameraserver                         E  CameraService::connect call (PID 28668 "com.msidecoder.scanner", camera ID 0) and Camera API version 2
-2025-08-15 17:12:44.633 28668-28668 libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.display.enable_optimal_refresh_rate"
-2025-08-15 17:12:44.634 28668-28668 libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.gpp.create_frc_extension"
-2025-08-15 17:12:44.631 28668-28668 decoder.scanner         com.msidecoder.scanner               W  type=1400 audit(0.0:2087): avc:  denied  { read } for  name="u:object_r:vendor_display_prop:s0" dev="tmpfs" ino=1465 scontext=u:r:untrusted_app:s0:c72,c256,c512,c768 tcontext=u:object_r:vendor_display_prop:s0 tclass=file permissive=0 app=com.msidecoder.scanner
-2025-08-15 17:12:44.637 28668-28668 libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.display.enable_optimal_refresh_rate"
-2025-08-15 17:12:44.637 28668-28668 libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.gpp.create_frc_extension"
-2025-08-15 17:12:44.637 28668-28668 SurfaceViewImpl         com.msidecoder.scanner               D  Surface created.
-2025-08-15 17:12:44.637 28668-28668 SurfaceViewImpl         com.msidecoder.scanner               D  Surface changed. Size: 1600x1200
-2025-08-15 17:12:44.635 28668-28668 decoder.scanner         com.msidecoder.scanner               W  type=1400 audit(0.0:2088): avc:  denied  { read } for  name="u:object_r:vendor_display_prop:s0" dev="tmpfs" ino=1465 scontext=u:r:untrusted_app:s0:c72,c256,c512,c768 tcontext=u:object_r:vendor_display_prop:s0 tclass=file permissive=0 app=com.msidecoder.scanner
-2025-08-15 17:12:44.638 28668-28668 SurfaceView             com.msidecoder.scanner               I  surfaceview vote min fps
-2025-08-15 17:12:44.640 28668-28681 libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.camera.aux.packagelist"
-2025-08-15 17:12:44.640 28668-28681 CameraManagerGlobal     com.msidecoder.scanner               E  Camera 3 is not present. Ignore physical camera status change
-2025-08-15 17:12:44.641 28668-28681 libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.camera.aux.packagelist"
-2025-08-15 17:12:44.641 28668-28681 libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.camera.aux.packagelist"
-2025-08-15 17:12:44.641 28668-28681 CameraManagerGlobal     com.msidecoder.scanner               W  ignore the torch status update of camera: 2
-2025-08-15 17:12:44.642 28668-28681 libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.camera.aux.packagelist"
-2025-08-15 17:12:44.642 28668-28681 CameraManagerGlobal     com.msidecoder.scanner               W  ignore the torch status update of camera: 3
-2025-08-15 17:12:44.654 28668-28668 DeferrableSurface       com.msidecoder.scanner               D  Surface created[total_surfaces=1, used_surfaces=0](androidx.camera.core.processing.SurfaceEdge$SettableSurface@c383426}
-2025-08-15 17:12:44.675 28668-28694 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Use case androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645 ACTIVE
-2025-08-15 17:12:44.676 28668-28694 UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645] for camera: 0
-2025-08-15 17:12:44.678 28668-28694 UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645] for camera: 0
-2025-08-15 17:12:44.680 28668-28694 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Use case androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645 RESET
-2025-08-15 17:12:44.680 28668-28694 UseCaseAttachState      com.msidecoder.scanner               D  All use case: [androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645] for camera: 0
-2025-08-15 17:12:44.681 28668-28694 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Resetting Capture Session
-2025-08-15 17:12:44.681 28668-28694 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Releasing session in state OPENING
-2025-08-15 17:12:44.681 28668-28694 UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645] for camera: 0
-2025-08-15 17:12:44.683 28668-28694 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} CameraDevice.onOpened()
-2025-08-15 17:12:44.683 28668-28694 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Transitioning camera internal state: OPENING --> OPENED
-2025-08-15 17:12:44.683 28668-28694 CameraStateRegistry     com.msidecoder.scanner               D  Recalculating open cameras:
-                                                                                                    Camera                                       State                 
-                                                                                                    -------------------------------------------------------------------
-                                                                                                    Camera@d53e574[id=0]                         OPEN                  
-                                                                                                    Camera@d24e399[id=1]                         UNKNOWN               
-                                                                                                    -------------------------------------------------------------------
-                                                                                                    Open count: 1 (Max allowed: 1)
-2025-08-15 17:12:44.683 28668-28694 CameraStateMachine      com.msidecoder.scanner               D  New public camera state CameraState{type=OPEN, error=null} from OPEN and null
-2025-08-15 17:12:44.683 28668-28694 CameraStateMachine      com.msidecoder.scanner               D  Publishing new public camera state CameraState{type=OPEN, error=null}
-2025-08-15 17:12:44.684 28668-28694 UseCaseAttachState      com.msidecoder.scanner               D  All use case: [androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645] for camera: 0
-2025-08-15 17:12:44.685 28668-28694 UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645] for camera: 0
-2025-08-15 17:12:44.687 28668-28694 SyncCaptureSessionBase  com.msidecoder.scanner               D  [androidx.camera.camera2.internal.SynchronizedCaptureSessionBaseImpl@197c957] getSurface...done
-2025-08-15 17:12:44.687 28668-28694 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Posting surface closed
-                                                                                                    java.lang.Throwable
-                                                                                                        at androidx.camera.camera2.internal.Camera2CameraImpl.postSurfaceClosedError(Camera2CameraImpl.java:1302)
-                                                                                                        at androidx.camera.camera2.internal.Camera2CameraImpl$2.onFailure(Camera2CameraImpl.java:1244)
-                                                                                                        at androidx.camera.core.impl.utils.futures.Futures$CallbackListener.run(Futures.java:345)
-                                                                                                        at androidx.camera.core.impl.utils.executor.SequentialExecutor$QueueWorker.workOnQueue(SequentialExecutor.java:231)
-                                                                                                        at androidx.camera.core.impl.utils.executor.SequentialExecutor$QueueWorker.run(SequentialExecutor.java:173)
-                                                                                                        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)
-                                                                                                        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)
-                                                                                                        at java.lang.Thread.run(Thread.java:1119)
-2025-08-15 17:12:44.688 28668-28668 DeferrableSurface       com.msidecoder.scanner               D  surface closed,  useCount=0 closed=true androidx.camera.core.processing.SurfaceEdge$SettableSurface@c383426
-2025-08-15 17:12:44.688 28668-28668 DeferrableSurface       com.msidecoder.scanner               D  Surface terminated[total_surfaces=0, used_surfaces=0](androidx.camera.core.processing.SurfaceEdge$SettableSurface@c383426}
-2025-08-15 17:12:44.688 28668-28668 CameraOrientationUtil   com.msidecoder.scanner               D  getRelativeImageRotation: destRotationDegrees=0, sourceRotationDegrees=90, isOppositeFacing=true, result=90
-2025-08-15 17:12:44.688 28668-28668 DeferrableSurface       com.msidecoder.scanner               D  Surface created[total_surfaces=1, used_surfaces=0](androidx.camera.core.processing.SurfaceEdge$SettableSurface@eac6662}
-2025-08-15 17:12:44.689 28668-28668 DeferrableSurface       com.msidecoder.scanner               D  Surface created[total_surfaces=2, used_surfaces=0](androidx.camera.core.SurfaceRequest$2@8ee86ae}
-2025-08-15 17:12:44.689 28668-28668 DeferrableSurface       com.msidecoder.scanner               D  New surface in use[total_surfaces=2, used_surfaces=1](androidx.camera.core.SurfaceRequest$2@8ee86ae}
-2025-08-15 17:12:44.689 28668-28668 DeferrableSurface       com.msidecoder.scanner               D  use count+1, useCount=1 androidx.camera.core.SurfaceRequest$2@8ee86ae
-2025-08-15 17:12:44.691 28668-28668 CameraOrientationUtil   com.msidecoder.scanner               D  getRelativeImageRotation: destRotationDegrees=0, sourceRotationDegrees=90, isOppositeFacing=true, result=90
-2025-08-15 17:12:44.694 28668-28697 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Use case androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645 RESET
-2025-08-15 17:12:44.694 28668-28668 PreviewView             com.msidecoder.scanner               D  Surface requested by Preview.
-2025-08-15 17:12:44.695 28668-28668 PreviewView             com.msidecoder.scanner               D  Preview transformation info updated. TransformationInfo{getCropRect=Rect(0, 0 - 1600, 1200), getRotationDegrees=90, getTargetRotation=0, hasCameraTransform=true, getSensorToBufferTransform=Matrix{[1.0, 0.0, 0.0][0.0, 1.0, 0.0][0.0, 0.0, 1.0]}, getMirroring=false}
-2025-08-15 17:12:44.695 28668-28668 PreviewTransform        com.msidecoder.scanner               D  Transformation info set: TransformationInfo{getCropRect=Rect(0, 0 - 1600, 1200), getRotationDegrees=90, getTargetRotation=0, hasCameraTransform=true, getSensorToBufferTransform=Matrix{[1.0, 0.0, 0.0][0.0, 1.0, 0.0][0.0, 0.0, 1.0]}, getMirroring=false} 1600x1200 false
-2025-08-15 17:12:44.695 28668-28668 CameraOrientationUtil   com.msidecoder.scanner               D  getRelativeImageRotation: destRotationDegrees=0, sourceRotationDegrees=90, isOppositeFacing=true, result=90
-2025-08-15 17:12:44.696 28668-28668 SurfaceViewImpl         com.msidecoder.scanner               D  Surface set on Preview.
-2025-08-15 17:12:44.696 28668-28697 UseCaseAttachState      com.msidecoder.scanner               D  All use case: [androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645] for camera: 0
-2025-08-15 17:12:44.697 28668-28697 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Resetting Capture Session
-2025-08-15 17:12:44.697 28668-28697 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@d53e574[id=0]} Releasing session in state OPENED
-2025-08-15 17:12:44.697 28668-28697 UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645] for camera: 0
-2025-08-15 17:12:44.701 28668-28697 UseCaseAttachState      com.msidecoder.scanner               D  All use case: [androidx.camera.core.Preview-413e12e2-086c-4b66-a717-3c5aa10a061e182414645] for camera: 0
-2025-08-15 17:12:44.703 28668-28697 SyncCaptureSessionBase  com.msidecoder.scanner               D  [androidx.camera.camera2.internal.SynchronizedCaptureSessionBaseImpl@2dff75e] getSurface...done
-2025-08-15 17:12:44.704 28668-28697 CaptureSession          com.msidecoder.scanner               D  Opening capture session.
-2025-08-15 17:12:44.705 28668-28668 NtViewRootImpl          com.msidecoder.scanner               D  mPopUpViewOffsets: offset=(0.0, 0.0), scale=(1.0, 1.0)
-2025-08-15 17:12:44.706 28668-28697 DeferrableSurface       com.msidecoder.scanner               D  use count+1, useCount=2 androidx.camera.core.SurfaceRequest$2@8ee86ae
-2025-08-15 17:12:44.886 28668-28697 CaptureSession          com.msidecoder.scanner               D  Attempting to send capture request onConfigured
-2025-08-15 17:12:44.886 28668-28697 CaptureSession          com.msidecoder.scanner               D  Issuing request for session.
-2025-08-15 17:12:44.886 28668-28697 Camera2Cap...estBuilder com.msidecoder.scanner               D  createCaptureRequest
-2025-08-15 17:12:44.889 28668-28697 CaptureSession          com.msidecoder.scanner               D  CameraCaptureSession.onConfigured() mState=OPENED
-2025-08-15 17:12:44.889 28668-28697 CaptureSession          com.msidecoder.scanner               D  CameraCaptureSession.onReady() OPENED
-2025-08-15 17:12:45.009 28668-28697 StreamStateObserver     com.msidecoder.scanner               D  Update Preview stream state to STREAMING
-2025-08-15 17:12:45.249 28668-28668 CameraOrientationUtil   com.msidecoder.scanner               D  getRelativeImageRotation: destRotationDegrees=0, sourceRotationDegrees=90, isOppositeFacing=true, result=90
+2025-08-21 20:19:14.535  9310-9310  MSIScanner              com.msidecoder.scanner               D  Starting scanner with MlKitAnalyzer
+2025-08-21 20:19:14.538  9310-9350  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@136f736[id=0]} Use case androidx.camera.core.ImageAnalysis-567f4429-f74c-4be6-a6ea-a347e15a40d6108290696 ACTIVE
+2025-08-21 20:19:14.545  9310-9350  UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.ImageCapture-10d14615-29cf-439b-a2d8-9f704fa4cf4b14189866, androidx.camera.core.Preview-7feae112-f9bc-45f2-86d9-eff51358f92b192658965, androidx.camera.core.ImageAnalysis-567f4429-f74c-4be6-a6ea-a347e15a40d6108290696] for camera: 0
+2025-08-21 20:19:14.552  9310-9350  CaptureSession          com.msidecoder.scanner               D  Attempting to submit CaptureRequest after setting
+2025-08-21 20:19:14.552  9310-9350  CaptureSession          com.msidecoder.scanner               D  Issuing request for session.
+2025-08-21 20:19:14.552  9310-9350  Camera2Cap...estBuilder com.msidecoder.scanner               D  createCaptureRequest
+2025-08-21 20:19:14.554  9310-9310  DeferrableSurface       com.msidecoder.scanner               D  surface closed,  useCount=1 closed=true androidx.camera.core.impl.ImmediateSurface@6ee5046
+2025-08-21 20:19:14.559  9310-9350  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@136f736[id=0]} Use cases [androidx.camera.core.ImageAnalysis-567f4429-f74c-4be6-a6ea-a347e15a40d6108290696] now DETACHED for camera
+2025-08-21 20:19:14.560  9310-9350  UseCaseAttachState      com.msidecoder.scanner               D  All use case: [androidx.camera.core.ImageCapture-10d14615-29cf-439b-a2d8-9f704fa4cf4b14189866, androidx.camera.core.Preview-7feae112-f9bc-45f2-86d9-eff51358f92b192658965] for camera: 0
+2025-08-21 20:19:14.560  9310-9350  Camera2CameraImpl       com.msidecoder.scanner               D  No need to remove a previous mMeteringRepeating, SessionConfig Surfaces: 2, CaptureConfig Surfaces: 1
+2025-08-21 20:19:14.561  9310-9350  UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.ImageCapture-10d14615-29cf-439b-a2d8-9f704fa4cf4b14189866, androidx.camera.core.Preview-7feae112-f9bc-45f2-86d9-eff51358f92b192658965] for camera: 0
+2025-08-21 20:19:14.562  9310-9350  CaptureSession          com.msidecoder.scanner               D  Attempting to submit CaptureRequest after setting
+2025-08-21 20:19:14.562  9310-9350  CaptureSession          com.msidecoder.scanner               D  Issuing request for session.
+2025-08-21 20:19:14.562  9310-9350  Camera2Cap...estBuilder com.msidecoder.scanner               D  createCaptureRequest
+2025-08-21 20:19:14.567  9310-9350  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@136f736[id=0]} Resetting Capture Session
+2025-08-21 20:19:14.567  9310-9350  SyncCaptureSessionImpl  com.msidecoder.scanner               D  [androidx.camera.camera2.internal.SynchronizedCaptureSessionImpl@8960c08] Session call close()
+2025-08-21 20:19:14.567  9310-9350  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@136f736[id=0]} Releasing session in state OPENED
+2025-08-21 20:19:14.569  9310-9350  UseCaseAttachState      com.msidecoder.scanner               D  All use case: [androidx.camera.core.ImageCapture-10d14615-29cf-439b-a2d8-9f704fa4cf4b14189866, androidx.camera.core.Preview-7feae112-f9bc-45f2-86d9-eff51358f92b192658965] for camera: 0
+2025-08-21 20:19:14.570  9310-9350  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@136f736[id=0]} Use case androidx.camera.core.Preview-7feae112-f9bc-45f2-86d9-eff51358f92b192658965 UPDATED
+2025-08-21 20:19:14.571  9310-9350  UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.ImageCapture-10d14615-29cf-439b-a2d8-9f704fa4cf4b14189866, androidx.camera.core.Preview-7feae112-f9bc-45f2-86d9-eff51358f92b192658965] for camera: 0
+2025-08-21 20:19:14.573  9310-9350  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@136f736[id=0]} Use case androidx.camera.core.ImageCapture-10d14615-29cf-439b-a2d8-9f704fa4cf4b14189866 UPDATED
+2025-08-21 20:19:14.574  9310-9350  UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.ImageCapture-10d14615-29cf-439b-a2d8-9f704fa4cf4b14189866, androidx.camera.core.Preview-7feae112-f9bc-45f2-86d9-eff51358f92b192658965] for camera: 0
+2025-08-21 20:19:14.575  9310-9350  SyncCaptureSessionImpl  com.msidecoder.scanner               D  [androidx.camera.camera2.internal.SynchronizedCaptureSessionImpl@8960c08] Session call super.close()
+2025-08-21 20:19:14.575  9310-9310  CameraQuirks            com.msidecoder.scanner               D  camera2 CameraQuirks = 
+2025-08-21 20:19:14.580  9310-9310  decoder.scanner         com.msidecoder.scanner               W  type=1400 audit(0.0:3614): avc:  denied  { read } for  name="u:object_r:vendor_display_prop:s0" dev="tmpfs" ino=12796 scontext=u:r:untrusted_app:s0:c72,c256,c512,c768 tcontext=u:object_r:vendor_display_prop:s0 tclass=file permissive=0 app=com.msidecoder.scanner
+2025-08-21 20:19:14.580  9310-9310  decoder.scanner         com.msidecoder.scanner               W  type=1400 audit(0.0:3615): avc:  denied  { read } for  name="u:object_r:vendor_display_prop:s0" dev="tmpfs" ino=12796 scontext=u:r:untrusted_app:s0:c72,c256,c512,c768 tcontext=u:object_r:vendor_display_prop:s0 tclass=file permissive=0 app=com.msidecoder.scanner
+2025-08-21 20:19:14.583  9310-9310  libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.display.enable_optimal_refresh_rate"
+2025-08-21 20:19:14.583  9310-9310  libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.gpp.create_frc_extension"
+2025-08-21 20:19:14.583  9310-9310  libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.display.enable_optimal_refresh_rate"
+2025-08-21 20:19:14.583  9310-9310  libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.gpp.create_frc_extension"
+2025-08-21 20:19:14.584  9310-9310  DeferrableSurface       com.msidecoder.scanner               D  Surface created[total_surfaces=5, used_surfaces=3](androidx.camera.core.impl.ImmediateSurface@47b27e9}
+2025-08-21 20:19:14.587  9310-9310  MSIScanner              com.msidecoder.scanner               D  Scanner started - MlKitAnalyzer enabled
+2025-08-21 20:19:14.609  9310-9350  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@136f736[id=0]} Use case androidx.camera.core.Preview-7feae112-f9bc-45f2-86d9-eff51358f92b192658965 UPDATED
+2025-08-21 20:19:14.609  9310-9350  UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.ImageCapture-10d14615-29cf-439b-a2d8-9f704fa4cf4b14189866, androidx.camera.core.Preview-7feae112-f9bc-45f2-86d9-eff51358f92b192658965] for camera: 0
+2025-08-21 20:19:14.610  9310-9350  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@136f736[id=0]} Use case androidx.camera.core.ImageCapture-10d14615-29cf-439b-a2d8-9f704fa4cf4b14189866 UPDATED
+2025-08-21 20:19:14.610  9310-9350  UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.ImageCapture-10d14615-29cf-439b-a2d8-9f704fa4cf4b14189866, androidx.camera.core.Preview-7feae112-f9bc-45f2-86d9-eff51358f92b192658965] for camera: 0
+2025-08-21 20:19:14.611  9310-9350  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@136f736[id=0]} Use cases [androidx.camera.core.ImageAnalysis-be602554-09f7-4c2f-9592-b3bd38b4c36096247958] now ATTACHED
+2025-08-21 20:19:14.612  9310-9350  UseCaseAttachState      com.msidecoder.scanner               D  All use case: [androidx.camera.core.ImageCapture-10d14615-29cf-439b-a2d8-9f704fa4cf4b14189866, androidx.camera.core.Preview-7feae112-f9bc-45f2-86d9-eff51358f92b192658965, androidx.camera.core.ImageAnalysis-be602554-09f7-4c2f-9592-b3bd38b4c36096247958] for camera: 0
+2025-08-21 20:19:14.612  9310-9350  UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.ImageCapture-10d14615-29cf-439b-a2d8-9f704fa4cf4b14189866, androidx.camera.core.Preview-7feae112-f9bc-45f2-86d9-eff51358f92b192658965] for camera: 0
+2025-08-21 20:19:14.613  9310-9350  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@136f736[id=0]} Resetting Capture Session
+2025-08-21 20:19:14.613  9310-9350  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@136f736[id=0]} Releasing session in state OPENED
+2025-08-21 20:19:14.613  9310-9350  UseCaseAttachState      com.msidecoder.scanner               D  All use case: [androidx.camera.core.ImageCapture-10d14615-29cf-439b-a2d8-9f704fa4cf4b14189866, androidx.camera.core.Preview-7feae112-f9bc-45f2-86d9-eff51358f92b192658965, androidx.camera.core.ImageAnalysis-be602554-09f7-4c2f-9592-b3bd38b4c36096247958] for camera: 0
+2025-08-21 20:19:14.614  9310-9350  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@136f736[id=0]} Use case androidx.camera.core.ImageAnalysis-be602554-09f7-4c2f-9592-b3bd38b4c36096247958 ACTIVE
+2025-08-21 20:19:14.614  9310-9350  UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.ImageCapture-10d14615-29cf-439b-a2d8-9f704fa4cf4b14189866, androidx.camera.core.Preview-7feae112-f9bc-45f2-86d9-eff51358f92b192658965, androidx.camera.core.ImageAnalysis-be602554-09f7-4c2f-9592-b3bd38b4c36096247958] for camera: 0
+2025-08-21 20:19:14.615  9310-9350  CaptureSession          com.msidecoder.scanner               D  onSessionFinished()
+2025-08-21 20:19:14.615  9310-9350  SyncCaptureSessionBase  com.msidecoder.scanner               D  [androidx.camera.camera2.internal.SynchronizedCaptureSessionImpl@91cff4a] getSurface done with results: [Surface(name=null mNativeObject=-5476376669301566688)/@0x71a74c7, Surface(name=null mNativeObject=-5476376669301531808)/@0x27a5c8d]
+2025-08-21 20:19:14.615  9310-9350  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@136f736[id=0]} Unable to configure camera cancelled
+2025-08-21 20:19:14.616  9310-9350  SyncCaptureSessionBase  com.msidecoder.scanner               D  [androidx.camera.camera2.internal.SynchronizedCaptureSessionImpl@bb3c616] getSurface done with results: [Surface(name=null mNativeObject=-5476376669301566688)/@0x71a74c7, Surface(name=null mNativeObject=-5476376669301531808)/@0x27a5c8d, Surface(name=null mNativeObject=-5476376669301418448)/@0x3274fd8]
+2025-08-21 20:19:14.616  9310-9350  CaptureSession          com.msidecoder.scanner               D  Opening capture session.
+2025-08-21 20:19:14.616  9310-9350  Camera2Cap...estBuilder com.msidecoder.scanner               D  template type = 1
+2025-08-21 20:19:14.618  9310-9350  SyncCaptureSessionImpl  com.msidecoder.scanner               D  [androidx.camera.camera2.internal.SynchronizedCaptureSessionImpl@bb3c616] start openCaptureSession
+2025-08-21 20:19:14.618  9310-9350  DeferrableSurface       com.msidecoder.scanner               D  use count+1, useCount=3 androidx.camera.core.SurfaceRequest$2@2895685
+2025-08-21 20:19:14.618  9310-9350  DeferrableSurface       com.msidecoder.scanner               D  use count+1, useCount=2 androidx.camera.core.impl.ImmediateSurface@2f23294
+2025-08-21 20:19:14.618  9310-9350  DeferrableSurface       com.msidecoder.scanner               D  New surface in use[total_surfaces=5, used_surfaces=4](androidx.camera.core.impl.ImmediateSurface@47b27e9}
+2025-08-21 20:19:14.618  9310-9350  DeferrableSurface       com.msidecoder.scanner               D  use count+1, useCount=1 androidx.camera.core.impl.ImmediateSurface@47b27e9
+2025-08-21 20:19:15.443  9310-9350  SyncCaptureSessionImpl  com.msidecoder.scanner               D  [androidx.camera.camera2.internal.SynchronizedCaptureSessionImpl@bb3c616] Session onConfigured()
+2025-08-21 20:19:15.443  9310-9350  DeferrableSurface       com.msidecoder.scanner               D  use count-1,  useCount=2 closed=false androidx.camera.core.SurfaceRequest$2@2895685
+2025-08-21 20:19:15.443  9310-9350  DeferrableSurface       com.msidecoder.scanner               D  use count-1,  useCount=1 closed=false androidx.camera.core.impl.ImmediateSurface@2f23294
+2025-08-21 20:19:15.443  9310-9350  DeferrableSurface       com.msidecoder.scanner               D  use count-1,  useCount=0 closed=true androidx.camera.core.impl.ImmediateSurface@6ee5046
+2025-08-21 20:19:15.444  9310-9350  DeferrableSurface       com.msidecoder.scanner               D  Surface no longer in use[total_surfaces=5, used_surfaces=3](androidx.camera.core.impl.ImmediateSurface@6ee5046}
+2025-08-21 20:19:15.444  9310-9350  DeferrableSurface       com.msidecoder.scanner               D  Surface terminated[total_surfaces=4, used_surfaces=3](androidx.camera.core.impl.ImmediateSurface@6ee5046}
+2025-08-21 20:19:15.444  9310-9350  CaptureSession          com.msidecoder.scanner               D  Attempting to send capture request onConfigured
+2025-08-21 20:19:15.444  9310-9350  CaptureSession          com.msidecoder.scanner               D  Issuing request for session.
+2025-08-21 20:19:15.444  9310-9350  Camera2Cap...estBuilder com.msidecoder.scanner               D  createCaptureRequest
+2025-08-21 20:19:15.454  9310-9350  CaptureSession          com.msidecoder.scanner               D  CameraCaptureSession.onConfigured() mState=OPENED
+2025-08-21 20:19:15.454  9310-9350  CaptureSession          com.msidecoder.scanner               D  CameraCaptureSession.onReady() OPENED
+2025-08-21 20:19:15.467  9310-9346  SyncCaptureSessionImpl  com.msidecoder.scanner               D  [androidx.camera.camera2.internal.SynchronizedCaptureSessionImpl@8960c08] onClosed()
+2025-08-21 20:19:15.471  9310-9350  CaptureSession          com.msidecoder.scanner               D  CameraCaptureSession.onReady() OPENED
+2025-08-21 20:19:15.668  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:15.680  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:15.736  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:15.772  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:15.804  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:15.838  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:15.872  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:15.904  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:15.943  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:15.974  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:16.006  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:16.042  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:16.072  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:16.103  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:16.139  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:16.172  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:16.205  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:16.239  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:16.274  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:16.308  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:16.342  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:16.371  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:16.404  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:16.457  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:16.478  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:16.503  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:16.535  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:16.570  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:16.604  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:16.638  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:16.678  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:16.702  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:16.771  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:16.806  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:16.843  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:16.868  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:16.902  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:16.941  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:16.974  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:17.003  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:17.047  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:17.070  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:17.103  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:17.132  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:17.167  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:17.200  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:17.249  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:17.269  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:17.301  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:17.348  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:17.374  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:17.400  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:17.451  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:17.472  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:17.504  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:17.546  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:17.568  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:17.599  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:17.654  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:17.670  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:17.699  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:17.747  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:17.782  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:17.798  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:17.832  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:17.884  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:17.900  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:17.929  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:17.966  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:17.998  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:18.031  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:18.063  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:18.102  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:18.135  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:18.184  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:18.203  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:18.232  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:18.261  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:18.320  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:18.335  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:18.361  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:18.400  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:18.436  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:18.464  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:18.520  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:18.531  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:18.565  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:18.595  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:18.628  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:18.664  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:18.702  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:18.727  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:18.761  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:18.796  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:18.828  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:18.870  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:18.896  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:18.954  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:18.973  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:18.995  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:19.040  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:19.063  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:19.110  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:19.125  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:19.164  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:19.198  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:19.228  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:19.264  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:19.294  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:19.329  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:19.362  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:19.393  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:19.426  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:19.467  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:19.498  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:19.525  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:19.564  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:19.598  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:19.628  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:19.663  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:19.692  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:19.725  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:19.771  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:19.790  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:19.836  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:19.864  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:19.895  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:19.926  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:19.964  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:19.992  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:20.031  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:20.063  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:20.090  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:20.121  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:20.162  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:20.193  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:20.224  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:20.258  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:20.294  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:20.337  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:20.357  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:20.392  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:20.423  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:20.458  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:20.489  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:20.524  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:20.556  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:20.588  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:20.624  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:20.654  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:20.692  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:20.723  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:20.755  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:20.803  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:20.827  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:20.860  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:20.888  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:20.957  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:21.015  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:21.027  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:21.091  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:21.122  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:21.155  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:21.188  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:21.222  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:21.254  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:21.288  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:21.317  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:21.355  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:21.387  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:21.427  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:21.451  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:21.483  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:21.521  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:21.556  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:21.587  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:21.623  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:21.652  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:21.697  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:21.719  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:21.763  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:21.796  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:21.841  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:21.854  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:21.901  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:21.922  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:21.951  9310-9310  MlKitAnalyzer           com.msidecoder.scanner               D  Sensor-to-target transformation is null.
+2025-08-21 20:19:21.974  9310-9310  MSIScanner              com.msidecoder.scanner               D  Stopping scanner
+2025-08-21 20:19:21.976  9310-9346  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@136f736[id=0]} Use case androidx.camera.core.ImageAnalysis-be602554-09f7-4c2f-9592-b3bd38b4c36096247958 INACTIVE
+2025-08-21 20:19:21.976  9310-9310  DeferrableSurface       com.msidecoder.scanner               D  surface closed,  useCount=1 closed=true androidx.camera.core.impl.ImmediateSurface@47b27e9
+2025-08-21 20:19:21.978  9310-9346  UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.ImageCapture-10d14615-29cf-439b-a2d8-9f704fa4cf4b14189866, androidx.camera.core.Preview-7feae112-f9bc-45f2-86d9-eff51358f92b192658965] for camera: 0
+2025-08-21 20:19:21.985  9310-9346  CaptureSession          com.msidecoder.scanner               D  Attempting to submit CaptureRequest after setting
+2025-08-21 20:19:21.985  9310-9346  CaptureSession          com.msidecoder.scanner               D  Issuing request for session.
+2025-08-21 20:19:21.985  9310-9346  Camera2Cap...estBuilder com.msidecoder.scanner               D  createCaptureRequest
+2025-08-21 20:19:21.991  9310-9310  CameraQuirks            com.msidecoder.scanner               D  camera2 CameraQuirks = 
+2025-08-21 20:19:21.991  9310-9346  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@136f736[id=0]} Use cases [androidx.camera.core.ImageAnalysis-be602554-09f7-4c2f-9592-b3bd38b4c36096247958] now DETACHED for camera
+2025-08-21 20:19:21.992  9310-9346  UseCaseAttachState      com.msidecoder.scanner               D  All use case: [androidx.camera.core.ImageCapture-10d14615-29cf-439b-a2d8-9f704fa4cf4b14189866, androidx.camera.core.Preview-7feae112-f9bc-45f2-86d9-eff51358f92b192658965] for camera: 0
+2025-08-21 20:19:21.992  9310-9346  Camera2CameraImpl       com.msidecoder.scanner               D  No need to remove a previous mMeteringRepeating, SessionConfig Surfaces: 2, CaptureConfig Surfaces: 1
+2025-08-21 20:19:21.992  9310-9346  UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.ImageCapture-10d14615-29cf-439b-a2d8-9f704fa4cf4b14189866, androidx.camera.core.Preview-7feae112-f9bc-45f2-86d9-eff51358f92b192658965] for camera: 0
+2025-08-21 20:19:21.994  9310-9310  libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.display.enable_optimal_refresh_rate"
+2025-08-21 20:19:21.994  9310-9310  libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.gpp.create_frc_extension"
+2025-08-21 20:19:21.992  9310-9310  decoder.scanner         com.msidecoder.scanner               W  type=1400 audit(0.0:3619): avc:  denied  { read } for  name="u:object_r:vendor_display_prop:s0" dev="tmpfs" ino=12796 scontext=u:r:untrusted_app:s0:c72,c256,c512,c768 tcontext=u:object_r:vendor_display_prop:s0 tclass=file permissive=0 app=com.msidecoder.scanner
+2025-08-21 20:19:21.994  9310-9346  CaptureSession          com.msidecoder.scanner               D  Attempting to submit CaptureRequest after setting
+2025-08-21 20:19:21.994  9310-9346  CaptureSession          com.msidecoder.scanner               D  Issuing request for session.
+2025-08-21 20:19:21.994  9310-9346  Camera2Cap...estBuilder com.msidecoder.scanner               D  createCaptureRequest
+2025-08-21 20:19:21.994  9310-9310  libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.display.enable_optimal_refresh_rate"
+2025-08-21 20:19:21.995  9310-9310  libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.gpp.create_frc_extension"
+2025-08-21 20:19:21.996  9310-9310  DeferrableSurface       com.msidecoder.scanner               D  Surface created[total_surfaces=5, used_surfaces=3](androidx.camera.core.impl.ImmediateSurface@8079645}
+2025-08-21 20:19:21.997  9310-9310  MSIScanner              com.msidecoder.scanner               D  Scanner stopped - MlKitAnalyzer cleared
+2025-08-21 20:19:21.992  9310-9310  decoder.scanner         com.msidecoder.scanner               W  type=1400 audit(0.0:3620): avc:  denied  { read } for  name="u:object_r:vendor_display_prop:s0" dev="tmpfs" ino=12796 scontext=u:r:untrusted_app:s0:c72,c256,c512,c768 tcontext=u:object_r:vendor_display_prop:s0 tclass=file permissive=0 app=com.msidecoder.scanner
+2025-08-21 20:19:22.008  9310-9346  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@136f736[id=0]} Resetting Capture Session
+2025-08-21 20:19:22.009  9310-9346  SyncCaptureSessionImpl  com.msidecoder.scanner               D  [androidx.camera.camera2.internal.SynchronizedCaptureSessionImpl@bb3c616] Session call close()
+2025-08-21 20:19:22.009  9310-9346  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@136f736[id=0]} Releasing session in state OPENED
+2025-08-21 20:19:22.010  9310-9346  UseCaseAttachState      com.msidecoder.scanner               D  All use case: [androidx.camera.core.ImageCapture-10d14615-29cf-439b-a2d8-9f704fa4cf4b14189866, androidx.camera.core.Preview-7feae112-f9bc-45f2-86d9-eff51358f92b192658965] for camera: 0
+2025-08-21 20:19:22.011  9310-9346  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@136f736[id=0]} Use case androidx.camera.core.Preview-7feae112-f9bc-45f2-86d9-eff51358f92b192658965 UPDATED
+2025-08-21 20:19:22.012  9310-9346  UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.ImageCapture-10d14615-29cf-439b-a2d8-9f704fa4cf4b14189866, androidx.camera.core.Preview-7feae112-f9bc-45f2-86d9-eff51358f92b192658965] for camera: 0
+2025-08-21 20:19:22.013  9310-9346  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@136f736[id=0]} Use case androidx.camera.core.ImageCapture-10d14615-29cf-439b-a2d8-9f704fa4cf4b14189866 UPDATED
+2025-08-21 20:19:22.013  9310-9346  UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.ImageCapture-10d14615-29cf-439b-a2d8-9f704fa4cf4b14189866, androidx.camera.core.Preview-7feae112-f9bc-45f2-86d9-eff51358f92b192658965] for camera: 0
+2025-08-21 20:19:22.015  9310-9346  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@136f736[id=0]} Use case androidx.camera.core.Preview-7feae112-f9bc-45f2-86d9-eff51358f92b192658965 UPDATED
+2025-08-21 20:19:22.015  9310-9346  UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.ImageCapture-10d14615-29cf-439b-a2d8-9f704fa4cf4b14189866, androidx.camera.core.Preview-7feae112-f9bc-45f2-86d9-eff51358f92b192658965] for camera: 0
+2025-08-21 20:19:22.016  9310-9346  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@136f736[id=0]} Use case androidx.camera.core.ImageCapture-10d14615-29cf-439b-a2d8-9f704fa4cf4b14189866 UPDATED
+2025-08-21 20:19:22.017  9310-9346  UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.ImageCapture-10d14615-29cf-439b-a2d8-9f704fa4cf4b14189866, androidx.camera.core.Preview-7feae112-f9bc-45f2-86d9-eff51358f92b192658965] for camera: 0
+2025-08-21 20:19:22.018  9310-9346  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@136f736[id=0]} Use cases [androidx.camera.core.ImageAnalysis-deeec57d-d9ed-4dcc-9847-f068d1598fae109902478] now ATTACHED
+2025-08-21 20:19:22.018  9310-9346  UseCaseAttachState      com.msidecoder.scanner               D  All use case: [androidx.camera.core.ImageCapture-10d14615-29cf-439b-a2d8-9f704fa4cf4b14189866, androidx.camera.core.Preview-7feae112-f9bc-45f2-86d9-eff51358f92b192658965, androidx.camera.core.ImageAnalysis-deeec57d-d9ed-4dcc-9847-f068d1598fae109902478] for camera: 0
+2025-08-21 20:19:22.019  9310-9346  UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.ImageCapture-10d14615-29cf-439b-a2d8-9f704fa4cf4b14189866, androidx.camera.core.Preview-7feae112-f9bc-45f2-86d9-eff51358f92b192658965] for camera: 0
+2025-08-21 20:19:22.020  9310-9346  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@136f736[id=0]} Resetting Capture Session
+2025-08-21 20:19:22.020  9310-9346  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@136f736[id=0]} Releasing session in state OPENED
+2025-08-21 20:19:22.021  9310-9346  UseCaseAttachState      com.msidecoder.scanner               D  All use case: [androidx.camera.core.ImageCapture-10d14615-29cf-439b-a2d8-9f704fa4cf4b14189866, androidx.camera.core.Preview-7feae112-f9bc-45f2-86d9-eff51358f92b192658965, androidx.camera.core.ImageAnalysis-deeec57d-d9ed-4dcc-9847-f068d1598fae109902478] for camera: 0
+2025-08-21 20:19:22.021  9310-9346  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@136f736[id=0]} Use case androidx.camera.core.ImageAnalysis-deeec57d-d9ed-4dcc-9847-f068d1598fae109902478 INACTIVE
+2025-08-21 20:19:22.022  9310-9346  UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.ImageCapture-10d14615-29cf-439b-a2d8-9f704fa4cf4b14189866, androidx.camera.core.Preview-7feae112-f9bc-45f2-86d9-eff51358f92b192658965] for camera: 0
+2025-08-21 20:19:22.023  9310-9346  SyncCaptureSessionImpl  com.msidecoder.scanner               D  [androidx.camera.camera2.internal.SynchronizedCaptureSessionImpl@bb3c616] Session call super.close()
+2025-08-21 20:19:22.041  9310-9346  CaptureSession          com.msidecoder.scanner               D  onSessionFinished()
+2025-08-21 20:19:22.041  9310-9346  Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@136f736[id=0]} Unable to configure camera cancelled
+2025-08-21 20:19:22.041  9310-9346  SyncCaptureSessionBase  com.msidecoder.scanner               D  [androidx.camera.camera2.internal.SynchronizedCaptureSessionImpl@7c9900e] getSurface done with results: [Surface(name=null mNativeObject=-5476376669301566688)/@0x71a74c7, Surface(name=null mNativeObject=-5476376669301531808)/@0x27a5c8d, Surface(name=null mNativeObject=-5476376669301401008)/@0xcf1c3d3]
+2025-08-21 20:19:22.041  9310-9346  CaptureSession          com.msidecoder.scanner               D  Opening capture session.
+2025-08-21 20:19:22.042  9310-9346  Camera2Cap...estBuilder com.msidecoder.scanner               D  template type = 1
+2025-08-21 20:19:22.044  9310-9346  SyncCaptureSessionImpl  com.msidecoder.scanner               D  [androidx.camera.camera2.internal.SynchronizedCaptureSessionImpl@7c9900e] start openCaptureSession
+2025-08-21 20:19:22.044  9310-9346  DeferrableSurface       com.msidecoder.scanner               D  use count+1, useCount=3 androidx.camera.core.SurfaceRequest$2@2895685
+2025-08-21 20:19:22.044  9310-9346  DeferrableSurface       com.msidecoder.scanner               D  use count+1, useCount=2 androidx.camera.core.impl.ImmediateSurface@2f23294
+2025-08-21 20:19:22.044  9310-9346  DeferrableSurface       com.msidecoder.scanner               D  New surface in use[total_surfaces=5, used_surfaces=4](androidx.camera.core.impl.ImmediateSurface@8079645}
+2025-08-21 20:19:22.044  9310-9346  DeferrableSurface       com.msidecoder.scanner               D  use count+1, useCount=1 androidx.camera.core.impl.ImmediateSurface@8079645
+2025-08-21 20:19:22.851  9310-9346  SyncCaptureSessionImpl  com.msidecoder.scanner               D  [androidx.camera.camera2.internal.SynchronizedCaptureSessionImpl@7c9900e] Session onConfigured()
+2025-08-21 20:19:22.852  9310-9346  DeferrableSurface       com.msidecoder.scanner               D  use count-1,  useCount=2 closed=false androidx.camera.core.SurfaceRequest$2@2895685
+2025-08-21 20:19:22.852  9310-9346  DeferrableSurface       com.msidecoder.scanner               D  use count-1,  useCount=1 closed=false androidx.camera.core.impl.ImmediateSurface@2f23294
+2025-08-21 20:19:22.852  9310-9346  DeferrableSurface       com.msidecoder.scanner               D  use count-1,  useCount=0 closed=true androidx.camera.core.impl.ImmediateSurface@47b27e9
+2025-08-21 20:19:22.852  9310-9346  DeferrableSurface       com.msidecoder.scanner               D  Surface no longer in use[total_surfaces=5, used_surfaces=3](androidx.camera.core.impl.ImmediateSurface@47b27e9}
+2025-08-21 20:19:22.852  9310-9346  DeferrableSurface       com.msidecoder.scanner               D  Surface terminated[total_surfaces=4, used_surfaces=3](androidx.camera.core.impl.ImmediateSurface@47b27e9}
+2025-08-21 20:19:22.852  9310-9346  CaptureSession          com.msidecoder.scanner               D  Attempting to send capture request onConfigured
+2025-08-21 20:19:22.852  9310-9346  CaptureSession          com.msidecoder.scanner               D  Issuing request for session.
+2025-08-21 20:19:22.852  9310-9346  Camera2Cap...estBuilder com.msidecoder.scanner               D  createCaptureRequest
+2025-08-21 20:19:22.855  9310-9346  CaptureSession          com.msidecoder.scanner               D  CameraCaptureSession.onConfigured() mState=OPENED
+2025-08-21 20:19:22.855  9310-9346  CaptureSession          com.msidecoder.scanner               D  CameraCaptureSession.onReady() OPENED
+2025-08-21 20:19:22.864  9310-9350  CaptureSession          com.msidecoder.scanner               D  CameraCaptureSession.onReady() OPENED
+2025-08-21 20:19:22.864  9310-9350  SyncCaptureSessionImpl  com.msidecoder.scanner               D  [androidx.camera.camera2.internal.SynchronizedCaptureSessionImpl@bb3c616] onClosed()

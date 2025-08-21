@@ -71,7 +71,9 @@ class MLKitScanner {
                             data = barcode.rawValue ?: "",
                             format = mapBarcodeFormat(barcode.format),
                             source = ScanSource.ML_KIT,
-                            processingTimeMs = processingTime
+                            processingTimeMs = processingTime,
+                            boundingBox = barcode.boundingBox,  // T-008: MLKit coordinates
+                            cornerPoints = barcode.cornerPoints  // T-008: Corner points
                         )
                         
                         Log.d(TAG, "ML Kit detected: ${result.format} in ${processingTime}ms")

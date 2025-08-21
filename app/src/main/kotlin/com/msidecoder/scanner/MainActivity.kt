@@ -14,22 +14,24 @@ import androidx.camera.core.CameraControl
 import androidx.camera.core.CameraInfo
 import androidx.camera.core.CameraSelector
 import androidx.camera.core.ImageAnalysis
-import androidx.camera.core.ImageProxy
-import androidx.camera.core.Preview
-import androidx.camera.lifecycle.ProcessCameraProvider
+import androidx.camera.mlkit.vision.MlKitAnalyzer
+import androidx.camera.view.CameraController
+import androidx.camera.view.LifecycleCameraController
 import androidx.camera.view.PreviewView
 import androidx.core.content.ContextCompat
-import com.msidecoder.scanner.camera.YuvToNv21Converter
 import com.msidecoder.scanner.databinding.ActivityMainBinding
 import com.msidecoder.scanner.debug.SnapshotManager
 import com.msidecoder.scanner.scanner.MLKitScanner
 import com.msidecoder.scanner.scanner.MSIScanner
 import com.msidecoder.scanner.scanner.ScannerArbitrator
 import com.msidecoder.scanner.scanner.ScanResult
+import com.msidecoder.scanner.scanner.ScanSource
 import com.msidecoder.scanner.state.CameraControlsManager
 import com.msidecoder.scanner.state.PreferencesRepository
 import com.msidecoder.scanner.state.ScannerState
 import com.msidecoder.scanner.state.ScannerStateManager
+import com.google.mlkit.vision.barcode.BarcodeScanning
+import com.google.mlkit.vision.barcode.common.Barcode
 import com.msidecoder.scanner.utils.MetricsCollector
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
@@ -38,16 +40,20 @@ class MainActivity : AppCompatActivity() {
     
     private lateinit var binding: ActivityMainBinding
     private lateinit var cameraExecutor: ExecutorService
-    private var cameraProvider: ProcessCameraProvider? = null
-    private var imageAnalysis: ImageAnalysis? = null
+    private var cameraController: LifecycleCameraController? = null
     private var cameraControl: CameraControl? = null
     private var cameraInfo: CameraInfo? = null
+    
+    // T-008: MLKit native components 
+    private lateinit var barcodeScanner: com.google.mlkit.vision.barcode.BarcodeScanner
+    private var isScannerActive = false // Control processing state
     
     private val metricsCollector = MetricsCollector()
     private val scannerStateManager = ScannerStateManager()
     private val cameraControlsManager = CameraControlsManager()
     private lateinit var preferencesRepository: PreferencesRepository
     private lateinit var snapshotManager: SnapshotManager
+    
     
     // Scanner components
     private lateinit var scannerArbitrator: ScannerArbitrator
@@ -101,6 +107,9 @@ class MainActivity : AppCompatActivity() {
         cameraExecutor = Executors.newSingleThreadExecutor()
         preferencesRepository = PreferencesRepository(this)
         
+        // T-008: Initialize native MLKit barcode scanner
+        barcodeScanner = BarcodeScanning.getClient()
+        
         // T-007: Initialize snapshot manager
         snapshotManager = SnapshotManager(
             context = this,
@@ -143,100 +152,56 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun startCamera() {
-        val cameraProviderFuture = ProcessCameraProvider.getInstance(this)
-
-        cameraProviderFuture.addListener({
-            try {
-                cameraProvider = cameraProviderFuture.get()
-                bindCameraUseCases()
-            } catch (exc: Exception) {
-                Log.e(TAG, "Use case binding failed", exc)
-                showCameraErrorDialog()
-            }
-        }, ContextCompat.getMainExecutor(this))
-    }
-
-    private fun bindCameraUseCases() {
-        val cameraProvider = this.cameraProvider ?: run {
-            Log.e(TAG, "Camera provider is null")
-            return
-        }
-
-        val cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
-
-        val preview = Preview.Builder()
-            .setTargetRotation(Surface.ROTATION_0)
-            .build()
-            .also {
-                it.setSurfaceProvider(binding.previewView.surfaceProvider)
-            }
-
-        // Create ImageAnalysis but don't bind it initially (IDLE state)
-        imageAnalysis = ImageAnalysis.Builder()
-            .setTargetRotation(Surface.ROTATION_0)
-            .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
-            .build()
-            .also {
-                Log.d(TAG, "Setting ImageAnalysis analyzer")
-                it.setAnalyzer(cameraExecutor) { imageProxy ->
-                    processFrame(imageProxy)
+        Log.d(TAG, "Starting camera with MlKitAnalyzer")
+        
+        // T-008: Use LifecycleCameraController for native MLKit integration
+        cameraController = LifecycleCameraController(this)
+        
+        // Configure camera controller
+        cameraController?.apply {
+            // Set camera selector
+            setCameraSelector(CameraSelector.DEFAULT_BACK_CAMERA)
+            
+            // T-008: Configure MlKitAnalyzer BEFORE bindToLifecycle (critical for COORDINATE_SYSTEM_VIEW_REFERENCED)
+            setImageAnalysisAnalyzer(
+                ContextCompat.getMainExecutor(this@MainActivity),
+                MlKitAnalyzer(
+                    listOf(barcodeScanner),
+                    ImageAnalysis.COORDINATE_SYSTEM_VIEW_REFERENCED,
+                    ContextCompat.getMainExecutor(this@MainActivity)
+                ) { result: MlKitAnalyzer.Result? ->
+                    handleMlKitNativeResult(result)
                 }
-            }
-
-        try {
-            cameraProvider.unbindAll()
-            Log.d(TAG, "Binding Preview only (Scanner IDLE)")
-            // Only bind preview initially - ImageAnalysis will be bound when scanner starts
-            val camera = cameraProvider.bindToLifecycle(
-                this,
-                cameraSelector,
-                preview
             )
             
-            // Capture camera control references
-            cameraControl = camera.cameraControl
-            cameraInfo = camera.cameraInfo
+            // Bind to lifecycle AFTER analyzer configuration
+            bindToLifecycle(this@MainActivity)
             
-            Log.d(TAG, "Preview bound successfully")
+            // Set surface provider
+            binding.previewView.controller = this
+        }
+        
+        // Capture camera control references after controller is set
+        cameraController?.let { controller ->
+            cameraControl = controller.cameraControl
+            cameraInfo = controller.cameraInfo
+            
             Log.d(TAG, "Camera capabilities: Torch=${cameraInfo?.hasFlashUnit()}, MaxZoom=${cameraInfo?.zoomState?.value?.maxZoomRatio}")
             
             // Apply saved zoom after camera is ready
             applySavedZoomAfterCameraReady()
-            
-        } catch (exc: Exception) {
-            Log.e(TAG, "Use case binding failed", exc)
-            showCameraErrorDialog()
         }
+        
+        Log.d(TAG, "Camera started successfully with MlKitAnalyzer")
     }
 
-    private fun processFrame(imageProxy: ImageProxy) {
-        metricsCollector.onFrameStart()
-        val startTime = System.currentTimeMillis()
-        
-        try {
-            val width = imageProxy.width
-            val height = imageProxy.height
-            val rotationDegrees = imageProxy.imageInfo.rotationDegrees
-            
-            // Convert YUV to NV21 
-            val nv21Data = YuvToNv21Converter.convert(imageProxy)
-            
-            // Process frame through scanner arbitrator
-            scannerArbitrator.scanFrame(nv21Data, width, height, rotationDegrees) { result ->
-                handleScanResult(result)
-            }
-            
-            val processingTime = System.currentTimeMillis() - startTime
-            metricsCollector.onFrameProcessed(processingTime, width, height, rotationDegrees)
-            
-        } finally {
-            imageProxy.close()
-        }
-    }
+
     
     private fun handleScanResult(result: ScanResult) {
         when (result) {
             is ScanResult.Success -> {
+                // T-008: Native coordinates already handled in handleMlKitNativeResult
+                
                 // T-006: Check anti-republication before debounce
                 val lastResult = preferencesRepository.getLastScanResult()
                 if (lastResult != null && lastResult.matches(result.data) && lastResult.isRecent(800L)) {
@@ -330,19 +295,14 @@ class MainActivity : AppCompatActivity() {
     }
     
     private fun startScanner() {
-        Log.d(TAG, "Starting scanner")
-        val provider = cameraProvider ?: return
-        val analysis = imageAnalysis ?: return
+        Log.d(TAG, "Starting scanner with MlKitAnalyzer")
         
         try {
-            // Bind ImageAnalysis to start processing
-            provider.bindToLifecycle(
-                this,
-                CameraSelector.DEFAULT_BACK_CAMERA,
-                analysis
-            )
+            // T-008: MlKitAnalyzer is already configured, just activate processing
+            isScannerActive = true
+            
             metricsCollector.reset() // Reset metrics when starting
-            Log.d(TAG, "Scanner started - ImageAnalysis bound")
+            Log.d(TAG, "Scanner started - Processing activated")
         } catch (exc: Exception) {
             Log.e(TAG, "Failed to start scanner", exc)
         }
@@ -350,15 +310,83 @@ class MainActivity : AppCompatActivity() {
     
     private fun stopScanner() {
         Log.d(TAG, "Stopping scanner")
-        val provider = cameraProvider ?: return
-        val analysis = imageAnalysis ?: return
         
         try {
-            // Unbind only ImageAnalysis, keep Preview
-            provider.unbind(analysis)
-            Log.d(TAG, "Scanner stopped - ImageAnalysis unbound")
+            // T-008: Deactivate processing but keep analyzer running
+            isScannerActive = false
+            
+            // Clear ROI overlay when stopping
+            binding.roiOverlay.clearRoi()
+            
+            Log.d(TAG, "Scanner stopped - Processing deactivated")
         } catch (exc: Exception) {
             Log.e(TAG, "Failed to stop scanner", exc)
+        }
+    }
+    
+    // T-008: Handle MLKit native results with COORDINATE_SYSTEM_VIEW_REFERENCED
+    private fun handleMlKitNativeResult(result: MlKitAnalyzer.Result?) {
+        // Early return if scanner is not active
+        if (!isScannerActive) {
+            return
+        }
+        
+        metricsCollector.onFrameStart()
+        val startTime = System.currentTimeMillis()
+        
+        try {
+            result?.getValue(barcodeScanner)?.let { barcodes ->
+                if (barcodes.isNotEmpty()) {
+                    val barcode = barcodes.first() // Take first detected barcode
+                    Log.d(TAG, "=== T-008 NATIVE MLKIT SUCCESS ===")
+                    Log.d(TAG, "Detected: ${barcode.displayValue}")
+                    Log.d(TAG, "Format: ${barcode.format}")
+                    Log.d(TAG, "BoundingBox NATIVE (PreviewView space): ${barcode.boundingBox}")
+                    Log.d(TAG, "PreviewView Size: ${binding.previewView.width}×${binding.previewView.height}")
+                    
+                    // Create ScanResult compatible with existing pipeline
+                    val scanResult = ScanResult.Success(
+                        data = barcode.displayValue ?: "",
+                        format = mapBarcodeFormat(barcode.format),
+                        source = ScanSource.ML_KIT,
+                        processingTimeMs = System.currentTimeMillis() - startTime,
+                        boundingBox = barcode.boundingBox // Already in PreviewView coordinates!
+                    )
+                    
+                    // Display ROI with native coordinates (no transformation needed!)
+                    barcode.boundingBox?.let { nativeBoundingBox ->
+                        binding.roiOverlay.updateRoi(
+                            rects = listOf(nativeBoundingBox),
+                            cameraWidth = 0, // Not needed with native coordinates
+                            cameraHeight = 0  // Not needed with native coordinates
+                        )
+                    }
+                    
+                    // Handle through existing pipeline
+                    handleScanResult(scanResult)
+                } else {
+                    // No barcode detected - clear overlay
+                    binding.roiOverlay.clearRoi()
+                }
+            }
+            
+            val processingTime = System.currentTimeMillis() - startTime
+            metricsCollector.onFrameProcessed(processingTime, 0, 0, 0) // Frame dimensions not relevant for native
+            
+        } catch (exc: Exception) {
+            Log.e(TAG, "Error handling MLKit native result", exc)
+        }
+    }
+    
+    // Helper function to map MLKit barcode formats to our internal format
+    private fun mapBarcodeFormat(mlkitFormat: Int): String {
+        return when (mlkitFormat) {
+            Barcode.FORMAT_QR_CODE -> "QR_CODE"
+            Barcode.FORMAT_DATA_MATRIX -> "DATA_MATRIX"
+            Barcode.FORMAT_EAN_13 -> "EAN_13"
+            Barcode.FORMAT_EAN_8 -> "EAN_8"
+            Barcode.FORMAT_CODE_128 -> "CODE_128"
+            else -> "UNKNOWN_$mlkitFormat"
         }
     }
     
@@ -631,8 +659,8 @@ class MainActivity : AppCompatActivity() {
         }
         
         // Check camera availability
-        if (cameraProvider == null) {
-            Log.w(TAG, "Camera provider not available")
+        if (cameraController == null) {
+            Log.w(TAG, "Camera controller not available")
             return false
         }
         
@@ -710,6 +738,7 @@ class MainActivity : AppCompatActivity() {
         }
         cameraExecutor.shutdown()
     }
+    
 
     companion object {
         private const val TAG = "MSIScanner"

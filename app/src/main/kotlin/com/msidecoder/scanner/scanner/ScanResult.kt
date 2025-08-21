@@ -8,7 +8,9 @@ sealed class ScanResult {
         val data: String,
         val format: String,
         val source: ScanSource,
-        val processingTimeMs: Long
+        val processingTimeMs: Long,
+        val boundingBox: android.graphics.Rect? = null,  // T-008: Coordinates for ROI overlay
+        val cornerPoints: Array<android.graphics.Point>? = null  // T-008: Corner points if available
     ) : ScanResult()
     
     object NoResult : ScanResult()

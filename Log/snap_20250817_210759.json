@@ -1,0 +1,60 @@
+{
+  "ts": 1755457679565,
+  "res": "640x480",
+  "fps": 4.844053641876844,
+  "procMs": 0.8461538461538461,
+  "queue": 0,
+  "rotationDeg": 90,
+  "torch": "OFF",
+  "zoom": {
+    "ratio": 1,
+    "type": "numerique"
+  },
+  "ml": {
+    "latMs": 16,
+    "hits": 1717
+  },
+  "msi": {
+    "latMs": 230,
+    "status": "stub"
+  },
+  "lastPub": {
+    "text": "http:\/\/www.tp-link.com\/support",
+    "src": "none",
+    "ts": 1755446379989
+  },
+  "msiDbg": {
+    "frameId": "msi_11506",
+    "stage": "roi_extract",
+    "success": true,
+    "params": {
+      "roiWidth": 1280,
+      "bandHeight": 10,
+      "binThreshold": 0.5,
+      "filterSize": 3,
+      "moduleMethod": "median"
+    },
+    "roi": {
+      "candidates": 1,
+      "bestScore": "0,64",
+      "bestROI": "0,306 79x24",
+      "procTimeMs": 186,
+      "gradThresh": 0.3,
+      "morphKernel": 15,
+      "angle": "-15,8°",
+      "rectifyMs": 6,
+      "rectifyOK": true,
+      "profileMs": 5,
+      "profileLines": 32,
+      "profileSmooth": true,
+      "thresholdMs": 0,
+      "runsCount": 4,
+      "peaksCount": 0,
+      "windowSize": 45,
+      "quantifyMs": 0,
+      "moduleWPx": "0,0",
+      "quantifyRate": "0,0%",
+      "quantifyCount": 0
+    }
+  }
+}

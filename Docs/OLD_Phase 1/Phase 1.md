@@ -16,6 +16,23 @@ Cette phase a pour but de construire un **pipeline de traitement image brut → 
 
 ## 📑 Tâches proposées
 
+### **T-100 : Diagnostic & Debug Snapshot**
+
+* Objectif : Préparer un système de monitoring interne pour valider visuellement et via logs JSON chaque étape de la pipeline.
+* Implémentation :
+  * Créer un objet `MsiDebugSnapshot` qui enregistre :
+    - frameId
+    - horodatage
+    - paramètres actifs (`binThreshold`, largeur ROI, filtre utilisé…)
+    - stats signal (longueur ligne, moyenne, variance…)
+  * Export JSON compact inséré dans la sortie de T-007 (Phase 0).
+  * Affichage visuel minimal dans l’overlay (ex : “Diag OK / NOK”).
+* Bénéfices :
+  * Assure que chaque micro-tâche T-101 → T-105 peut être tracée et validée.
+  * Évite d’engorger les logs classiques avec trop de détails.
+
+
+
 ### **T-101 : ROI Extraction (stub + heuristique simple)**
 
 * Définir un pipeline minimal pour isoler un **Rectangle Of Interest (ROI)** dans le frame.
@@ -69,6 +86,15 @@ Cette phase a pour but de construire un **pipeline de traitement image brut → 
 
   * `runs`, `module`, `signalLength`, `threshold`, etc.
 
+
+  ### **T-109 (Lite)** : Implémentation d’un overlay interactif minimal
+  - Cadre orange = ROI MSI candidate (pas encore décodable).
+  - Cadre vert = ML Kit quand décodage réussi.
+  - Pas d’animation, pas de fade-out.
+  - Permet de valider visuellement la stabilité et le mapping coordonnées → écran.
+  - Version complète prévue en Phase 2.
+
+
 ---
 
 ## ⚠️ Contraintes spécifiques Phase 1
@@ -93,6 +119,8 @@ Cette phase a pour but de construire un **pipeline de traitement image brut → 
 * Les snapshots JSON contiennent les runs et params associés.
 * Même si ça ne “décode” pas encore, la chaîne **ROI → runs** fonctionne de manière stable.
 * Robustesse : tolère un peu de bruit, légère inclinaison, variations de luminosité.
+* Chaque étape (T-100 à T-109) est vérifiable via snapshots JSON (`msiDbg`) et retour visuel (overlay).
+
 
 ---
 
