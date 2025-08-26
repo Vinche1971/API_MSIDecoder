@@ -28,6 +28,8 @@ import com.msidecoder.scanner.scanner.ScanResult
 import com.msidecoder.scanner.scanner.ScanSource
 import com.msidecoder.scanner.state.CameraControlsManager
 import com.msidecoder.scanner.state.PreferencesRepository
+import com.msidecoder.scanner.opencv.OpenCVConverter
+import org.opencv.android.OpenCVLoader
 import com.msidecoder.scanner.state.ScannerState
 import com.msidecoder.scanner.state.ScannerStateManager
 import com.google.mlkit.vision.barcode.BarcodeScanning
@@ -109,6 +111,9 @@ class MainActivity : AppCompatActivity() {
         
         // T-008: Initialize native MLKit barcode scanner
         barcodeScanner = BarcodeScanning.getClient()
+        
+        // T-101: Initialize OpenCV (early initialization)
+        initializeOpenCV()
         
         // T-007: Initialize snapshot manager
         snapshotManager = SnapshotManager(
@@ -696,6 +701,7 @@ class MainActivity : AppCompatActivity() {
             Log.d(TAG, "Applying torch on resume: ${currentState.torchEnabled}")
             cameraControl?.enableTorch(currentState.torchEnabled)
         }
+        
         Log.d(TAG, "=== ON RESUME COMPLETE ===")
     }
     
@@ -737,6 +743,62 @@ class MainActivity : AppCompatActivity() {
             scannerArbitrator.close()
         }
         cameraExecutor.shutdown()
+    }
+    
+    /**
+     * T-101: Initialize OpenCV early in onCreate() using modern API
+     */
+    private fun initializeOpenCV() {
+        Log.d(TAG, "=== T-101: Initializing OpenCV ===")
+        
+        try {
+            // OpenCV 4.12.0: Use direct initialization (simpler than callback approach)
+            val success = OpenCVLoader.initLocal()
+            if (success) {
+                Log.d(TAG, "✅ OpenCV loaded successfully - version: ${OpenCVLoader.OPENCV_VERSION}")
+                // T-101: Quick test - NV21→Mat conversion functionality
+                testOpenCVBaseline()
+            } else {
+                Log.e(TAG, "❌ OpenCV initialization failed")
+            }
+        } catch (exception: Exception) {
+            Log.e(TAG, "❌ OpenCV initialization exception: ${exception.message}", exception)
+        }
+    }
+    
+    /**
+     * T-101: OpenCV baseline test - NV21→Mat conversion validation
+     */
+    private fun testOpenCVBaseline() {
+        Log.d(TAG, "=== OpenCV Baseline Test ===")
+        
+        try {
+            // Create mock NV21 data (640x480 typical CameraX size)  
+            val width = 640
+            val height = 480
+            val nv21Size = width * height * 3 / 2 // NV21 format size
+            val mockNv21Data = ByteArray(nv21Size) { (it % 256).toByte() }
+            
+            // Test conversion
+            val startTime = System.currentTimeMillis()
+            val grayMat = OpenCVConverter.nv21ToGrayMat(mockNv21Data, width, height)
+            val conversionTime = System.currentTimeMillis() - startTime
+            
+            if (grayMat != null) {
+                val isValid = OpenCVConverter.validateMat(grayMat, width, height)
+                Log.d(TAG, "✅ OpenCV baseline test SUCCESS: conversion=${conversionTime}ms, valid=$isValid")
+                
+                // Clean up
+                grayMat.release()
+            } else {
+                Log.e(TAG, "❌ OpenCV baseline test FAILED: conversion returned null")
+            }
+            
+        } catch (exception: Exception) {
+            Log.e(TAG, "❌ OpenCV baseline test EXCEPTION: ${exception.message}", exception)
+        }
+        
+        Log.d(TAG, "=== OpenCV Baseline Test Complete ===")
     }
     
 

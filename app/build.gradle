@@ -15,6 +15,11 @@ android {
         versionName "0.1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        
+        // OpenCV native libraries support
+        ndk {
+            abiFilters 'arm64-v8a', 'armeabi-v7a'  // Focus on main ARM architectures
+        }
     }
 
     buildTypes {
@@ -39,6 +44,12 @@ android {
 
     buildFeatures {
         viewBinding true
+    }
+    
+    // OpenCV packaging options
+    packagingOptions {
+        pickFirst '**/libc++_shared.so'
+        pickFirst '**/libopenmp.so'
     }
 }
 
@@ -68,6 +79,9 @@ dependencies {
 
     // ML Kit Barcode Scanning
     implementation 'com.google.mlkit:barcode-scanning:17.2.0'
+    
+    // OpenCV Android SDK - Local module (T-101)
+    implementation project(':opencv')
 
     // Test dependencies
     testImplementation 'junit:junit:4.13.2'

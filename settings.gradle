@@ -10,8 +10,14 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        // OpenCV official Maven repository
+        maven { url 'https://maven.opencv.org/releases' }
     }
 }
 
 rootProject.name = "MSI Decoder"
 include ':app'
+
+// OpenCV Android SDK module (T-101)
+include ':opencv'
+project(':opencv').projectDir = new File('OpenCV/SDK')
