@@ -228,7 +228,7 @@ Le stub MSI recevra déjà la signature complète (FrameNV21 + rotationDeg) pour
 5. **Documentation technique** complète (spécifications + validations)
 6. **Debug tooling** professionnel (JSON snapshots)
 
-### Transition vers Phase 1
+### Transition vers Phase 1 - OpenCV Integration
 L'infrastructure Phase 0 fournit :
 - **Pipeline dual** prêt (ML Kit ✅ + MSI interface ✅)
 - **Data structures** complètes (FrameNV21, rotationDeg, callbacks)
@@ -236,8 +236,40 @@ L'infrastructure Phase 0 fournit :
 - **User experience** raffinée (controls, feedback, persistance)
 - **Debug capabilities** (snapshot JSON avec tous états système)
 
-**→ Phase 1 peut maintenant implémenter le détecteur MSI réel**
+## 🚀 PHASE 1 - OpenCV MSI Detection
+
+### Documentation Technique OpenCV
+- **OpenCV/** : Documentation complète intégration OpenCV Android
+- **Plan-Action-Integration-Dual.md** : Architecture dual MLKit + OpenCV fallback
+- **Point d'injection** : Remplacement pur du stub `MSIScanner.kt`
+- **Compatibilité** : 100% préservation architecture MLKit native Phase 0
+
+### Architecture Dual Validée
+```
+MlKitAnalyzer (NATIF - INCHANGÉ)
+    ↓ (NV21 + COORDINATE_SYSTEM_VIEW_REFERENCED)
+ScannerArbitrator  
+    ↓
+MLKit Scanner (Priorité 1) → OpenCV Scanner (Fallback MSI uniquement)
+```
+
+### Stratégie Zero-Impact
+- ✅ **MLKit inchangé** : `COORDINATE_SYSTEM_VIEW_REFERENCED` préservé
+- ✅ **OpenCV fallback pur** : Seulement si MLKit NoResult/Error
+- ✅ **Interface compatible** : Même signature `scanFrame(nv21Data, width, height, rotationDegrees)`
+- ✅ **Performance optimale** : Données NV21 déjà disponibles, zero conversion supplémentaire
+
+### Timeline Phase 1
+- **T-101** : Setup OpenCV SDK (2-3h)
+- **T-102** : Détecteur ROI MSI (6-8h)
+- **T-103** : Pipeline Binarisation (4-6h)
+- **T-104** : MSIScanner Integration (3-4h)
+- **T-105** : Tests & Validation (2-3h)
+
+**Total** : 27-33h sur 2-3 semaines
+
+**→ Phase 1 OpenCV implémente le détecteur MSI réel via architecture dual**
 
 ---
 *Document vivant mis à jour à chaque phase*
-*Dernière révision: **PHASE 0 TERMINÉE** - T-007 APPROVED (2025-08-15)*
+*Dernière révision: **PHASE 1 PLANIFIÉE** - OpenCV Integration Dual (2025-08-26)*
