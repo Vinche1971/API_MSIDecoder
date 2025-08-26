@@ -103,3 +103,13 @@ app/build/
 app/release/
 *.aab
 *.apk
+
+# OpenCV Android SDK (external dependency - T-101)
+# Use Docs/Phase 0/T-101_Approved.md guide to setup OpenCV manually
+# Download from: https://github.com/opencv/opencv/releases (opencv-4.12.0-android-sdk.zip)
+OpenCV/SDK/
+OpenCV/opencv-4.12.0/
+
+# Keep OpenCV documentation and integration guides
+!OpenCV/*.md
+!OpenCV/README.md
