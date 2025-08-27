@@ -8,6 +8,12 @@
     <!-- T-007: Vibration permission for snapshot feedback -->
     <uses-permission android:name="android.permission.VIBRATE" />
     
+    <!-- Storage permissions for debug images -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" 
+        android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    
     <!-- Camera features -->
     <uses-feature
         android:name="android.hardware.camera"

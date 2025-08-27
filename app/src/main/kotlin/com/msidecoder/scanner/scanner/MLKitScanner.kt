@@ -67,9 +67,18 @@ class MLKitScanner {
                     if (barcodes.isNotEmpty()) {
                         // Take first detected barcode
                         val barcode = barcodes.first()
+                        val mappedFormat = mapBarcodeFormat(barcode.format)
+                        
+                        // Check if format is in whitelist (supported formats only)
+                        if (mappedFormat.startsWith("UNKNOWN_")) {
+                            Log.d(TAG, "ML Kit detected unsupported format: $mappedFormat -> fallback to MSI")
+                            callback(ScanResult.NoResult)
+                            return@addOnSuccessListener
+                        }
+                        
                         val result = ScanResult.Success(
                             data = barcode.rawValue ?: "",
-                            format = mapBarcodeFormat(barcode.format),
+                            format = mappedFormat,
                             source = ScanSource.ML_KIT,
                             processingTimeMs = processingTime,
                             boundingBox = barcode.boundingBox,  // T-008: MLKit coordinates

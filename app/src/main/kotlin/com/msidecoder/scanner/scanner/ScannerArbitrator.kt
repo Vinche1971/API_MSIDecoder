@@ -45,7 +45,12 @@ class ScannerArbitrator(
         val arbitrationStartTime = System.currentTimeMillis()
         val resultDelivered = AtomicBoolean(false)
         
-        // Priority 1: Try ML Kit first (blocking)
+        // DEBUG: Skip ML Kit - test MSI directly
+        Log.d(TAG, "BYPASSING ML Kit -> testing MSI directly")
+        tryMSIFallback(nv21Data, width, height, rotationDegrees, callback, resultDelivered)
+        return
+        
+        // Priority 1: Try ML Kit first (blocking) - DISABLED FOR TEST
         mlkitScanner.scanFrame(nv21Data, width, height, rotationDegrees) { mlkitResult ->
             lastMLKitTimeMs = when (mlkitResult) {
                 is ScanResult.Success -> mlkitResult.processingTimeMs

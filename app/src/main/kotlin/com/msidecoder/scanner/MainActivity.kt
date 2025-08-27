@@ -6,15 +6,16 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
+import android.view.OrientationEventListener
 import android.view.Surface
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.camera.core.AspectRatio
 import androidx.camera.core.CameraControl
 import androidx.camera.core.CameraInfo
 import androidx.camera.core.CameraSelector
 import androidx.camera.core.ImageAnalysis
-import androidx.camera.mlkit.vision.MlKitAnalyzer
 import androidx.camera.view.CameraController
 import androidx.camera.view.LifecycleCameraController
 import androidx.camera.view.PreviewView
@@ -61,6 +62,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var scannerArbitrator: ScannerArbitrator
     private var lastScanTime = 0L
     private val debounceIntervalMs = 750L // 750ms debounce for scan results
+    
+    // Orientation handling for portrait-locked app
+    private var orientationEventListener: OrientationEventListener? = null
     private val overlayHandler = Handler(Looper.getMainLooper())
     private val overlayUpdateRunnable = object : Runnable {
         override fun run() {
@@ -126,6 +130,9 @@ class MainActivity : AppCompatActivity() {
         // Initialize scanner components
         initializeScanners()
         
+        // Initialize orientation listener for correct camera rotation
+        initializeOrientationListener()
+        
         // Restore saved states
         restoreStates()
         
@@ -157,7 +164,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun startCamera() {
-        Log.d(TAG, "Starting camera with MlKitAnalyzer")
+        Log.d(TAG, "Starting camera with ScannerArbitrator (MLKit + OpenCV) - High Resolution Mode")
         
         // T-008: Use LifecycleCameraController for native MLKit integration
         cameraController = LifecycleCameraController(this)
@@ -167,16 +174,15 @@ class MainActivity : AppCompatActivity() {
             // Set camera selector
             setCameraSelector(CameraSelector.DEFAULT_BACK_CAMERA)
             
-            // T-008: Configure MlKitAnalyzer BEFORE bindToLifecycle (critical for COORDINATE_SYSTEM_VIEW_REFERENCED)
+            // Configure high resolution for optimal barcode detection (OpenCV recommendations)
+            setImageAnalysisTargetSize(
+                CameraController.OutputSize(AspectRatio.RATIO_16_9)
+            )
+            
+            // T-103: Configure custom analyzer using ScannerArbitrator (MLKit + OpenCV)
             setImageAnalysisAnalyzer(
-                ContextCompat.getMainExecutor(this@MainActivity),
-                MlKitAnalyzer(
-                    listOf(barcodeScanner),
-                    ImageAnalysis.COORDINATE_SYSTEM_VIEW_REFERENCED,
-                    ContextCompat.getMainExecutor(this@MainActivity)
-                ) { result: MlKitAnalyzer.Result? ->
-                    handleMlKitNativeResult(result)
-                }
+                cameraExecutor,
+                createArbitratorAnalyzer()
             )
             
             // Bind to lifecycle AFTER analyzer configuration
@@ -197,7 +203,7 @@ class MainActivity : AppCompatActivity() {
             applySavedZoomAfterCameraReady()
         }
         
-        Log.d(TAG, "Camera started successfully with MlKitAnalyzer")
+        Log.d(TAG, "Camera started successfully with ScannerArbitrator")
     }
 
 
@@ -300,7 +306,7 @@ class MainActivity : AppCompatActivity() {
     }
     
     private fun startScanner() {
-        Log.d(TAG, "Starting scanner with MlKitAnalyzer")
+        Log.d(TAG, "Starting scanner with ScannerArbitrator")
         
         try {
             // T-008: MlKitAnalyzer is already configured, just activate processing
@@ -329,71 +335,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
     
-    // T-008: Handle MLKit native results with COORDINATE_SYSTEM_VIEW_REFERENCED
-    private fun handleMlKitNativeResult(result: MlKitAnalyzer.Result?) {
-        // Early return if scanner is not active
-        if (!isScannerActive) {
-            return
-        }
-        
-        metricsCollector.onFrameStart()
-        val startTime = System.currentTimeMillis()
-        
-        try {
-            result?.getValue(barcodeScanner)?.let { barcodes ->
-                if (barcodes.isNotEmpty()) {
-                    val barcode = barcodes.first() // Take first detected barcode
-                    Log.d(TAG, "=== T-008 NATIVE MLKIT SUCCESS ===")
-                    Log.d(TAG, "Detected: ${barcode.displayValue}")
-                    Log.d(TAG, "Format: ${barcode.format}")
-                    Log.d(TAG, "BoundingBox NATIVE (PreviewView space): ${barcode.boundingBox}")
-                    Log.d(TAG, "PreviewView Size: ${binding.previewView.width}×${binding.previewView.height}")
-                    
-                    // Create ScanResult compatible with existing pipeline
-                    val scanResult = ScanResult.Success(
-                        data = barcode.displayValue ?: "",
-                        format = mapBarcodeFormat(barcode.format),
-                        source = ScanSource.ML_KIT,
-                        processingTimeMs = System.currentTimeMillis() - startTime,
-                        boundingBox = barcode.boundingBox // Already in PreviewView coordinates!
-                    )
-                    
-                    // Display ROI with native coordinates (no transformation needed!)
-                    barcode.boundingBox?.let { nativeBoundingBox ->
-                        binding.roiOverlay.updateRoi(
-                            rects = listOf(nativeBoundingBox),
-                            cameraWidth = 0, // Not needed with native coordinates
-                            cameraHeight = 0  // Not needed with native coordinates
-                        )
-                    }
-                    
-                    // Handle through existing pipeline
-                    handleScanResult(scanResult)
-                } else {
-                    // No barcode detected - clear overlay
-                    binding.roiOverlay.clearRoi()
-                }
-            }
-            
-            val processingTime = System.currentTimeMillis() - startTime
-            metricsCollector.onFrameProcessed(processingTime, 0, 0, 0) // Frame dimensions not relevant for native
-            
-        } catch (exc: Exception) {
-            Log.e(TAG, "Error handling MLKit native result", exc)
-        }
-    }
     
-    // Helper function to map MLKit barcode formats to our internal format
-    private fun mapBarcodeFormat(mlkitFormat: Int): String {
-        return when (mlkitFormat) {
-            Barcode.FORMAT_QR_CODE -> "QR_CODE"
-            Barcode.FORMAT_DATA_MATRIX -> "DATA_MATRIX"
-            Barcode.FORMAT_EAN_13 -> "EAN_13"
-            Barcode.FORMAT_EAN_8 -> "EAN_8"
-            Barcode.FORMAT_CODE_128 -> "CODE_128"
-            else -> "UNKNOWN_$mlkitFormat"
-        }
-    }
     
     private fun updateButtonForIdleState() {
         binding.fabStartStop.icon = ContextCompat.getDrawable(this, R.drawable.ic_play)
@@ -689,6 +631,10 @@ class MainActivity : AppCompatActivity() {
         Log.d(TAG, "=== ON RESUME ===")
         Log.d(TAG, "CameraControlsManager state on resume: ${cameraControlsManager.getCurrentState()}")
         
+        // Enable orientation listener for correct camera rotation
+        orientationEventListener?.enable()
+        Log.d(TAG, "OrientationEventListener enabled")
+        
         // Force apply current states when resuming 
         if (cameraControl != null) {
             val currentState = cameraControlsManager.getCurrentState()
@@ -709,6 +655,10 @@ class MainActivity : AppCompatActivity() {
         super.onPause()
         Log.d(TAG, "=== ON PAUSE ===")
         
+        // Disable orientation listener to save battery
+        orientationEventListener?.disable()
+        Log.d(TAG, "OrientationEventListener disabled")
+        
         // T-006: Auto-OFF torch when going to background (system only)
         val currentTorchState = cameraControlsManager.getCurrentState().torchEnabled
         if (currentTorchState) {
@@ -725,7 +675,8 @@ class MainActivity : AppCompatActivity() {
         Log.d(TAG, "Initializing scanner components")
         
         val mlkitScanner = MLKitScanner()
-        val msiScanner = MSIScanner() 
+        // Enable visual debugging for MSI scanner (images saved to Pictures/MSI_Debug)
+        val msiScanner = MSIScanner(context = this, enableDebugImages = true) 
         
         scannerArbitrator = ScannerArbitrator(
             mlkitScanner = mlkitScanner,
@@ -734,6 +685,90 @@ class MainActivity : AppCompatActivity() {
         )
         
         Log.d(TAG, "Scanner components initialized")
+    }
+    
+    /**
+     * Initialize OrientationEventListener for correct camera rotation in portrait-locked app
+     */
+    private fun initializeOrientationListener() {
+        orientationEventListener = object : OrientationEventListener(this) {
+            override fun onOrientationChanged(orientation: Int) {
+                if (orientation == ORIENTATION_UNKNOWN) return
+                
+                val rotation = when {
+                    orientation >= 45 && orientation < 135 -> Surface.ROTATION_270
+                    orientation >= 135 && orientation < 225 -> Surface.ROTATION_180
+                    orientation >= 225 && orientation < 315 -> Surface.ROTATION_90
+                    else -> Surface.ROTATION_0
+                }
+                
+                // LifecycleCameraController automatically handles rotation based on device sensors
+                // Just log the orientation for debugging
+                Log.v(TAG, "Device orientation: $orientation° → Expected rotation: $rotation")
+            }
+        }
+    }
+    
+    /**
+     * T-103: Create ImageAnalysis.Analyzer that uses ScannerArbitrator
+     */
+    private fun createArbitratorAnalyzer(): ImageAnalysis.Analyzer {
+        return ImageAnalysis.Analyzer { imageProxy ->
+            if (!isScannerActive) {
+                imageProxy.close()
+                return@Analyzer
+            }
+            
+            val startTime = System.currentTimeMillis()
+            
+            try {
+                // Convert ImageProxy to NV21
+                val nv21Data = OpenCVConverter.imageProxyToNv21(imageProxy)
+                if (nv21Data != null) {
+                    // Call arbitrator with NV21 data
+                    scannerArbitrator.scanFrame(
+                        nv21Data = nv21Data,
+                        width = imageProxy.width,
+                        height = imageProxy.height,
+                        rotationDegrees = imageProxy.imageInfo.rotationDegrees
+                    ) { result ->
+                        // Handle result on main thread
+                        runOnUiThread {
+                            handleArbitratorResult(result)
+                        }
+                    }
+                } else {
+                    Log.w(TAG, "Failed to convert ImageProxy to NV21")
+                }
+            } catch (e: Exception) {
+                Log.e(TAG, "Error in arbitrator analyzer", e)
+            } finally {
+                imageProxy.close()
+            }
+            
+            val processingTime = System.currentTimeMillis() - startTime
+            metricsCollector.onFrameProcessed(processingTime, 0, 0, 0)
+        }
+    }
+    
+    /**
+     * T-103: Handle ScanResult from ScannerArbitrator
+     */
+    private fun handleArbitratorResult(result: ScanResult) {
+        when (result) {
+            is ScanResult.Success -> {
+                Log.d(TAG, "ARBITRATOR SUCCESS: ${result.format} = '${result.data}' (${result.source}, ${result.processingTimeMs}ms)")
+                handleScanResult(result)
+            }
+            is ScanResult.Error -> {
+                Log.w(TAG, "ARBITRATOR ERROR: ${result.source}", result.exception)
+                binding.roiOverlay.clearRoi()
+            }
+            is ScanResult.NoResult -> {
+                // Clear overlay when no result
+                binding.roiOverlay.clearRoi()
+            }
+        }
     }
 
     override fun onDestroy() {

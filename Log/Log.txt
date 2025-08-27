@@ -1,113 +1,814 @@
---------- beginning of main
---------- beginning of kernel
---------- beginning of system
----------------------------- PROCESS STARTED (18293) for package com.msidecoder.scanner ----------------------------
-2025-08-26 16:16:57.598 18293-18293 MSIScanner              com.msidecoder.scanner               D  === T-101: Initializing OpenCV ===
-2025-08-26 16:16:57.598 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               D  First attempt to load libs
-2025-08-26 16:16:57.598 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               D  Trying to load library opencv_java4
-2025-08-26 16:16:57.605 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               D  Library opencv_java4 loaded
-2025-08-26 16:16:57.605 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               D  First attempt to load libs is OK
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I  
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I  General configuration for OpenCV 4.12.0 =====================================
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I    Version control:               4.12.0-dirty
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I  
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I    Platform:
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      Timestamp:                   2025-07-02T13:00:18Z
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      Host:                        Linux 5.4.0-200-generic x86_64
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      Target:                      Android 1 aarch64
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      CMake:                       3.22.1-g37088a8
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      CMake generator:             Ninja
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      CMake build tool:            /opt/android-sdk/cmake/3.22.1/bin/ninja
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      Configuration:               Release
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      Algorithm Hint:              ALGO_HINT_ACCURATE
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I  
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I    CPU/HW features:
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      Baseline:                    NEON FP16
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I        requested:                 DETECT
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      Dispatched code generation:  NEON_DOTPROD NEON_FP16 NEON_BF16
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I        requested:                 NEON_FP16 NEON_BF16 NEON_DOTPROD
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I        NEON_DOTPROD (2 files):    + NEON_DOTPROD
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I        NEON_FP16 (2 files):       + NEON_FP16
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I        NEON_BF16 (0 files):       + NEON_BF16
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I  
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I    C/C++:
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      Built as dynamic libs?:      NO
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      C++ standard:                11
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      C++ Compiler:                /opt/android-sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++  (ver 18.0.3)
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      C++ flags (Release):         -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D__BIONIC_NO_PAGE_SIZE_MACRO -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security     -fsigned-char -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wuninitialized -Winconsistent-missing-override -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -Wno-comment -Wno-deprecated-enum-enum-conversion -Wno-deprecated-anon-enum-enum-conversion -fdiagnostics-show-option -Qunused-arguments  -fvisibility=hidden -fvisibility-inlines-hidden  -O3 -DNDEBUG   -DNDEBUG
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      C++ flags (Debug):           -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D__BIONIC_NO_PAGE_SIZE_MACRO -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security     -fsigned-char -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wuninitialized -Winconsistent-missing-override -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -Wno-comment -Wno-deprecated-enum-enum-conversion -Wno-deprecated-anon-enum-enum-conversion -fdiagnostics-show-option -Qunused-arguments  -fvisibility=hidden -fvisibility-inlines-hidden  -fno-limit-debug-info   -O0 -DDEBUG -D_DEBUG -g
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      C Compiler:                  /opt/android-sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin/clang
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      C flags (Release):           -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D__BIONIC_NO_PAGE_SIZE_MACRO -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security    -fsigned-char -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wuninitialized -Winconsistent-missing-override -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -Wno-comment -Wno-deprecated-enum-enum-conversion -Wno-deprecated-anon-enum-enum-conversion -fdiagnostics-show-option -Qunused-arguments  -fvisibility=hidden -fvisibility-inlines-hidden  -O3 -DNDEBUG   -DNDEBUG
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      C flags (Debug):             -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D__BIONIC_NO_PAGE_SIZE_MACRO -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security    -fsigned-char -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wuninitialized -Winconsistent-missing-override -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -Wno-comment -Wno-deprecated-enum-enum-conversion -Wno-deprecated-anon-enum-enum-conversion -fdiagnostics-show-option -Qunused-arguments  -fvisibility=hidden -fvisibility-inlines-hidden  -fno-limit-debug-info   -O0 -DDEBUG -D_DEBUG -g
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      Linker flags (Release):      -Wl,-z,max-page-size=16384 -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments  -Wl,-z,max-page-size=16384  -Wl,--as-needed -Wl,--no-undefined -Wl,--gc-sections  
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      Linker flags (Debug):        -Wl,-z,max-page-size=16384 -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments  -Wl,-z,max-page-size=16384  -Wl,--as-needed -Wl,--no-undefined  
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      ccache:                      YES
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      Precompiled headers:         NO
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      Extra dependencies:          z dl m log
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      3rdparty dependencies:       libcpufeatures libprotobuf ade tbb ittnotify libjpeg-turbo libwebp libpng libtiff libopenjp2 IlmImf tegra_hal kleidicv_hal kleidicv kleidicv_thread
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I  
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I    OpenCV modules:
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      To be built:                 calib3d core dnn features2d flann gapi highgui imgcodecs imgproc java ml objdetect photo stitching video videoio
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      Disabled:                    world
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      Disabled by dependency:      -
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      Unavailable:                 python2 python3 ts
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      Applications:                -
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      Documentation:               NO
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      Non-free algorithms:         NO
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I  
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I    Android NDK:                   /opt/android-sdk/ndk/27.2.12479018 (ver 27.2.12479018)
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      Android ABI:                 arm64-v8a
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      NDK toolchain:               aarch64-linux-android-clang
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      STL type:                    c++_shared
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      Native API level:            21
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I    Android SDK:                   /opt/android-sdk (tools:  build tools: 34.0.0)
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I  
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I    GUI:                           NONE
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I  
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I    Media I/O: 
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      ZLib:                        z (ver 1.3.0.1)
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      JPEG:                        build-libjpeg-turbo (ver 3.1.0-70)
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I        SIMD Support Request:      YES
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I        SIMD Support:              YES
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      WEBP:                        build (ver decoder: 0x0209, encoder: 0x020f, demux: 0x0107)
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      AVIF:                        NO
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      PNG:                         build (ver 1.6.43)
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I        SIMD Support Request:      YES
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I        SIMD Support:              YES (Arm NEON)
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      TIFF:                        build (ver 42 - 4.6.0)
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      JPEG 2000:                   build (ver 2.5.3)
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      OpenEXR:                     build (ver 2.3.0)
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      GIF:                         YES
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      HDR:                         YES
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      SUNRASTER:                   YES
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      PXM:                         YES
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      PFM:                         YES
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I  
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I    Video I/O:
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I     MEDIANDK:                     YES
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I     NDK Camera:                   NO
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I  
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I    Parallel framework:            TBB (ver 2022.1 interface 12150)
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I  
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I    Trace:                         YES (with Intel ITT(3.25.4))
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I  
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I    Other third-party libraries:
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      Custom HAL:                  YES (carotene (ver 0.0.1) KleidiCV (ver 0.5.0))
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      Protobuf:                    build (3.19.1)
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      Flatbuffers:                 builtin/3rdparty (23.5.9)
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I  
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I    Python (for build):            /usr/bin/python3
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I  
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I    Java:                          export all functions
-2025-08-26 16:16:57.609 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      ant:                         NO
-2025-08-26 16:16:57.610 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      Java wrappers:               YES ()
-2025-08-26 16:16:57.610 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I      Java tests:                  NO
-2025-08-26 16:16:57.610 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I  
-2025-08-26 16:16:57.610 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I    Install to:                    /home/ci/build/o4a/install
-2025-08-26 16:16:57.610 18293-18293 OpenCV/StaticHelper     com.msidecoder.scanner               I  -----------------------------------------------------------------
-2025-08-26 16:16:57.610 18293-18293 MSIScanner              com.msidecoder.scanner               D  ✅ OpenCV loaded successfully - version: 4.12.0
-2025-08-26 16:16:57.610 18293-18293 MSIScanner              com.msidecoder.scanner               D  === OpenCV Baseline Test ===
-2025-08-26 16:16:57.658 18293-18293 OpenCVConverter         com.msidecoder.scanner               V  NV21→Gray conversion: 640x480 in 3ms
-2025-08-26 16:16:57.658 18293-18293 OpenCVConverter         com.msidecoder.scanner               V  Mat validation SUCCESS: 640x480, type: 0, channels: 1
-2025-08-26 16:16:57.658 18293-18293 MSIScanner              com.msidecoder.scanner               D  ✅ OpenCV baseline test SUCCESS: conversion=3ms, valid=true
-2025-08-26 16:16:57.658 18293-18293 MSIScanner              com.msidecoder.scanner               D  === OpenCV Baseline Test Complete ===
+2025-08-27 22:50:44.789 13295-13295 MSIScanner              com.msidecoder.scanner               V  Device orientation: 13° → Expected rotation: 0
+2025-08-27 22:50:44.940 13295-13341 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@56d6bef[id=0]} Issue capture request
+2025-08-27 22:50:44.940 13295-13341 CaptureSession          com.msidecoder.scanner               D  Issuing capture request.
+2025-08-27 22:50:44.945 13295-13341 Camera2Cap...estBuilder com.msidecoder.scanner               D  createCaptureRequest
+2025-08-27 22:50:44.951 13295-13341 UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [androidx.camera.core.ImageCapture-dde84cac-6f77-4d66-85b6-95ebad67039f118359889, androidx.camera.core.Preview-48d35b1d-eb94-4555-a1c6-49d9557e650a222356600, androidx.camera.core.ImageAnalysis-3d64dd9c-c2d7-4d81-bb7b-9715e4cbc76e14285750] for camera: 0
+2025-08-27 22:50:44.954 13295-13341 CaptureSession          com.msidecoder.scanner               D  Attempting to submit CaptureRequest after setting
+2025-08-27 22:50:44.955 13295-13341 CaptureSession          com.msidecoder.scanner               D  Issuing request for session.
+2025-08-27 22:50:44.955 13295-13341 Camera2Cap...estBuilder com.msidecoder.scanner               D  createCaptureRequest
+2025-08-27 22:50:44.993 13295-13295 MSIScanner              com.msidecoder.scanner               V  Device orientation: 12° → Expected rotation: 0
+2025-08-27 22:50:46.217 13295-13295 MSIScanner              com.msidecoder.scanner               V  Device orientation: 7° → Expected rotation: 0
+2025-08-27 22:50:46.421 13295-13295 MSIScanner              com.msidecoder.scanner               V  Device orientation: 0° → Expected rotation: 0
+2025-08-27 22:50:46.625 13295-13295 MSIScanner              com.msidecoder.scanner               V  Device orientation: 4° → Expected rotation: 0
+2025-08-27 22:50:46.829 13295-13295 MSIScanner              com.msidecoder.scanner               V  Device orientation: 18° → Expected rotation: 0
+2025-08-27 22:50:48.063 13295-13295 MSIScanner              com.msidecoder.scanner               D  Starting scanner with ScannerArbitrator
+2025-08-27 22:50:48.063 13295-13295 MSIScanner              com.msidecoder.scanner               D  Scanner started - Processing activated
+2025-08-27 22:50:48.153 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  BYPASSING ML Kit -> testing MSI directly
+2025-08-27 22:50:48.156 13295-13485 MSIScanner              com.msidecoder.scanner               W  Using legacy NV21 scan method - consider using ImageProxy method
+2025-08-27 22:50:48.161 13295-13485 OpenCVConverter         com.msidecoder.scanner               V  NV21→Gray conversion: 864x480 → 480x864 in 5ms (ROTATED 90°)
+2025-08-27 22:50:48.162 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Detecting ROI candidates in 480x864 image
+2025-08-27 22:50:48.165 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:48.322 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225048-161_1_01_original.png
+2025-08-27 22:50:48.339 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:48.389 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225048-161_1_02_gradients.png
+2025-08-27 22:50:48.393 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:48.437 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225048-161_1_03_morphology.png
+2025-08-27 22:50:48.440 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Found 12 contours
+2025-08-27 22:50:48.440 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 23x16 < 100x30
+2025-08-27 22:50:48.440 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 101x15 < 100x30
+2025-08-27 22:50:48.441 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  ACCEPT ROI: 238x83, ratio=2,9, area=19754, density=0,95, convexity=0,99, grad=343,8
+2025-08-27 22:50:48.442 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  CONFIDENCE: 0,62 = aspect(0,30) + density(1,00) + compact(0,59) + pos(0,83)
+2025-08-27 22:50:48.442 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 13x42 < 100x30
+2025-08-27 22:50:48.442 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 18x16 < 100x30
+2025-08-27 22:50:48.442 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 38x12 < 100x30
+2025-08-27 22:50:48.442 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 0.7855974 not in [2.5, 15.0]
+2025-08-27 22:50:48.442 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 56x28 < 100x30
+2025-08-27 22:50:48.442 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 24x31 < 100x30
+2025-08-27 22:50:48.442 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 81x35 < 100x30
+2025-08-27 22:50:48.442 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 24x15 < 100x30
+2025-08-27 22:50:48.442 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 30x16 < 100x30
+2025-08-27 22:50:48.442 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  Detected 1 ROI candidates in 281ms
+2025-08-27 22:50:48.442 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  High confidence ROIs: 0/1 (threshold: 0.8)
+2025-08-27 22:50:48.442 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               W  No high confidence ROIs, using medium confidence (>=0.5)
+2025-08-27 22:50:48.443 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               V  Binarizing ROI: ROI(rect=Rect(173, 456 - 411, 539), conf=0,62, ratio=2,9, grad=343,8)
+2025-08-27 22:50:48.446 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:48.485 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225048-442_2_06_extracted_roi.png
+2025-08-27 22:50:48.489 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:48.514 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225048-442_2_07_preprocessed.png
+2025-08-27 22:50:48.515 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               V  Method 0 (Otsu): score=0,350
+2025-08-27 22:50:48.563 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               V  Method 1 (AdaptiveGaussian): score=0,440
+2025-08-27 22:50:48.564 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               V  Method 2 (AdaptiveMean): score=0,350
+2025-08-27 22:50:48.564 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               V  Method 3 (Triangle): score=0,350
+2025-08-27 22:50:48.564 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               V  Selected method: AdaptiveGaussian (confidence: 0,440)
+2025-08-27 22:50:48.566 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:48.590 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225048-442_2_08_binarized_binary.png
+2025-08-27 22:50:48.591 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               D  ROI binarized successfully in 149ms
+2025-08-27 22:50:48.592 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               D  BinaryProfile(len=172, quality=1,00, transitions=68, avgBarWidth=1,8, ratio=2,87)
+                                                                                                    ASCII: ······················██··█··███·█···█··███·█··██··██··█··██··███·██··█··██··██··██·····███·█···█··███·█···█··██··███·█···█···██··█··██··██··█···█··███·····················
+                                                                                                    Compact: ·222·21·23·11·31·23·11·22·22·21·22·23·12·21·22·22·22·53·11·31·23·11·31·22·23·11·31·32·21·22·22·21·31·23·21
+2025-08-27 22:50:48.593 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               D  BINARY PATTERN: ······················██··█··███·█···█··███·█··██··██··█··██··███·██··█··██··██··██·····███·█···█··███·█···█··██··███·█···█···██··█··██··██··█···█··███·····················
+2025-08-27 22:50:48.593 13295-13485 MSIScanner              com.msidecoder.scanner               D  MSI binarization successful (legacy method)
+2025-08-27 22:50:48.593 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-27 22:50:48.594 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  BYPASSING ML Kit -> testing MSI directly
+2025-08-27 22:50:48.595 13295-13485 MSIScanner              com.msidecoder.scanner               W  Using legacy NV21 scan method - consider using ImageProxy method
+2025-08-27 22:50:48.595 13295-13485 OpenCVConverter         com.msidecoder.scanner               V  NV21→Gray conversion: 864x480 → 480x864 in 0ms (ROTATED 90°)
+2025-08-27 22:50:48.596 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Detecting ROI candidates in 480x864 image
+2025-08-27 22:50:48.598 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:48.601 13295-13295 RoiOverlayView          com.msidecoder.scanner               D  clearRoi called
+2025-08-27 22:50:48.742 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225048-595_3_01_original.png
+2025-08-27 22:50:48.752 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:48.832 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225048-595_3_02_gradients.png
+2025-08-27 22:50:48.839 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:48.887 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225048-595_3_03_morphology.png
+2025-08-27 22:50:48.890 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Found 13 contours
+2025-08-27 22:50:48.890 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 22x16 < 100x30
+2025-08-27 22:50:48.890 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 102x13 < 100x30
+2025-08-27 22:50:48.891 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  ACCEPT ROI: 238x82, ratio=2,9, area=19516, density=0,96, convexity=0,99, grad=310,4
+2025-08-27 22:50:48.891 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  CONFIDENCE: 0,62 = aspect(0,30) + density(1,00) + compact(0,59) + pos(0,84)
+2025-08-27 22:50:48.892 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 18x84 < 100x30
+2025-08-27 22:50:48.892 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 56x32 < 100x30
+2025-08-27 22:50:48.892 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 22x15 < 100x30
+2025-08-27 22:50:48.892 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 44x20 < 100x30
+2025-08-27 22:50:48.892 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 0.7855974 not in [2.5, 15.0]
+2025-08-27 22:50:48.892 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 22x17 < 100x30
+2025-08-27 22:50:48.892 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 40x17 < 100x30
+2025-08-27 22:50:48.892 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 32x8 < 100x30
+2025-08-27 22:50:48.892 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 23x23 < 100x30
+2025-08-27 22:50:48.892 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 30x10 < 100x30
+2025-08-27 22:50:48.892 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  Detected 1 ROI candidates in 297ms
+2025-08-27 22:50:48.892 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  High confidence ROIs: 0/1 (threshold: 0.8)
+2025-08-27 22:50:48.892 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               W  No high confidence ROIs, using medium confidence (>=0.5)
+2025-08-27 22:50:48.893 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               V  Binarizing ROI: ROI(rect=Rect(168, 455 - 406, 537), conf=0,62, ratio=2,9, grad=310,4)
+2025-08-27 22:50:48.895 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:48.931 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225048-892_4_06_extracted_roi.png
+2025-08-27 22:50:48.936 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:48.954 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225048-892_4_07_preprocessed.png
+2025-08-27 22:50:48.955 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               V  Method 0 (Otsu): score=0,350
+2025-08-27 22:50:48.956 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               V  Method 1 (AdaptiveGaussian): score=0,440
+2025-08-27 22:50:48.957 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               V  Method 2 (AdaptiveMean): score=0,470
+2025-08-27 22:50:48.957 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               V  Method 3 (Triangle): score=0,350
+2025-08-27 22:50:48.957 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               V  Selected method: AdaptiveMean (confidence: 0,470)
+2025-08-27 22:50:48.962 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:48.982 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225048-892_4_08_binarized_binary.png
+2025-08-27 22:50:48.983 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               D  ROI binarized successfully in 91ms
+2025-08-27 22:50:48.984 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               D  BinaryProfile(len=174, quality=1,00, transitions=56, avgBarWidth=2,2, ratio=2,90)
+                                                                                                    ASCII: ·····················████····█████···█··█████···██·██··██··█···██··██·····█···██··██·····███·█···█··███·█···█···█··████····█···█████···█··██··██··██··██······················
+                                                                                                    Compact: ·214·45·31·25·32·12·22·21·32·22·51·32·22·53·11·31·23·11·31·31·24·41·35·31·22·22·22·22·22
+2025-08-27 22:50:48.985 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               D  BINARY PATTERN: ·····················████····█████···█··█████···██·██··██··█···██··██·····█···██··██·····███·█···█··███·█···█···█··████····█···█████···█··██··██··██··██······················
+2025-08-27 22:50:48.985 13295-13485 MSIScanner              com.msidecoder.scanner               D  MSI binarization successful (legacy method)
+2025-08-27 22:50:48.985 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-27 22:50:48.985 13295-13295 RoiOverlayView          com.msidecoder.scanner               D  clearRoi called
+2025-08-27 22:50:48.986 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  BYPASSING ML Kit -> testing MSI directly
+2025-08-27 22:50:48.986 13295-13485 MSIScanner              com.msidecoder.scanner               W  Using legacy NV21 scan method - consider using ImageProxy method
+2025-08-27 22:50:48.987 13295-13485 OpenCVConverter         com.msidecoder.scanner               V  NV21→Gray conversion: 864x480 → 480x864 in 1ms (ROTATED 90°)
+2025-08-27 22:50:48.988 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Detecting ROI candidates in 480x864 image
+2025-08-27 22:50:48.990 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:49.141 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225048-987_5_01_original.png
+2025-08-27 22:50:49.150 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:49.239 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225048-987_5_02_gradients.png
+2025-08-27 22:50:49.245 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:49.302 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225048-987_5_03_morphology.png
+2025-08-27 22:50:49.305 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Found 21 contours
+2025-08-27 22:50:49.306 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 23x7 < 100x30
+2025-08-27 22:50:49.306 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 23x16 < 100x30
+2025-08-27 22:50:49.306 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 2.3203883 not in [2.5, 15.0]
+2025-08-27 22:50:49.306 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 30x159 < 100x30
+2025-08-27 22:50:49.306 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 32x18 < 100x30
+2025-08-27 22:50:49.306 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 22x7 < 100x30
+2025-08-27 22:50:49.306 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 74x19 < 100x30
+2025-08-27 22:50:49.306 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 44x25 < 100x30
+2025-08-27 22:50:49.306 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 18x7 < 100x30
+2025-08-27 22:50:49.306 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 56x20 < 100x30
+2025-08-27 22:50:49.306 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 23x10 < 100x30
+2025-08-27 22:50:49.306 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 0.78175896 not in [2.5, 15.0]
+2025-08-27 22:50:49.306 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 14x15 < 100x30
+2025-08-27 22:50:49.306 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 21x8 < 100x30
+2025-08-27 22:50:49.306 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 23x7 < 100x30
+2025-08-27 22:50:49.306 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 24x19 < 100x30
+2025-08-27 22:50:49.306 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 45x16 < 100x30
+2025-08-27 22:50:49.306 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 42x10 < 100x30
+2025-08-27 22:50:49.306 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 37x10 < 100x30
+2025-08-27 22:50:49.306 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 23x14 < 100x30
+2025-08-27 22:50:49.306 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 22x4 < 100x30
+2025-08-27 22:50:49.306 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  Detected 0 ROI candidates in 319ms
+2025-08-27 22:50:49.306 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  High confidence ROIs: 0/0 (threshold: 0.8)
+2025-08-27 22:50:49.306 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-27 22:50:49.307 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  BYPASSING ML Kit -> testing MSI directly
+2025-08-27 22:50:49.308 13295-13485 MSIScanner              com.msidecoder.scanner               W  Using legacy NV21 scan method - consider using ImageProxy method
+2025-08-27 22:50:49.309 13295-13485 OpenCVConverter         com.msidecoder.scanner               V  NV21→Gray conversion: 864x480 → 480x864 in 0ms (ROTATED 90°)
+2025-08-27 22:50:49.309 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Detecting ROI candidates in 480x864 image
+2025-08-27 22:50:49.311 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:49.319 13295-13295 RoiOverlayView          com.msidecoder.scanner               D  clearRoi called
+2025-08-27 22:50:49.474 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225049-309_6_01_original.png
+2025-08-27 22:50:49.484 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:49.559 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225049-309_6_02_gradients.png
+2025-08-27 22:50:49.566 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:49.619 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225049-309_6_03_morphology.png
+2025-08-27 22:50:49.621 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Found 13 contours
+2025-08-27 22:50:49.621 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 32x6 < 100x30
+2025-08-27 22:50:49.621 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 28x7 < 100x30
+2025-08-27 22:50:49.621 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 21x25 < 100x30
+2025-08-27 22:50:49.621 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 23x16 < 100x30
+2025-08-27 22:50:49.621 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 19x9 < 100x30
+2025-08-27 22:50:49.622 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  ACCEPT ROI: 108x37, ratio=2,9, area=3996, density=0,62, convexity=0,85, grad=40,1
+2025-08-27 22:50:49.623 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  CONFIDENCE: 0,54 = aspect(0,30) + density(1,00) + compact(0,39) + pos(0,42)
+2025-08-27 22:50:49.623 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 101x25 < 100x30
+2025-08-27 22:50:49.623 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 0.73282444 not in [2.5, 15.0]
+2025-08-27 22:50:49.623 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 84x32 < 100x30
+2025-08-27 22:50:49.623 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 24x28 < 100x30
+2025-08-27 22:50:49.623 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 33x10 < 100x30
+2025-08-27 22:50:49.623 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 29x4 < 100x30
+2025-08-27 22:50:49.623 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 19x11 < 100x30
+2025-08-27 22:50:49.623 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  Detected 1 ROI candidates in 314ms
+2025-08-27 22:50:49.623 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  High confidence ROIs: 0/1 (threshold: 0.8)
+2025-08-27 22:50:49.623 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               W  No high confidence ROIs, using medium confidence (>=0.5)
+2025-08-27 22:50:49.624 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               V  Binarizing ROI: ROI(rect=Rect(372, 193 - 480, 230), conf=0,54, ratio=2,9, grad=40,1)
+2025-08-27 22:50:49.626 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:49.654 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225049-623_7_06_extracted_roi.png
+2025-08-27 22:50:49.657 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:49.692 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225049-623_7_07_preprocessed.png
+2025-08-27 22:50:49.693 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               V  Method 0 (Otsu): score=0,440
+2025-08-27 22:50:49.699 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               V  Method 1 (AdaptiveGaussian): score=0,490
+2025-08-27 22:50:49.700 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               V  Method 2 (AdaptiveMean): score=0,440
+2025-08-27 22:50:49.700 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               V  Method 3 (Triangle): score=0,490
+2025-08-27 22:50:49.701 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               V  Selected method: AdaptiveGaussian (confidence: 0,490)
+2025-08-27 22:50:49.703 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:49.723 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225049-623_7_08_binarized_binary.png
+2025-08-27 22:50:49.725 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               V  Binary profile quality insufficient: 0.0
+2025-08-27 22:50:49.725 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-27 22:50:49.725 13295-13295 RoiOverlayView          com.msidecoder.scanner               D  clearRoi called
+2025-08-27 22:50:49.726 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  BYPASSING ML Kit -> testing MSI directly
+2025-08-27 22:50:49.727 13295-13485 MSIScanner              com.msidecoder.scanner               W  Using legacy NV21 scan method - consider using ImageProxy method
+2025-08-27 22:50:49.730 13295-13485 OpenCVConverter         com.msidecoder.scanner               V  NV21→Gray conversion: 864x480 → 480x864 in 3ms (ROTATED 90°)
+2025-08-27 22:50:49.731 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Detecting ROI candidates in 480x864 image
+2025-08-27 22:50:49.737 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:49.905 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225049-731_8_01_original.png
+2025-08-27 22:50:49.914 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:50.005 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225049-731_8_02_gradients.png
+2025-08-27 22:50:50.010 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:50.055 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225049-731_8_03_morphology.png
+2025-08-27 22:50:50.057 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Found 15 contours
+2025-08-27 22:50:50.057 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 32x5 < 100x30
+2025-08-27 22:50:50.057 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 26x7 < 100x30
+2025-08-27 22:50:50.058 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 22x25 < 100x30
+2025-08-27 22:50:50.058 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 23x16 < 100x30
+2025-08-27 22:50:50.058 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 20x12 < 100x30
+2025-08-27 22:50:50.058 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 21x7 < 100x30
+2025-08-27 22:50:50.058 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 57x27 < 100x30
+2025-08-27 22:50:50.058 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 0.7523511 not in [2.5, 15.0]
+2025-08-27 22:50:50.058 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 21x7 < 100x30
+2025-08-27 22:50:50.058 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 65x39 < 100x30
+2025-08-27 22:50:50.058 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 15x22 < 100x30
+2025-08-27 22:50:50.058 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 84x32 < 100x30
+2025-08-27 22:50:50.058 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 14x14 < 100x30
+2025-08-27 22:50:50.058 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 42x25 < 100x30
+2025-08-27 22:50:50.058 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 22x6 < 100x30
+2025-08-27 22:50:50.058 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  Detected 0 ROI candidates in 327ms
+2025-08-27 22:50:50.058 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  High confidence ROIs: 0/0 (threshold: 0.8)
+2025-08-27 22:50:50.058 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-27 22:50:50.058 13295-13295 RoiOverlayView          com.msidecoder.scanner               D  clearRoi called
+2025-08-27 22:50:50.059 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  BYPASSING ML Kit -> testing MSI directly
+2025-08-27 22:50:50.060 13295-13485 MSIScanner              com.msidecoder.scanner               W  Using legacy NV21 scan method - consider using ImageProxy method
+2025-08-27 22:50:50.085 13295-13485 OpenCVConverter         com.msidecoder.scanner               V  NV21→Gray conversion: 864x480 → 480x864 in 25ms (ROTATED 90°)
+2025-08-27 22:50:50.086 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Detecting ROI candidates in 480x864 image
+2025-08-27 22:50:50.088 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:50.239 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225050-085_9_01_original.png
+2025-08-27 22:50:50.251 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:50.344 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225050-085_9_02_gradients.png
+2025-08-27 22:50:50.350 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:50.404 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225050-085_9_03_morphology.png
+2025-08-27 22:50:50.406 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Found 12 contours
+2025-08-27 22:50:50.407 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 17x29 < 100x30
+2025-08-27 22:50:50.407 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 25x19 < 100x30
+2025-08-27 22:50:50.407 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 2.2818182 not in [2.5, 15.0]
+2025-08-27 22:50:50.407 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 38x274 < 100x30
+2025-08-27 22:50:50.407 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 19x11 < 100x30
+2025-08-27 22:50:50.407 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 47x7 < 100x30
+2025-08-27 22:50:50.407 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 47x13 < 100x30
+2025-08-27 22:50:50.407 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 50x10 < 100x30
+2025-08-27 22:50:50.407 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 0.66481996 not in [2.5, 15.0]
+2025-08-27 22:50:50.407 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 2.1636364 not in [2.5, 15.0]
+2025-08-27 22:50:50.407 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 28x17 < 100x30
+2025-08-27 22:50:50.407 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 41x19 < 100x30
+2025-08-27 22:50:50.407 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  Detected 0 ROI candidates in 322ms
+2025-08-27 22:50:50.407 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  High confidence ROIs: 0/0 (threshold: 0.8)
+2025-08-27 22:50:50.407 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-27 22:50:50.407 13295-13295 RoiOverlayView          com.msidecoder.scanner               D  clearRoi called
+2025-08-27 22:50:50.408 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  BYPASSING ML Kit -> testing MSI directly
+2025-08-27 22:50:50.409 13295-13485 MSIScanner              com.msidecoder.scanner               W  Using legacy NV21 scan method - consider using ImageProxy method
+2025-08-27 22:50:50.411 13295-13485 OpenCVConverter         com.msidecoder.scanner               V  NV21→Gray conversion: 864x480 → 480x864 in 1ms (ROTATED 90°)
+2025-08-27 22:50:50.411 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Detecting ROI candidates in 480x864 image
+2025-08-27 22:50:50.416 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:50.567 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225050-411_10_01_original.png
+2025-08-27 22:50:50.577 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:50.641 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225050-411_10_02_gradients.png
+2025-08-27 22:50:50.644 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:50.694 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225050-411_10_03_morphology.png
+2025-08-27 22:50:50.695 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Found 16 contours
+2025-08-27 22:50:50.695 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 25x29 < 100x30
+2025-08-27 22:50:50.695 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 1.8532819 not in [2.5, 15.0]
+2025-08-27 22:50:50.695 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 2.3391304 not in [2.5, 15.0]
+2025-08-27 22:50:50.695 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 36x250 < 100x30
+2025-08-27 22:50:50.695 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 38x20 < 100x30
+2025-08-27 22:50:50.695 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 78x32 < 100x30
+2025-08-27 22:50:50.695 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 24x7 < 100x30
+2025-08-27 22:50:50.695 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 59x31 < 100x30
+2025-08-27 22:50:50.695 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 1.1622276 not in [2.5, 15.0]
+2025-08-27 22:50:50.696 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 19x11 < 100x30
+2025-08-27 22:50:50.696 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 36x12 < 100x30
+2025-08-27 22:50:50.696 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 56x28 < 100x30
+2025-08-27 22:50:50.696 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 28x9 < 100x30
+2025-08-27 22:50:50.696 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 23x7 < 100x30
+2025-08-27 22:50:50.696 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 82x30 < 100x30
+2025-08-27 22:50:50.696 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 22x4 < 100x30
+2025-08-27 22:50:50.696 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  Detected 0 ROI candidates in 285ms
+2025-08-27 22:50:50.696 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  High confidence ROIs: 0/0 (threshold: 0.8)
+2025-08-27 22:50:50.696 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-27 22:50:50.696 13295-13295 RoiOverlayView          com.msidecoder.scanner               D  clearRoi called
+2025-08-27 22:50:50.697 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  BYPASSING ML Kit -> testing MSI directly
+2025-08-27 22:50:50.698 13295-13485 MSIScanner              com.msidecoder.scanner               W  Using legacy NV21 scan method - consider using ImageProxy method
+2025-08-27 22:50:50.699 13295-13485 OpenCVConverter         com.msidecoder.scanner               V  NV21→Gray conversion: 864x480 → 480x864 in 1ms (ROTATED 90°)
+2025-08-27 22:50:50.700 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Detecting ROI candidates in 480x864 image
+2025-08-27 22:50:50.702 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:50.864 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225050-699_11_01_original.png
+2025-08-27 22:50:50.875 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:50.945 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225050-699_11_02_gradients.png
+2025-08-27 22:50:50.948 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:51.001 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225050-699_11_03_morphology.png
+2025-08-27 22:50:51.004 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Found 10 contours
+2025-08-27 22:50:51.005 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 26x31 < 100x30
+2025-08-27 22:50:51.005 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 2.224 not in [2.5, 15.0]
+2025-08-27 22:50:51.005 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 19x121 < 100x30
+2025-08-27 22:50:51.005 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 23x9 < 100x30
+2025-08-27 22:50:51.005 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 47x18 < 100x30
+2025-08-27 22:50:51.005 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 33x9 < 100x30
+2025-08-27 22:50:51.005 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 26x10 < 100x30
+2025-08-27 22:50:51.005 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 0.627451 not in [2.5, 15.0]
+2025-08-27 22:50:51.005 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 24x11 < 100x30
+2025-08-27 22:50:51.005 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 2.3396227 not in [2.5, 15.0]
+2025-08-27 22:50:51.005 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  Detected 0 ROI candidates in 306ms
+2025-08-27 22:50:51.005 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  High confidence ROIs: 0/0 (threshold: 0.8)
+2025-08-27 22:50:51.005 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-27 22:50:51.005 13295-13295 RoiOverlayView          com.msidecoder.scanner               D  clearRoi called
+2025-08-27 22:50:51.007 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  BYPASSING ML Kit -> testing MSI directly
+2025-08-27 22:50:51.007 13295-13485 MSIScanner              com.msidecoder.scanner               W  Using legacy NV21 scan method - consider using ImageProxy method
+2025-08-27 22:50:51.008 13295-13485 OpenCVConverter         com.msidecoder.scanner               V  NV21→Gray conversion: 864x480 → 480x864 in 1ms (ROTATED 90°)
+2025-08-27 22:50:51.008 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Detecting ROI candidates in 480x864 image
+2025-08-27 22:50:51.011 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:51.177 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225051-008_12_01_original.png
+2025-08-27 22:50:51.186 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:51.276 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225051-008_12_02_gradients.png
+2025-08-27 22:50:51.281 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:51.367 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225051-008_12_03_morphology.png
+2025-08-27 22:50:51.368 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Found 5 contours
+2025-08-27 22:50:51.368 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 26x23 < 100x30
+2025-08-27 22:50:51.368 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 1.7647059 not in [2.5, 15.0]
+2025-08-27 22:50:51.368 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 2.167939 not in [2.5, 15.0]
+2025-08-27 22:50:51.368 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 19x97 < 100x30
+2025-08-27 22:50:51.368 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 0.92843324 not in [2.5, 15.0]
+2025-08-27 22:50:51.368 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  Detected 0 ROI candidates in 360ms
+2025-08-27 22:50:51.368 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  High confidence ROIs: 0/0 (threshold: 0.8)
+2025-08-27 22:50:51.368 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-27 22:50:51.369 13295-13295 RoiOverlayView          com.msidecoder.scanner               D  clearRoi called
+2025-08-27 22:50:51.370 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  BYPASSING ML Kit -> testing MSI directly
+2025-08-27 22:50:51.372 13295-13485 MSIScanner              com.msidecoder.scanner               W  Using legacy NV21 scan method - consider using ImageProxy method
+2025-08-27 22:50:51.373 13295-13485 OpenCVConverter         com.msidecoder.scanner               V  NV21→Gray conversion: 864x480 → 480x864 in 1ms (ROTATED 90°)
+2025-08-27 22:50:51.374 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Detecting ROI candidates in 480x864 image
+2025-08-27 22:50:51.378 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:51.581 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225051-373_13_01_original.png
+2025-08-27 22:50:51.592 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:51.695 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225051-373_13_02_gradients.png
+2025-08-27 22:50:51.701 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:51.773 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225051-373_13_03_morphology.png
+2025-08-27 22:50:51.776 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Found 9 contours
+2025-08-27 22:50:51.776 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 25x23 < 100x30
+2025-08-27 22:50:51.776 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 2.4870467 not in [2.5, 15.0]
+2025-08-27 22:50:51.776 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 29x15 < 100x30
+2025-08-27 22:50:51.776 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 33x45 < 100x30
+2025-08-27 22:50:51.776 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 2.142857 not in [2.5, 15.0]
+2025-08-27 22:50:51.776 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 21x9 < 100x30
+2025-08-27 22:50:51.776 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 11x12 < 100x30
+2025-08-27 22:50:51.776 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 0.93203884 not in [2.5, 15.0]
+2025-08-27 22:50:51.777 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 30x11 < 100x30
+2025-08-27 22:50:51.777 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  Detected 0 ROI candidates in 404ms
+2025-08-27 22:50:51.777 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  High confidence ROIs: 0/0 (threshold: 0.8)
+2025-08-27 22:50:51.777 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-27 22:50:51.777 13295-13295 RoiOverlayView          com.msidecoder.scanner               D  clearRoi called
+2025-08-27 22:50:51.778 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  BYPASSING ML Kit -> testing MSI directly
+2025-08-27 22:50:51.779 13295-13485 MSIScanner              com.msidecoder.scanner               W  Using legacy NV21 scan method - consider using ImageProxy method
+2025-08-27 22:50:51.782 13295-13485 OpenCVConverter         com.msidecoder.scanner               V  NV21→Gray conversion: 864x480 → 480x864 in 0ms (ROTATED 90°)
+2025-08-27 22:50:51.782 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Detecting ROI candidates in 480x864 image
+2025-08-27 22:50:51.786 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:51.952 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225051-782_14_01_original.png
+2025-08-27 22:50:51.964 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:52.029 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225051-782_14_02_gradients.png
+2025-08-27 22:50:52.034 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:52.110 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225051-782_14_03_morphology.png
+2025-08-27 22:50:52.113 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Found 21 contours
+2025-08-27 22:50:52.113 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 31x11 < 100x30
+2025-08-27 22:50:52.113 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 32x28 < 100x30
+2025-08-27 22:50:52.113 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 21x30 < 100x30
+2025-08-27 22:50:52.113 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 22x14 < 100x30
+2025-08-27 22:50:52.113 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 2.3762376 not in [2.5, 15.0]
+2025-08-27 22:50:52.113 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 11x9 < 100x30
+2025-08-27 22:50:52.113 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 52x39 < 100x30
+2025-08-27 22:50:52.113 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 16x79 < 100x30
+2025-08-27 22:50:52.113 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 2.254386 not in [2.5, 15.0]
+2025-08-27 22:50:52.113 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 30x8 < 100x30
+2025-08-27 22:50:52.113 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 66x214 < 100x30
+2025-08-27 22:50:52.113 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 44x14 < 100x30
+2025-08-27 22:50:52.113 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 23x9 < 100x30
+2025-08-27 22:50:52.113 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 76x16 < 100x30
+2025-08-27 22:50:52.113 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 33x11 < 100x30
+2025-08-27 22:50:52.113 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 1.6050955 not in [2.5, 15.0]
+2025-08-27 22:50:52.113 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 34x10 < 100x30
+2025-08-27 22:50:52.113 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 34x8 < 100x30
+2025-08-27 22:50:52.113 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 62x28 < 100x30
+2025-08-27 22:50:52.113 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 29x19 < 100x30
+2025-08-27 22:50:52.113 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 43x14 < 100x30
+2025-08-27 22:50:52.114 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  Detected 0 ROI candidates in 331ms
+2025-08-27 22:50:52.114 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  High confidence ROIs: 0/0 (threshold: 0.8)
+2025-08-27 22:50:52.114 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-27 22:50:52.114 13295-13295 RoiOverlayView          com.msidecoder.scanner               D  clearRoi called
+2025-08-27 22:50:52.115 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  BYPASSING ML Kit -> testing MSI directly
+2025-08-27 22:50:52.116 13295-13485 MSIScanner              com.msidecoder.scanner               W  Using legacy NV21 scan method - consider using ImageProxy method
+2025-08-27 22:50:52.118 13295-13485 OpenCVConverter         com.msidecoder.scanner               V  NV21→Gray conversion: 864x480 → 480x864 in 0ms (ROTATED 90°)
+2025-08-27 22:50:52.118 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Detecting ROI candidates in 480x864 image
+2025-08-27 22:50:52.123 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:52.328 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225052-118_15_01_original.png
+2025-08-27 22:50:52.338 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:52.429 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225052-118_15_02_gradients.png
+2025-08-27 22:50:52.432 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:52.475 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225052-118_15_03_morphology.png
+2025-08-27 22:50:52.476 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Found 15 contours
+2025-08-27 22:50:52.476 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 25x10 < 100x30
+2025-08-27 22:50:52.476 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 23x9 < 100x30
+2025-08-27 22:50:52.476 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 30x34 < 100x30
+2025-08-27 22:50:52.476 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 2.223301 not in [2.5, 15.0]
+2025-08-27 22:50:52.476 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 33x9 < 100x30
+2025-08-27 22:50:52.476 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 43x12 < 100x30
+2025-08-27 22:50:52.476 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 40x13 < 100x30
+2025-08-27 22:50:52.476 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 0.8648649 not in [2.5, 15.0]
+2025-08-27 22:50:52.476 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 52x20 < 100x30
+2025-08-27 22:50:52.476 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 90x28 < 100x30
+2025-08-27 22:50:52.476 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 59x20 < 100x30
+2025-08-27 22:50:52.476 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 55x55 < 100x30
+2025-08-27 22:50:52.476 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 25x7 < 100x30
+2025-08-27 22:50:52.476 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 69x33 < 100x30
+2025-08-27 22:50:52.476 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 20x28 < 100x30
+2025-08-27 22:50:52.477 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  Detected 0 ROI candidates in 359ms
+2025-08-27 22:50:52.477 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  High confidence ROIs: 0/0 (threshold: 0.8)
+2025-08-27 22:50:52.477 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-27 22:50:52.477 13295-13295 RoiOverlayView          com.msidecoder.scanner               D  clearRoi called
+2025-08-27 22:50:52.478 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  BYPASSING ML Kit -> testing MSI directly
+2025-08-27 22:50:52.478 13295-13485 MSIScanner              com.msidecoder.scanner               W  Using legacy NV21 scan method - consider using ImageProxy method
+2025-08-27 22:50:52.479 13295-13485 OpenCVConverter         com.msidecoder.scanner               V  NV21→Gray conversion: 864x480 → 480x864 in 1ms (ROTATED 90°)
+2025-08-27 22:50:52.480 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Detecting ROI candidates in 480x864 image
+2025-08-27 22:50:52.484 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:52.677 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225052-479_16_01_original.png
+2025-08-27 22:50:52.686 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:52.748 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225052-479_16_02_gradients.png
+2025-08-27 22:50:52.753 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:52.830 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225052-479_16_03_morphology.png
+2025-08-27 22:50:52.831 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Found 28 contours
+2025-08-27 22:50:52.831 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 23x8 < 100x30
+2025-08-27 22:50:52.831 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 28x29 < 100x30
+2025-08-27 22:50:52.831 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 22x8 < 100x30
+2025-08-27 22:50:52.831 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 28x21 < 100x30
+2025-08-27 22:50:52.831 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 62x21 < 100x30
+2025-08-27 22:50:52.832 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 21x7 < 100x30
+2025-08-27 22:50:52.832 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 56x21 < 100x30
+2025-08-27 22:50:52.835 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT convexity: 0,69 < 0.7
+2025-08-27 22:50:52.835 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 42x15 < 100x30
+2025-08-27 22:50:52.835 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 49x21 < 100x30
+2025-08-27 22:50:52.835 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 52x17 < 100x30
+2025-08-27 22:50:52.835 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 17x36 < 100x30
+2025-08-27 22:50:52.835 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 2.2371135 not in [2.5, 15.0]
+2025-08-27 22:50:52.835 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 61x129 < 100x30
+2025-08-27 22:50:52.835 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 52x26 < 100x30
+2025-08-27 22:50:52.835 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 44x8 < 100x30
+2025-08-27 22:50:52.835 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 147x21 < 100x30
+2025-08-27 22:50:52.835 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 21x21 < 100x30
+2025-08-27 22:50:52.835 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 25x8 < 100x30
+2025-08-27 22:50:52.835 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 41x12 < 100x30
+2025-08-27 22:50:52.835 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 24x14 < 100x30
+2025-08-27 22:50:52.835 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 1.2363636 not in [2.5, 15.0]
+2025-08-27 22:50:52.835 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 24x10 < 100x30
+2025-08-27 22:50:52.835 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 22x8 < 100x30
+2025-08-27 22:50:52.835 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 26x36 < 100x30
+2025-08-27 22:50:52.835 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 67x28 < 100x30
+2025-08-27 22:50:52.835 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 14x21 < 100x30
+2025-08-27 22:50:52.835 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 29x18 < 100x30
+2025-08-27 22:50:52.835 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  Detected 0 ROI candidates in 356ms
+2025-08-27 22:50:52.835 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  High confidence ROIs: 0/0 (threshold: 0.8)
+2025-08-27 22:50:52.835 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-27 22:50:52.835 13295-13295 RoiOverlayView          com.msidecoder.scanner               D  clearRoi called
+2025-08-27 22:50:52.836 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  BYPASSING ML Kit -> testing MSI directly
+2025-08-27 22:50:52.837 13295-13485 MSIScanner              com.msidecoder.scanner               W  Using legacy NV21 scan method - consider using ImageProxy method
+2025-08-27 22:50:52.838 13295-13485 OpenCVConverter         com.msidecoder.scanner               V  NV21→Gray conversion: 864x480 → 480x864 in 0ms (ROTATED 90°)
+2025-08-27 22:50:52.838 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Detecting ROI candidates in 480x864 image
+2025-08-27 22:50:52.844 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:53.029 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225052-838_17_01_original.png
+2025-08-27 22:50:53.039 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:53.146 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225052-838_17_02_gradients.png
+2025-08-27 22:50:53.151 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:53.225 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225052-838_17_03_morphology.png
+2025-08-27 22:50:53.227 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Found 7 contours
+2025-08-27 22:50:53.227 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 25x11 < 100x30
+2025-08-27 22:50:53.227 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 22x15 < 100x30
+2025-08-27 22:50:53.227 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 0.66574204 not in [2.5, 15.0]
+2025-08-27 22:50:53.227 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 16x7 < 100x30
+2025-08-27 22:50:53.227 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 25x14 < 100x30
+2025-08-27 22:50:53.227 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 19x9 < 100x30
+2025-08-27 22:50:53.227 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 25x10 < 100x30
+2025-08-27 22:50:53.227 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  Detected 0 ROI candidates in 389ms
+2025-08-27 22:50:53.227 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  High confidence ROIs: 0/0 (threshold: 0.8)
+2025-08-27 22:50:53.227 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-27 22:50:53.228 13295-13295 RoiOverlayView          com.msidecoder.scanner               D  clearRoi called
+2025-08-27 22:50:53.229 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  BYPASSING ML Kit -> testing MSI directly
+2025-08-27 22:50:53.229 13295-13485 MSIScanner              com.msidecoder.scanner               W  Using legacy NV21 scan method - consider using ImageProxy method
+2025-08-27 22:50:53.232 13295-13485 OpenCVConverter         com.msidecoder.scanner               V  NV21→Gray conversion: 864x480 → 480x864 in 1ms (ROTATED 90°)
+2025-08-27 22:50:53.232 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Detecting ROI candidates in 480x864 image
+2025-08-27 22:50:53.236 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:53.415 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225053-232_18_01_original.png
+2025-08-27 22:50:53.427 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:53.503 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225053-232_18_02_gradients.png
+2025-08-27 22:50:53.508 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:53.591 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225053-232_18_03_morphology.png
+2025-08-27 22:50:53.593 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Found 9 contours
+2025-08-27 22:50:53.593 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 2.2045455 not in [2.5, 15.0]
+2025-08-27 22:50:53.593 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 30x8 < 100x30
+2025-08-27 22:50:53.594 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 22x19 < 100x30
+2025-08-27 22:50:53.594 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 24x7 < 100x30
+2025-08-27 22:50:53.594 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 28x7 < 100x30
+2025-08-27 22:50:53.594 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 41x109 < 100x30
+2025-08-27 22:50:53.594 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 27x27 < 100x30
+2025-08-27 22:50:53.594 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 0.6530612 not in [2.5, 15.0]
+2025-08-27 22:50:53.594 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 11x6 < 100x30
+2025-08-27 22:50:53.594 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  Detected 0 ROI candidates in 362ms
+2025-08-27 22:50:53.594 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  High confidence ROIs: 0/0 (threshold: 0.8)
+2025-08-27 22:50:53.594 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-27 22:50:53.594 13295-13295 RoiOverlayView          com.msidecoder.scanner               D  clearRoi called
+2025-08-27 22:50:53.595 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  BYPASSING ML Kit -> testing MSI directly
+2025-08-27 22:50:53.596 13295-13485 MSIScanner              com.msidecoder.scanner               W  Using legacy NV21 scan method - consider using ImageProxy method
+2025-08-27 22:50:53.597 13295-13485 OpenCVConverter         com.msidecoder.scanner               V  NV21→Gray conversion: 864x480 → 480x864 in 1ms (ROTATED 90°)
+2025-08-27 22:50:53.600 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Detecting ROI candidates in 480x864 image
+2025-08-27 22:50:53.605 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:53.776 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225053-597_19_01_original.png
+2025-08-27 22:50:53.786 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:53.867 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225053-597_19_02_gradients.png
+2025-08-27 22:50:53.873 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:53.934 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225053-597_19_03_morphology.png
+2025-08-27 22:50:53.936 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Found 10 contours
+2025-08-27 22:50:53.937 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 26x4 < 100x30
+2025-08-27 22:50:53.937 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 24x4 < 100x30
+2025-08-27 22:50:53.937 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 50x22 < 100x30
+2025-08-27 22:50:53.937 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 21x20 < 100x30
+2025-08-27 22:50:53.937 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 22x8 < 100x30
+2025-08-27 22:50:53.937 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 21x7 < 100x30
+2025-08-27 22:50:53.937 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 24x12 < 100x30
+2025-08-27 22:50:53.937 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 60x33 < 100x30
+2025-08-27 22:50:53.937 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 2.147651 not in [2.5, 15.0]
+2025-08-27 22:50:53.937 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 0.8177172 not in [2.5, 15.0]
+2025-08-27 22:50:53.937 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  Detected 0 ROI candidates in 340ms
+2025-08-27 22:50:53.937 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  High confidence ROIs: 0/0 (threshold: 0.8)
+2025-08-27 22:50:53.937 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-27 22:50:53.937 13295-13295 RoiOverlayView          com.msidecoder.scanner               D  clearRoi called
+2025-08-27 22:50:53.938 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  BYPASSING ML Kit -> testing MSI directly
+2025-08-27 22:50:53.939 13295-13485 MSIScanner              com.msidecoder.scanner               W  Using legacy NV21 scan method - consider using ImageProxy method
+2025-08-27 22:50:53.955 13295-13485 OpenCVConverter         com.msidecoder.scanner               V  NV21→Gray conversion: 864x480 → 480x864 in 16ms (ROTATED 90°)
+2025-08-27 22:50:53.956 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Detecting ROI candidates in 480x864 image
+2025-08-27 22:50:53.960 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:54.137 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225053-956_20_01_original.png
+2025-08-27 22:50:54.146 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:54.250 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225053-956_20_02_gradients.png
+2025-08-27 22:50:54.257 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:54.324 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225053-956_20_03_morphology.png
+2025-08-27 22:50:54.326 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Found 8 contours
+2025-08-27 22:50:54.326 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 23x6 < 100x30
+2025-08-27 22:50:54.326 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 21x11 < 100x30
+2025-08-27 22:50:54.326 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 34x8 < 100x30
+2025-08-27 22:50:54.327 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT convexity: 0,68 < 0.7
+2025-08-27 22:50:54.327 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 85x44 < 100x30
+2025-08-27 22:50:54.327 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 68x60 < 100x30
+2025-08-27 22:50:54.327 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 2.1052632 not in [2.5, 15.0]
+2025-08-27 22:50:54.327 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 0.7535322 not in [2.5, 15.0]
+2025-08-27 22:50:54.327 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  Detected 0 ROI candidates in 372ms
+2025-08-27 22:50:54.327 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  High confidence ROIs: 0/0 (threshold: 0.8)
+2025-08-27 22:50:54.327 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-27 22:50:54.327 13295-13295 RoiOverlayView          com.msidecoder.scanner               D  clearRoi called
+2025-08-27 22:50:54.328 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  BYPASSING ML Kit -> testing MSI directly
+2025-08-27 22:50:54.329 13295-13485 MSIScanner              com.msidecoder.scanner               W  Using legacy NV21 scan method - consider using ImageProxy method
+2025-08-27 22:50:54.330 13295-13485 OpenCVConverter         com.msidecoder.scanner               V  NV21→Gray conversion: 864x480 → 480x864 in 0ms (ROTATED 90°)
+2025-08-27 22:50:54.331 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Detecting ROI candidates in 480x864 image
+2025-08-27 22:50:54.336 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:54.498 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225054-330_21_01_original.png
+2025-08-27 22:50:54.508 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:54.595 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225054-330_21_02_gradients.png
+2025-08-27 22:50:54.601 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:54.667 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225054-330_21_03_morphology.png
+2025-08-27 22:50:54.669 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Found 11 contours
+2025-08-27 22:50:54.669 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 48x8 < 100x30
+2025-08-27 22:50:54.669 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 56x12 < 100x30
+2025-08-27 22:50:54.669 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 32x13 < 100x30
+2025-08-27 22:50:54.669 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 30x8 < 100x30
+2025-08-27 22:50:54.669 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 23x8 < 100x30
+2025-08-27 22:50:54.669 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 139x22 < 100x30
+2025-08-27 22:50:54.671 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  ACCEPT ROI: 322x121, ratio=2,7, area=38962, density=0,92, convexity=0,98, grad=256,6
+2025-08-27 22:50:54.671 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  CONFIDENCE: 0,62 = aspect(0,30) + density(1,00) + compact(0,59) + pos(0,86)
+2025-08-27 22:50:54.671 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 29x8 < 100x30
+2025-08-27 22:50:54.671 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 12x11 < 100x30
+2025-08-27 22:50:54.671 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 23x7 < 100x30
+2025-08-27 22:50:54.671 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 1.4328358 not in [2.5, 15.0]
+2025-08-27 22:50:54.671 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  Detected 1 ROI candidates in 341ms
+2025-08-27 22:50:54.671 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  High confidence ROIs: 0/1 (threshold: 0.8)
+2025-08-27 22:50:54.672 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               W  No high confidence ROIs, using medium confidence (>=0.5)
+2025-08-27 22:50:54.672 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               V  Binarizing ROI: ROI(rect=Rect(80, 441 - 402, 562), conf=0,62, ratio=2,7, grad=256,6)
+2025-08-27 22:50:54.674 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:54.748 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225054-672_22_06_extracted_roi.png
+2025-08-27 22:50:54.754 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:54.773 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225054-672_22_07_preprocessed.png
+2025-08-27 22:50:54.774 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               V  Method 0 (Otsu): score=0,350
+2025-08-27 22:50:54.780 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               V  Method 1 (AdaptiveGaussian): score=0,440
+2025-08-27 22:50:54.781 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               V  Method 2 (AdaptiveMean): score=0,440
+2025-08-27 22:50:54.781 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               V  Method 3 (Triangle): score=0,350
+2025-08-27 22:50:54.781 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               V  Selected method: AdaptiveGaussian (confidence: 0,440)
+2025-08-27 22:50:54.787 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:54.818 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225054-672_22_08_binarized_binary.png
+2025-08-27 22:50:54.819 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               D  ROI binarized successfully in 147ms
+2025-08-27 22:50:54.822 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               D  BinaryProfile(len=159, quality=1,00, transitions=60, avgBarWidth=1,7, ratio=2,66)
+                                                                                                    ASCII: ····················██·····██·█··█···████···█··█··██··█··██··██·█···█··██·██·····██··█··█··███·█··██··█··███·█······██·····█··██··█··██··██····················
+                                                                                                    Compact: ·202·52·11·21·34·31·21·22·21·22·22·11·31·22·12·52·21·21·23·11·22·21·23·11·62·51·22·21·22·22·20
+2025-08-27 22:50:54.824 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               D  BINARY PATTERN: ····················██·····██·█··█···████···█··█··██··█··██··██·█···█··██·██·····██··█··█··███·█··██··█··███·█······██·····█··██··█··██··██····················
+2025-08-27 22:50:54.824 13295-13485 MSIScanner              com.msidecoder.scanner               D  MSI binarization successful (legacy method)
+2025-08-27 22:50:54.824 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-27 22:50:54.824 13295-13295 RoiOverlayView          com.msidecoder.scanner               D  clearRoi called
+2025-08-27 22:50:54.827 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  BYPASSING ML Kit -> testing MSI directly
+2025-08-27 22:50:54.828 13295-13485 MSIScanner              com.msidecoder.scanner               W  Using legacy NV21 scan method - consider using ImageProxy method
+2025-08-27 22:50:54.829 13295-13485 OpenCVConverter         com.msidecoder.scanner               V  NV21→Gray conversion: 864x480 → 480x864 in 1ms (ROTATED 90°)
+2025-08-27 22:50:54.830 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Detecting ROI candidates in 480x864 image
+2025-08-27 22:50:54.834 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:55.033 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225054-829_23_01_original.png
+2025-08-27 22:50:55.042 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:55.121 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225054-829_23_02_gradients.png
+2025-08-27 22:50:55.126 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:55.207 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225054-829_23_03_morphology.png
+2025-08-27 22:50:55.210 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Found 10 contours
+2025-08-27 22:50:55.212 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  ACCEPT ROI: 480x63, ratio=7,6, area=30240, density=0,70, convexity=0,86, grad=65,2
+2025-08-27 22:50:55.212 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  CONFIDENCE: 0,71 = aspect(0,80) + density(1,00) + compact(0,22) + pos(0,43)
+2025-08-27 22:50:55.213 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 2.141892 not in [2.5, 15.0]
+2025-08-27 22:50:55.213 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 20x85 < 100x30
+2025-08-27 22:50:55.213 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 23x36 < 100x30
+2025-08-27 22:50:55.213 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 26x23 < 100x30
+2025-08-27 22:50:55.213 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 27x8 < 100x30
+2025-08-27 22:50:55.213 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 30x15 < 100x30
+2025-08-27 22:50:55.213 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 38x15 < 100x30
+2025-08-27 22:50:55.213 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 25x9 < 100x30
+2025-08-27 22:50:55.213 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 1.4723927 not in [2.5, 15.0]
+2025-08-27 22:50:55.213 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  Detected 1 ROI candidates in 384ms
+2025-08-27 22:50:55.213 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  High confidence ROIs: 0/1 (threshold: 0.8)
+2025-08-27 22:50:55.213 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               W  No high confidence ROIs, using medium confidence (>=0.5)
+2025-08-27 22:50:55.214 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               V  Binarizing ROI: ROI(rect=Rect(0, 684 - 480, 747), conf=0,71, ratio=7,6, grad=65,2)
+2025-08-27 22:50:55.216 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:55.273 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225055-213_24_06_extracted_roi.png
+2025-08-27 22:50:55.278 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:55.327 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225055-213_24_07_preprocessed.png
+2025-08-27 22:50:55.329 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               V  Method 0 (Otsu): score=0,470
+2025-08-27 22:50:55.333 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               V  Method 1 (AdaptiveGaussian): score=0,490
+2025-08-27 22:50:55.335 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               V  Method 2 (AdaptiveMean): score=0,440
+2025-08-27 22:50:55.336 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               V  Method 3 (Triangle): score=0,350
+2025-08-27 22:50:55.336 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               V  Selected method: AdaptiveGaussian (confidence: 0,490)
+2025-08-27 22:50:55.339 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:55.370 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225055-213_24_08_binarized_binary.png
+2025-08-27 22:50:55.371 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               D  ROI binarized successfully in 158ms
+2025-08-27 22:50:55.375 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               D  BinaryProfile(len=355, quality=1,00, transitions=22, avgBarWidth=3,0, ratio=7,62)
+                                                                                                    ASCII: ···········██████████···········································█·······························█·····················████·······█··········██··························································································································█·····································██████·████··················█·············██········
+                                                                                                    Compact: ·1110·431·311·214·71·102·1221·376·14·181·132·8
+2025-08-27 22:50:55.379 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               D  BINARY PATTERN: ···········██████████···········································█·······························█·····················████·······█··········██··························································································································█·····································██████·████··················█·············██········
+2025-08-27 22:50:55.379 13295-13485 MSIScanner              com.msidecoder.scanner               D  MSI binarization successful (legacy method)
+2025-08-27 22:50:55.379 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-27 22:50:55.382 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  BYPASSING ML Kit -> testing MSI directly
+2025-08-27 22:50:55.383 13295-13485 MSIScanner              com.msidecoder.scanner               W  Using legacy NV21 scan method - consider using ImageProxy method
+2025-08-27 22:50:55.383 13295-13295 RoiOverlayView          com.msidecoder.scanner               D  clearRoi called
+2025-08-27 22:50:55.434 13295-13485 OpenCVConverter         com.msidecoder.scanner               V  NV21→Gray conversion: 864x480 → 480x864 in 51ms (ROTATED 90°)
+2025-08-27 22:50:55.436 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Detecting ROI candidates in 480x864 image
+2025-08-27 22:50:55.440 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:55.610 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225055-435_25_01_original.png
+2025-08-27 22:50:55.622 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:55.727 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225055-435_25_02_gradients.png
+2025-08-27 22:50:55.738 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:55.776 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225055-435_25_03_morphology.png
+2025-08-27 22:50:55.780 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Found 3 contours
+2025-08-27 22:50:55.781 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  ACCEPT ROI: 480x159, ratio=3,0, area=76320, density=0,93, convexity=0,97, grad=87,3
+2025-08-27 22:50:55.782 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  CONFIDENCE: 0,68 = aspect(0,60) + density(1,00) + compact(0,52) + pos(0,36)
+2025-08-27 22:50:55.782 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 2.090909 not in [2.5, 15.0]
+2025-08-27 22:50:55.782 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 1.1970075 not in [2.5, 15.0]
+2025-08-27 22:50:55.782 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  Detected 1 ROI candidates in 347ms
+2025-08-27 22:50:55.782 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  High confidence ROIs: 0/1 (threshold: 0.8)
+2025-08-27 22:50:55.782 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               W  No high confidence ROIs, using medium confidence (>=0.5)
+2025-08-27 22:50:55.782 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               V  Binarizing ROI: ROI(rect=Rect(0, 671 - 480, 830), conf=0,68, ratio=3,0, grad=87,3)
+2025-08-27 22:50:55.786 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:55.855 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225055-782_26_06_extracted_roi.png
+2025-08-27 22:50:55.857 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:55.898 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225055-782_26_07_preprocessed.png
+2025-08-27 22:50:55.899 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               V  Method 0 (Otsu): score=0,350
+2025-08-27 22:50:55.904 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               V  Method 1 (AdaptiveGaussian): score=0,440
+2025-08-27 22:50:55.905 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               V  Method 2 (AdaptiveMean): score=0,350
+2025-08-27 22:50:55.905 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               V  Method 3 (Triangle): score=0,350
+2025-08-27 22:50:55.905 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               V  Selected method: AdaptiveGaussian (confidence: 0,440)
+2025-08-27 22:50:55.908 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:55.939 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225055-782_26_08_binarized_binary.png
+2025-08-27 22:50:55.939 13295-13485 OpenCVMSIBinarizer      com.msidecoder.scanner               V  Binary profile quality insufficient: 0.0
+2025-08-27 22:50:55.939 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-27 22:50:55.940 13295-13295 RoiOverlayView          com.msidecoder.scanner               D  clearRoi called
+2025-08-27 22:50:55.943 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  BYPASSING ML Kit -> testing MSI directly
+2025-08-27 22:50:55.944 13295-13485 MSIScanner              com.msidecoder.scanner               W  Using legacy NV21 scan method - consider using ImageProxy method
+2025-08-27 22:50:55.945 13295-13485 OpenCVConverter         com.msidecoder.scanner               V  NV21→Gray conversion: 864x480 → 480x864 in 1ms (ROTATED 90°)
+2025-08-27 22:50:55.948 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Detecting ROI candidates in 480x864 image
+2025-08-27 22:50:55.954 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:56.149 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225055-947_27_01_original.png
+2025-08-27 22:50:56.158 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:56.244 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225055-947_27_02_gradients.png
+2025-08-27 22:50:56.250 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:56.313 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225055-947_27_03_morphology.png
+2025-08-27 22:50:56.317 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Found 20 contours
+2025-08-27 22:50:56.317 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 26x33 < 100x30
+2025-08-27 22:50:56.317 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 2.1238937 not in [2.5, 15.0]
+2025-08-27 22:50:56.317 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 26x11 < 100x30
+2025-08-27 22:50:56.317 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 27x9 < 100x30
+2025-08-27 22:50:56.317 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 31x50 < 100x30
+2025-08-27 22:50:56.317 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 42x80 < 100x30
+2025-08-27 22:50:56.317 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 2.1716418 not in [2.5, 15.0]
+2025-08-27 22:50:56.317 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 44x15 < 100x30
+2025-08-27 22:50:56.317 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 48x42 < 100x30
+2025-08-27 22:50:56.317 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 50x23 < 100x30
+2025-08-27 22:50:56.317 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 24x7 < 100x30
+2025-08-27 22:50:56.317 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 21x32 < 100x30
+2025-08-27 22:50:56.317 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 42x11 < 100x30
+2025-08-27 22:50:56.317 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 36x16 < 100x30
+2025-08-27 22:50:56.317 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 42x11 < 100x30
+2025-08-27 22:50:56.317 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 25x9 < 100x30
+2025-08-27 22:50:56.317 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 51x18 < 100x30
+2025-08-27 22:50:56.317 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 24x7 < 100x30
+2025-08-27 22:50:56.317 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 1.394958 not in [2.5, 15.0]
+2025-08-27 22:50:56.317 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 98x24 < 100x30
+2025-08-27 22:50:56.317 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  Detected 0 ROI candidates in 370ms
+2025-08-27 22:50:56.317 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  High confidence ROIs: 0/0 (threshold: 0.8)
+2025-08-27 22:50:56.318 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-27 22:50:56.318 13295-13295 RoiOverlayView          com.msidecoder.scanner               D  clearRoi called
+2025-08-27 22:50:56.319 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  BYPASSING ML Kit -> testing MSI directly
+2025-08-27 22:50:56.320 13295-13485 MSIScanner              com.msidecoder.scanner               W  Using legacy NV21 scan method - consider using ImageProxy method
+2025-08-27 22:50:56.322 13295-13485 OpenCVConverter         com.msidecoder.scanner               V  NV21→Gray conversion: 864x480 → 480x864 in 1ms (ROTATED 90°)
+2025-08-27 22:50:56.323 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Detecting ROI candidates in 480x864 image
+2025-08-27 22:50:56.326 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:56.520 13295-13295 MSIScanner              com.msidecoder.scanner               D  Stopping scanner
+2025-08-27 22:50:56.520 13295-13295 RoiOverlayView          com.msidecoder.scanner               D  clearRoi called
+2025-08-27 22:50:56.520 13295-13295 MSIScanner              com.msidecoder.scanner               D  Scanner stopped - Processing deactivated
+2025-08-27 22:50:56.537 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225056-322_28_01_original.png
+2025-08-27 22:50:56.548 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:56.639 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225056-322_28_02_gradients.png
+2025-08-27 22:50:56.650 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Using external storage for debug: /storage/emulated/0/Pictures/MSI_Debug
+2025-08-27 22:50:56.722 13295-13485 VisualDebugger          com.msidecoder.scanner               D  Saved debug image: /storage/emulated/0/Pictures/MSI_Debug/225056-322_28_03_morphology.png
+2025-08-27 22:50:56.724 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  Found 13 contours
+2025-08-27 22:50:56.724 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 24x19 < 100x30
+2025-08-27 22:50:56.724 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 2.1666667 not in [2.5, 15.0]
+2025-08-27 22:50:56.724 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 31x15 < 100x30
+2025-08-27 22:50:56.725 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT convexity: 0,68 < 0.7
+2025-08-27 22:50:56.725 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT aspect ratio: 0.7017544 not in [2.5, 15.0]
+2025-08-27 22:50:56.725 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 46x14 < 100x30
+2025-08-27 22:50:56.725 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 21x7 < 100x30
+2025-08-27 22:50:56.725 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 31x8 < 100x30
+2025-08-27 22:50:56.725 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 26x48 < 100x30
+2025-08-27 22:50:56.725 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 13x16 < 100x30
+2025-08-27 22:50:56.725 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 73x32 < 100x30
+2025-08-27 22:50:56.725 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 24x8 < 100x30
+2025-08-27 22:50:56.725 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               V  REJECT size: 14x7 < 100x30
+2025-08-27 22:50:56.725 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  Detected 0 ROI candidates in 403ms
+2025-08-27 22:50:56.725 13295-13485 OpenCVMSIDetector       com.msidecoder.scanner               D  High confidence ROIs: 0/0 (threshold: 0.8)
+2025-08-27 22:50:56.725 13295-13485 ScannerArbitrator       com.msidecoder.scanner               D  MSI no result → overall no detection
+2025-08-27 22:50:56.726 13295-13295 RoiOverlayView          com.msidecoder.scanner               D  clearRoi called
+2025-08-27 22:50:59.109 13295-13295 MSIScanner              com.msidecoder.scanner               D  === ON PAUSE ===
+2025-08-27 22:50:59.113 13295-13295 MSIScanner              com.msidecoder.scanner               D  OrientationEventListener disabled
+2025-08-27 22:50:59.113 13295-13295 MSIScanner              com.msidecoder.scanner               D  === ON PAUSE COMPLETE ===
+2025-08-27 22:50:59.114 13295-13295 VRI[MainActivity]       com.msidecoder.scanner               D  visibilityChanged oldVisibility=true newVisibility=false
+2025-08-27 22:50:59.120 13295-13295 SurfaceViewImpl         com.msidecoder.scanner               D  Surface destroyed.
+2025-08-27 22:50:59.120 13295-13295 SurfaceViewImpl         com.msidecoder.scanner               D  Surface closed androidx.camera.core.SurfaceRequest@6a107cb
+2025-08-27 22:50:59.121 13295-13295 DeferrableSurface       com.msidecoder.scanner               D  surface closed,  useCount=2 closed=true androidx.camera.core.SurfaceRequest$2@4f25ba8
+2025-08-27 22:50:59.127 13295-13491 BufferQueueProducer     com.msidecoder.scanner               E  [SurfaceView[com.msidecoder.scanner/com.msidecoder.scanner.MainActivity]#1(BLAST Consumer)1](id:33ef00000004,api:4,p:1772,c:13295) queueBuffer: BufferQueue has been abandoned
+2025-08-27 22:50:59.130 13295-13491 BufferQueueProducer     com.msidecoder.scanner               E  [SurfaceView[com.msidecoder.scanner/com.msidecoder.scanner.MainActivity]#1(BLAST Consumer)1](id:33ef00000004,api:4,p:1772,c:13295) dequeueBuffer: BufferQueue has been abandoned
+2025-08-27 22:50:59.154 13295-13295 DeferrableSurface       com.msidecoder.scanner               D  surface closed,  useCount=0 closed=true androidx.camera.core.processing.SurfaceEdge$SettableSurface@1d6ffbc
+2025-08-27 22:50:59.154 13295-13295 DeferrableSurface       com.msidecoder.scanner               D  Surface terminated[total_surfaces=3, used_surfaces=3](androidx.camera.core.processing.SurfaceEdge$SettableSurface@1d6ffbc}
+2025-08-27 22:50:59.154 13295-13295 DeferrableSurface       com.msidecoder.scanner               D  use count-1,  useCount=1 closed=true androidx.camera.core.SurfaceRequest$2@4f25ba8
+2025-08-27 22:50:59.157 13295-13314 BufferQueueProducer     com.msidecoder.scanner               E  [SurfaceView[com.msidecoder.scanner/com.msidecoder.scanner.MainActivity]#1(BLAST Consumer)1](id:33ef00000004,api:4,p:1772,c:13295) queueBuffer: BufferQueue has been abandoned
+2025-08-27 22:50:59.157 13295-13295 ScreenFlashWrapper      com.msidecoder.scanner               W  completePendingScreenFlashClear: none pending!
+2025-08-27 22:50:59.160 13295-13337 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@56d6bef[id=0]} Use cases [androidx.camera.core.Preview-48d35b1d-eb94-4555-a1c6-49d9557e650a222356600, androidx.camera.core.ImageCapture-dde84cac-6f77-4d66-85b6-95ebad67039f118359889, androidx.camera.core.ImageAnalysis-3d64dd9c-c2d7-4d81-bb7b-9715e4cbc76e14285750] now DETACHED for camera
+2025-08-27 22:50:59.161 13295-13337 UseCaseAttachState      com.msidecoder.scanner               D  All use case: [] for camera: 0
+2025-08-27 22:50:59.162 13295-13337 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@56d6bef[id=0]} Resetting Capture Session
+2025-08-27 22:50:59.164 13295-13337 SyncCaptureSessionImpl  com.msidecoder.scanner               D  [androidx.camera.camera2.internal.SynchronizedCaptureSessionImpl@e08f78b] Session call close()
+2025-08-27 22:50:59.165 13295-13337 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@56d6bef[id=0]} Releasing session in state OPENED
+2025-08-27 22:50:59.165 13295-13337 Camera2CameraControlImp com.msidecoder.scanner               D  setActive: isActive = false
+2025-08-27 22:50:59.166 13295-13337 UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [] for camera: 0
+2025-08-27 22:50:59.169 13295-13337 UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [] for camera: 0
+2025-08-27 22:50:59.172 13295-13337 VideoUsageControl       com.msidecoder.scanner               D  resetDirectly: mVideoUsage reset!
+2025-08-27 22:50:59.173 13295-13337 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@56d6bef[id=0]} Closing camera.
+2025-08-27 22:50:59.174 13295-13337 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@56d6bef[id=0]} Transitioning camera internal state: OPENED --> CLOSING
+2025-08-27 22:50:59.174 13295-13337 CameraStateRegistry     com.msidecoder.scanner               D  Recalculating open cameras:
+                                                                                                    Camera                                       State                 
+                                                                                                    -------------------------------------------------------------------
+                                                                                                    Camera@56d6bef[id=0]                         CLOSING               
+                                                                                                    Camera@56786e8[id=1]                         UNKNOWN               
+                                                                                                    -------------------------------------------------------------------
+                                                                                                    Open count: 1 (Max allowed: 1)
+2025-08-27 22:50:59.175 13295-13337 CameraStateMachine      com.msidecoder.scanner               D  New public camera state CameraState{type=CLOSING, error=null} from CLOSING and null
+2025-08-27 22:50:59.175 13295-13337 CameraStateMachine      com.msidecoder.scanner               D  Publishing new public camera state CameraState{type=CLOSING, error=null}
+2025-08-27 22:50:59.175 13295-13337 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@56d6bef[id=0]} Resetting Capture Session
+2025-08-27 22:50:59.176 13295-13337 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@56d6bef[id=0]} Skipping Capture Session state check due to current camera state: CLOSING and previous session status: false
+2025-08-27 22:50:59.176 13295-13337 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@56d6bef[id=0]} Releasing session in state CLOSING
+2025-08-27 22:50:59.177 13295-13337 SyncCaptureSessionImpl  com.msidecoder.scanner               D  [androidx.camera.camera2.internal.SynchronizedCaptureSessionImpl@e08f78b] Session call super.close()
+2025-08-27 22:50:59.182 13295-13295 StreamStateObserver     com.msidecoder.scanner               D  Update Preview stream state to IDLE
+2025-08-27 22:50:59.189 13295-13338 BufferQueueProducer     com.msidecoder.scanner               E  [SurfaceView[com.msidecoder.scanner/com.msidecoder.scanner.MainActivity]#1(BLAST Consumer)1](id:33ef00000004,api:4,p:1772,c:13295) queueBuffer: BufferQueue has been abandoned
+2025-08-27 22:50:59.220 13295-13338 BufferQueueProducer     com.msidecoder.scanner               E  [SurfaceView[com.msidecoder.scanner/com.msidecoder.scanner.MainActivity]#1(BLAST Consumer)1](id:33ef00000004,api:4,p:1772,c:13295) queueBuffer: BufferQueue has been abandoned
+2025-08-27 22:50:59.254 13295-13338 BufferQueueProducer     com.msidecoder.scanner               E  [SurfaceView[com.msidecoder.scanner/com.msidecoder.scanner.MainActivity]#1(BLAST Consumer)1](id:33ef00000004,api:4,p:1772,c:13295) queueBuffer: BufferQueue has been abandoned
+2025-08-27 22:50:59.271 13295-13337 UseCaseAttachState      com.msidecoder.scanner               D  Active and attached use case: [] for camera: 0
+2025-08-27 22:50:59.274 13295-13337 CaptureSession          com.msidecoder.scanner               D  onSessionFinished()
+2025-08-27 22:50:59.274 13295-13337 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@56d6bef[id=0]} closing camera
+2025-08-27 22:50:59.286 13295-13338 BufferQueueProducer     com.msidecoder.scanner               E  [SurfaceView[com.msidecoder.scanner/com.msidecoder.scanner.MainActivity]#1(BLAST Consumer)1](id:33ef00000004,api:4,p:1772,c:13295) queueBuffer: BufferQueue has been abandoned
+2025-08-27 22:50:59.293 13295-13338 BufferQueueProducer     com.msidecoder.scanner               E  [SurfaceView[com.msidecoder.scanner/com.msidecoder.scanner.MainActivity]#1(BLAST Consumer)1](id:33ef00000004,api:4,p:1772,c:13295) cancelBuffer: BufferQueue has been abandoned
+2025-08-27 22:50:59.294 13295-13338 BufferQueueProducer     com.msidecoder.scanner               E  [SurfaceView[com.msidecoder.scanner/com.msidecoder.scanner.MainActivity]#1(BLAST Consumer)1](id:33ef00000004,api:4,p:1772,c:13295) cancelBuffer: BufferQueue has been abandoned
+2025-08-27 22:50:59.479 13295-13338 libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.camera.aux.packagelist"
+2025-08-27 22:50:59.480 13295-13338 libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.camera.aux.packagelist"
+2025-08-27 22:50:59.480 13295-13338 CameraManagerGlobal     com.msidecoder.scanner               W  ignore the torch status update of camera: 2
+2025-08-27 22:50:59.481 13295-13491 libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.camera.aux.packagelist"
+2025-08-27 22:50:59.481 13295-13491 CameraManagerGlobal     com.msidecoder.scanner               W  ignore the torch status update of camera: 3
+2025-08-27 22:50:59.489 13295-13338 CameraManagerGlobal     com.msidecoder.scanner               E  Camera 3 is not present. Ignore physical camera status change
+2025-08-27 22:50:59.490 13295-13338 libc                    com.msidecoder.scanner               W  Access denied finding property "vendor.camera.aux.packagelist"
+2025-08-27 22:50:59.493 13295-13337 DeferrableSurface       com.msidecoder.scanner               D  use count-1,  useCount=0 closed=true androidx.camera.core.SurfaceRequest$2@4f25ba8
+2025-08-27 22:50:59.493 13295-13337 DeferrableSurface       com.msidecoder.scanner               D  Surface no longer in use[total_surfaces=3, used_surfaces=2](androidx.camera.core.SurfaceRequest$2@4f25ba8}
+2025-08-27 22:50:59.494 13295-13337 DeferrableSurface       com.msidecoder.scanner               D  Surface terminated[total_surfaces=2, used_surfaces=2](androidx.camera.core.SurfaceRequest$2@4f25ba8}
+2025-08-27 22:50:59.496 13295-13337 DeferrableSurface       com.msidecoder.scanner               D  use count-1,  useCount=0 closed=false androidx.camera.core.impl.ImmediateSurface@ce8a543
+2025-08-27 22:50:59.496 13295-13337 DeferrableSurface       com.msidecoder.scanner               D  Surface no longer in use[total_surfaces=2, used_surfaces=1](androidx.camera.core.impl.ImmediateSurface@ce8a543}
+2025-08-27 22:50:59.496 13295-13337 DeferrableSurface       com.msidecoder.scanner               D  use count-1,  useCount=0 closed=false androidx.camera.core.impl.ImmediateSurface@295343e
+2025-08-27 22:50:59.496 13295-13337 DeferrableSurface       com.msidecoder.scanner               D  Surface no longer in use[total_surfaces=2, used_surfaces=0](androidx.camera.core.impl.ImmediateSurface@295343e}
+2025-08-27 22:50:59.496 13295-13295 SurfaceViewImpl         com.msidecoder.scanner               D  Safe to release surface.
+2025-08-27 22:50:59.497 13295-13337 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@56d6bef[id=0]} CameraDevice.onClosed()
+2025-08-27 22:50:59.497 13295-13337 Camera2CameraImpl       com.msidecoder.scanner               D  {Camera@56d6bef[id=0]} Transitioning camera internal state: CLOSING --> INITIALIZED
+2025-08-27 22:50:59.498 13295-13337 CameraStateRegistry     com.msidecoder.scanner               D  Recalculating open cameras:
+                                                                                                    Camera                                       State                 
+                                                                                                    -------------------------------------------------------------------
+                                                                                                    Camera@56d6bef[id=0]                         CLOSED                
+                                                                                                    Camera@56786e8[id=1]                         UNKNOWN               
+                                                                                                    -------------------------------------------------------------------
+                                                                                                    Open count: 0 (Max allowed: 1)
+2025-08-27 22:50:59.499 13295-13337 CameraStateMachine      com.msidecoder.scanner               D  New public camera state CameraState{type=CLOSED, error=null} from CLOSED and null
+2025-08-27 22:50:59.499 13295-13337 CameraStateMachine      com.msidecoder.scanner               D  Publishing new public camera state CameraState{type=CLOSED, error=null}
+2025-08-27 22:50:59.499 13295-13337 SyncCaptureSessionImpl  com.msidecoder.scanner               D  [androidx.camera.camera2.internal.SynchronizedCaptureSessionImpl@e08f78b] onClosed()
